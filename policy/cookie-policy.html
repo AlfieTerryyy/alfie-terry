@@ -147,26 +147,31 @@
         </nav>
         <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
-    <div class="cookie-overlay">
-        <div class="cookie-content">
-            <p>By clicking "Accept", you agree to our <a href="https://alfieterry.co.uk/policy/cookie-policy" target="_blank">Cookie Policy</a>.</p>
-            <button class="accept-cookies">Accept</button>
-        </div>
+<div class="cookie-overlay">
+    <div class="cookie-content">
+        <p>By clicking "Accept", you agree to our <a href="https://alfieterry.co.uk/policy/cookie-policy" target="_blank">Cookie Policy</a>.</p>
+        <button class="accept-cookies">Accept</button>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (!document.cookie.includes("accepted_cookies=true")) {
-                document.querySelector(".cookie-overlay").style.display = "block";
-            }
+</div>
 
-            document.querySelector(".accept-cookies").addEventListener("click", function() {
-                document.cookie = "accepted_cookies=true; path=/; max-age=" + 60*60*24*365;
-                document.querySelector(".cookie-overlay").style.display = "none";
-            });
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Check if the cookie is already set
+        if (!document.cookie.split('; ').find(row => row.startsWith('accepted_cookies='))) {
+            // Show the cookie overlay if the cookie is not set
+            document.querySelector(".cookie-overlay").style.display = "block";
+        }
+
+        // Set the cookie and hide the overlay when "Accept" is clicked
+        document.querySelector(".accept-cookies").addEventListener("click", function() {
+            document.cookie = "accepted_cookies=true; path=/; max-age=" + (60 * 60 * 24 * 365); // Cookie expires in 1 year
+            document.querySelector(".cookie-overlay").style.display = "none";
         });
+    });
 
-        // Update the current year in the footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
+    // Update the current year in the footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+
 </body>
 </html>
