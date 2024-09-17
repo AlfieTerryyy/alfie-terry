@@ -192,27 +192,5 @@
             <button class="close-policy">Close</button>
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            if (!document.cookie.includes("accepted_cookies=true")) {
-                document.querySelector(".cookie-overlay").style.display = "block";
-            }
-
-            document.querySelector(".accept-cookies").addEventListener("click", function() {
-                document.cookie = "accepted_cookies=true; path=/; max-age=" + 60*60*24*365;
-                document.querySelector(".cookie-overlay").style.display = "none";
-            });
-
-            document.getElementById("show-cookie-policy").addEventListener("click", function(event) {
-                event.preventDefault();
-                document.querySelector(".cookie-policy").style.display = "block";
-            });
-
-            document.querySelector(".close-policy").addEventListener("click", function() {
-                document.querySelector(".cookie-policy").style.display = "none";
-            });
-        });
-    </script>
 </body>
 </html>
