@@ -13,58 +13,81 @@
     <link rel="stylesheet" href="./assets/css/pounder-btns.css">
     <script src="./assets/js/main.js" defer></script>
     <style>
+        .footer-navfoot {
+            background-color: #1e1e1e;
+            padding: 40px 20px;
+            text-align: center;
+            color: #f0f0f0;
+            position: relative;
+            margin-top: 50px;
+        }
 
-.footer-navfoot {
-    background-color: #1e1e1e;
-    padding: 40px 20px;
-    text-align: center;
-    color: #f0f0f0;
-    position: relative;
-    margin-top: 50px;
-}
+        .footer-navfoot p {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #aaa;
+        }
 
-.footer-navfoot p {
-    font-size: 14px;
-    margin-top: 20px;
-    color: #aaa;
-}
+        .navfoot ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
 
-.navfoot ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
+        .navfoot ul li {
+            display: inline;
+        }
 
-.navfoot ul li {
-    display: inline;
-}
+        .navfoot ul li a {
+            text-decoration: none;
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
 
-.navfoot ul li a {
-    text-decoration: none;
-    color: #f0f0f0;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
+        .navfoot ul li a:hover {
+            color: #ffcc00;
+        }
 
-.navfoot ul li a:hover {
-    color: #ffcc00;
-}
+        .navfoot ul li a:active {
+            color: #ffa500;
+        }
 
-.navfoot ul li a:active {
-    color: #ffa500;
-}
+        .cookie-overlay {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            z-index: 1000;
+        }
 
-        
+        .cookie-overlay a {
+            color: #4CAF50;
+            text-decoration: underline;
+        }
+
+        .cookie-overlay .accept-cookies {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <div class="header-container">
-            <a href="https://alfieterry.co.uk" class="logo"><img src="assets/images/logo.png" alt="Alfie Terry Logo"></a>
+            <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo"></a>
             <nav class="navbar" id="navbar">
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -76,8 +99,7 @@
         </div>
     </header>
     <main>
-                   <!-- <img src="https://alfieterry.co.uk/images/" alt="img" width="2100" height="1280"> -->
-         <section id="home" class="hero">
+        <section id="home" class="hero">
             <h1>Welcome to ASAT Web</h1>
             <p>The One Space For All My Work.</p>
             <a href="about.html" class="button">Learn More</a>
@@ -93,17 +115,37 @@
             </article>
         </section>
     </main>
-<footer class="footer-navfoot">
-    <nav class="navfoot">
-        <ul>
-            <li><a href="https://alfieterry.co.uk/">Home</a></li>
-            <li><a href="https://alfieterry.co.uk/about">About</a></li>
-            <li><a href="https://alfieterry.co.uk/contact">Contact</a></li>
-            <li><a href="https://alfieterry.co.uk/policys">Policys</a></li>
-        </ul>
-    </nav>
-    <p>&copy; <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
-</footer>
+    <footer class="footer-navfoot">
+        <nav class="navfoot">
+            <ul>
+                <li><a href="https://alfieterry.co.uk/">Home</a></li>
+                <li><a href="https://alfieterry.co.uk/about">About</a></li>
+                <li><a href="https://alfieterry.co.uk/contact">Contact</a></li>
+                <li><a href="https://alfieterry.co.uk/policys">Policys</a></li>
+            </ul>
+        </nav>
+        <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
+    </footer>
     <div id="scroll-progress"></div>
+
+    <div class="cookie-overlay">
+        <div class="cookie-content">
+            <p>By clicking "Accept", you agree to our <a href="/cookie-policy" target="_blank">Cookie Policy</a>.</p>
+            <button class="accept-cookies">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!document.cookie.includes("accepted_cookies=true")) {
+                document.querySelector(".cookie-overlay").style.display = "block";
+            }
+
+            document.querySelector(".accept-cookies").addEventListener("click", function() {
+                document.cookie = "accepted_cookies=true; path=/; max-age=" + 60*60*24*365;
+                document.querySelector(".cookie-overlay").style.display = "none";
+            });
+        });
+    </script>
 </body>
 </html>
