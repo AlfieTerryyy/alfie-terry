@@ -1,0 +1,44 @@
+.cookie-overlay {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    color: #333333;
+    padding: 15px 20px;
+    text-align: center;
+    box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 12px 12px 0 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 16px;
+}
+.cookie-overlay a {
+    color: #007bff; 
+    text-decoration: none;
+    font-weight: 500;
+}
+.cookie-overlay a:hover {
+    text-decoration: underline; 
+}
+.cookie-overlay .accept-cookies {
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-left: 15px;
+    border-radius: 6px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cookie-overlay .accept-cookies:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+.cookie-overlay .accept-cookies:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}
