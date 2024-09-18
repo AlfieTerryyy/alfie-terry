@@ -1267,4 +1267,19 @@ header.main > :last-child {
 .navfoot ul li a:active {
     color: #ffa500;
 }
+    .code-box {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 16px;
+            color: #333;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            width: 90%;
+        }
 
