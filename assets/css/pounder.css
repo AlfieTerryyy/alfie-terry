@@ -347,7 +347,6 @@ footer {
     transition: width 0.3s ease;
 }
 
-/* Keyframes for animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -358,8 +357,6 @@ footer {
         transform: translateY(0);
     }
 }
-
-/* Responsive adjustments */
 @media (max-width: 768px) {
     .navbar {
         display: none;
@@ -415,8 +412,6 @@ footer {
     }
 }
 
-
-/* Row */
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -1173,7 +1168,6 @@ footer {
           .row.gtr-200.gtr-uniform > * {
             padding-top: 3em; } }
 
-/* Section/Article */
 section.special, article.special {
   text-align: center; }
 
@@ -1194,9 +1188,6 @@ header.major > :last-child {
 header.main > :last-child {
   margin: 0 0 1em 0; }
 
-
-
-/* 404 Error Page Styles */
 .error-container {
     max-width: 600px;
     margin: 100px auto;
@@ -1224,8 +1215,6 @@ header.main > :last-child {
 .error-container a:hover {
     text-decoration: underline;
 }
-
-/* Logo animation on error page */
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
