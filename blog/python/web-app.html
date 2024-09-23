@@ -84,7 +84,22 @@
         </section>
         <section id="blog-post" class="hero">
             <p>Recently i have been working on making an app using HTML, CSS, Java script and "Python"?, yep thats right i was using python infact its easier than i thaught recently ive been learning more and more python, well that helped with one of my projects because i can only really code in HTML, CSS and a bit of JS so it helped i will link the code i used below</p>
-        
+            <code class="code-box"> 
+import subprocess
+import sys
+def install(package):
+    subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+try:
+    import webview
+except ImportError:
+    print("App Failed to start...")
+    print("installing dependencys...")
+    install("pywebview")
+def open_html_auto():
+    webview.create_window("App", "./index.html")
+    webview.start()
+open_html_auto()
+            </code>
         </section>
         
     </main>
