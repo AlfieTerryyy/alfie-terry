@@ -6,7 +6,6 @@
     <title>Code Editor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/code/code/style.css">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
     <script src="https://alfieterry.co.uk/code/code/main.js" defer></script>
     <script src="https://alfieterry.co.uk/code/code/full.js" defer></script>
     
@@ -32,8 +31,8 @@
             <h3>JavaScript</h3>
             <textarea id="js-code"></textarea>
         </div>
-        <button class="button-flat" id="run">Run</button>
-        <a href="https://alfieterry.co.uk/code/code" class="button-flat" id="exit-full">Exit Full Screen</button>
+        <button id="run-button">Run</button>
+        <a href="https://alfieterry.co.uk/code/code" id="exit-full-mode">Exit Full Screen</a>
     </div>
     <div class="fullscreen" id="fullscreen">
         <span class="close" id="fullscreen-close">×</span>
