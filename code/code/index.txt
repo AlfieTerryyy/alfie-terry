@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Editor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
-
+    <link rel="stylesheet" href="https://alfieterry.co.uk/code/code/style.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
+    <script src="https://alfieterry.co.uk/code/code/main.js" defer></script>
+    <script src="https://alfieterry.co.uk/code/code/full.js" defer></script>
+    
     <style>
         body { font-family: Arial, sans-serif; }
         .editor-section { margin-bottom: 10px; }
@@ -28,7 +33,8 @@
             <h3>JavaScript</h3>
             <textarea id="js-code"></textarea>
         </div>
-        <button id="run-button">Run</button>
+        <button id="button-flat">Run</button>
+        <a href="https://alfieterry.co.uk/code/code" id="button-flat">Exit Full Screen</button>
     </div>
     <div class="fullscreen" id="fullscreen">
         <span class="close" id="fullscreen-close">×</span>
