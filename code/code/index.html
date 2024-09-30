@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+            <span class="title">Code Editor</span>
+        </div>
+        <div class="container">
+            <div class="editor-section">
+                <h3>HTML</h3>
+                <textarea id="html-code"></textarea>
+            </div>
+            <div class="editor-section">
+                <h3>CSS</h3>
+                <textarea id="css-code"></textarea>
+            </div>
+            <div class="editor-section">
+                <h3>JavaScript</h3>
+                <textarea id="js-code"></textarea>
+            </div>
+            <button id="run-button">Run</button>
+        </div>
+    </div>
+    <div class="fullscreen" id="fullscreen">
+        <span class="close" id="fullscreen-close">×</span>
+        <iframe id="output"></iframe>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
