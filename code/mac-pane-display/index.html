@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4 Pane Window</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="window">
+        <div class="title-bar">
+            <div class="buttons">
+                <span class="close"></span>
+                <span class="minimize"></span>
+                <span class="maximize"></span>
+            </div>
+            <span class="title">My Window</span>
+        </div>
+        <div class="container">
+            <div class="pane" id="pane1">1</div>
+            <div class="pane" id="pane2">2</div>
+            <div class="pane" id="pane3">3</div>
+            <div class="pane" id="pane4">4</div>
+        </div>
+    </div>
+    <div class="fullscreen" id="fullscreen">
+        <span class="close" id="fullscreen-close">×</span>
+        <div id="fullscreen-content"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
