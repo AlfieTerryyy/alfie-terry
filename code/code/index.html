@@ -3,10 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Editor</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Welcome to The Terrance Territory, showcasing the work and services of Alfie Terry.">
+    <meta name="keywords" content="Alfie Terry, AlfieTerry, alfie terry, alfieterry, alfieterry.co, alfieterry.com, alfieterry.co.uk, alfieterry.co.u, alfieterry.co.eu, web development, computer science, services, contact">
+    <meta name="author" content="Alfie Terry">
+    <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png" />
+    <title>ASAT - Code - Code Box</title>
+    <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/code/code/style.css">
+    <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
+    <script src="https://alfieterry.co.uk/code/code/main.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+  
+    <style>
+        .footer-navfoot {
+            background-color: #1e1e1e;
+            padding: 40px 20px;
+            text-align: center;
+            color: #f0f0f0;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .footer-navfoot p {
+            font-size: 14px;
+            margin-top: 20px;
+            color: #aaa;
+        }
+
+        .navfoot ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .navfoot ul li {
+            display: inline;
+        }
+
+        .navfoot ul li a {
+            text-decoration: none;
+            color: #f0f0f0;
+            font-weight: bold;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .navfoot ul li a:hover {
+            color: #ffcc00;
+        }
+
+        .navfoot ul li a:active {
+            color: #ffa500;
+        }
+
+    </style>
 </head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo"></a>
+            <nav class="navbar" id="navbar">
+                <ul>
+            <li><a href="https://alfieterry.co.uk/">Home</a></li>
+            <li><a href="https://alfieterry.co.uk/blog/">Blog</a></li>        
+            <li><a href="https://alfieterry.co.uk/code">Code</a></li>        
+            <li><a href="https://alfieterry.co.uk/about">About</a></li>
+            <li><a href="https://alfieterry.co.uk/contact">Contact</a></li>
+            <li><a href="https://alfieterry.co.uk/policys">Policys</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 <body>
     <div class="window">
         <div class="title-bar">
@@ -42,5 +115,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/htmlmixed/htmlmixed.min.js"></script>
     <script src="script.js"></script>
+</body>
+</html>
+<footer class="footer-navfoot">
+    <nav class="navfoot">
+        <ul>
+            <li><a href="https://alfieterry.co.uk/">Home</a></li>
+            <li><a href="https://alfieterry.co.uk/blog/">Blog</a></li>        
+            <li><a href="https://alfieterry.co.uk/code">Code</a></li>        
+            <li><a href="https://alfieterry.co.uk/about">About</a></li>
+            <li><a href="https://alfieterry.co.uk/contact">Contact</a></li>
+            <li><a href="https://alfieterry.co.uk/policys">Policys</a></li>
+        </ul>
+    </nav>
+    <p>&copy; <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
+</footer>
+    <div id="scroll-progress"></div>
+    
+<div class="cookie-overlay">
+        <div class="cookie-content">
+            <p>By clicking "Accept", you agree to our <a href="https://alfieterry.co.uk/policy/cookie-policy" target="_blank">Cookie Policy</a>.</p>
+            <button class="accept-cookies">Accept</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!document.cookie.includes("accepted_cookies=true")) {
+                document.querySelector(".cookie-overlay").style.display = "block";
+            }
+
+            document.querySelector(".accept-cookies").addEventListener("click", function() {
+                document.cookie = "accepted_cookies=true; path=/; max-age=" + 60*60*24*365;
+                document.querySelector(".cookie-overlay").style.display = "none";
+            });
+        });
+    </script>
 </body>
 </html>
