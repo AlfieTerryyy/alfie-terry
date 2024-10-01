@@ -37,7 +37,7 @@
             right: 10px; 
             cursor: pointer; 
             font-size: 24px; 
-            background-color: rgba(255, 255, 255, 0.7); /* Light background for better visibility */
+            background-color: rgba(255, 255, 255, 0.7);
             border: none; 
             border-radius: 5px; 
             padding: 5px 10px; 
@@ -68,26 +68,29 @@
     </div>
 
     <script>
-        // Initialize CodeMirror on the textareas
+
+        
         const htmlEditor = CodeMirror.fromTextArea(document.getElementById('html-code'), {
             mode: "htmlmixed",
             lineNumbers: true,
             theme: "default"
         });
+        
 
         const cssEditor = CodeMirror.fromTextArea(document.getElementById('css-code'), {
             mode: "css",
             lineNumbers: true,
             theme: "default"
         });
+        
 
         const jsEditor = CodeMirror.fromTextArea(document.getElementById('js-code'), {
             mode: "javascript",
             lineNumbers: true,
             theme: "default"
         });
-
-        // Function to run the code and display it in the iframe
+        
+        
         document.getElementById('run-button').addEventListener('click', function() {
             const htmlCode = htmlEditor.getValue();
             const cssCode = `<style>${cssEditor.getValue()}</style>`;
@@ -99,15 +102,15 @@
             iframe.contentWindow.document.open();
             iframe.contentWindow.document.write(outputCode);
             iframe.contentWindow.document.close();
-
-            // Show fullscreen
             document.getElementById('fullscreen').style.display = 'flex';
         });
-
-        // Close fullscreen mode
+        
+        
         document.getElementById('fullscreen-close').addEventListener('click', function() {
             document.getElementById('fullscreen').style.display = 'none';
         });
+        
+        
     </script>
 </body>
 </html>
