@@ -64,6 +64,7 @@ textarea {
     right: 20px;
     font-size: 40px;
     cursor: pointer;
+    color: black;
 }
 iframe {
     width: 100%;
