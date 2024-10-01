@@ -9,6 +9,7 @@
     <script src="https://alfieterry.co.uk/code/code/main.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/css/css.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/htmlmixed/htmlmixed.min.js"></script>
     <style>
         body { font-family: Arial, sans-serif; }
@@ -33,11 +34,55 @@
             <textarea id="js-code"></textarea>
         </div>
         <button id="run-button">Run</button>
-        <a href="https://alfieterry.co.uk/code/code/index.txt" id="exit-full-mode"><bold><strong>- Code - </strong></bold></a>
+        <a href="https://alfieterry.co.uk/code/code/index.txt" id="exit-full-mode"><strong>- Code -</strong></a>
     </div>
+
     <div class="fullscreen" id="fullscreen">
         <span class="close" id="fullscreen-close">×</span>
         <iframe id="output"></iframe>
     </div>
+
+    <script>
+        // Initialize CodeMirror on the textareas
+        const htmlEditor = CodeMirror.fromTextArea(document.getElementById('html-code'), {
+            mode: "htmlmixed",
+            lineNumbers: true,
+            theme: "default"
+        });
+
+        const cssEditor = CodeMirror.fromTextArea(document.getElementById('css-code'), {
+            mode: "css",
+            lineNumbers: true,
+            theme: "default"
+        });
+
+        const jsEditor = CodeMirror.fromTextArea(document.getElementById('js-code'), {
+            mode: "javascript",
+            lineNumbers: true,
+            theme: "default"
+        });
+
+        // Function to run the code and display it in the iframe
+        document.getElementById('run-button').addEventListener('click', function() {
+            const htmlCode = htmlEditor.getValue();
+            const cssCode = `<style>${cssEditor.getValue()}</style>`;
+            const jsCode = `<script>${jsEditor.getValue()}<\/script>`;
+            
+            const outputCode = htmlCode + cssCode + jsCode;
+
+            const iframe = document.getElementById('output');
+            iframe.contentWindow.document.open();
+            iframe.contentWindow.document.write(outputCode);
+            iframe.contentWindow.document.close();
+
+            // Show fullscreen
+            document.getElementById('fullscreen').style.display = 'flex';
+        });
+
+        // Close fullscreen mode
+        document.getElementById('fullscreen-close').addEventListener('click', function() {
+            document.getElementById('fullscreen').style.display = 'none';
+        });
+    </script>
 </body>
 </html>
