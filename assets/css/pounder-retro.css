@@ -1,60 +1,88 @@
+/* Reset and Box Sizing */
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Base Styles - Modern (default) */
 html, body {
     height: 100%;
     margin: 0;
-    background-color: #e0e0e0; /* Lighter grey background */
-    font-family: 'Verdana', sans-serif; /* Popular 2000s font */
+    background-color: #e0e0e0; /* Lighter grey */
+    font-family: 'Verdana', sans-serif;
     color: #333333;
+    transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
 body {
     display: block;
-    background-color: #e0e0e0;
-    background-image: url('background.png'); /* Soft background texture */
+    background-image: url('background.png');
     font-size: 14px;
     line-height: 1.6;
 }
 
+/* Modern Styles */
 header, nav, footer, .box, .hero, .code-box {
     background-color: #ffffff;
     border: 1px solid #cccccc;
     padding: 15px;
     margin: 20px;
-    border-radius: 10px; /* More rounded corners */
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
-}
-
-header, footer {
-    text-align: center;
-    font-size: 18px; /* Larger text */
-    background: linear-gradient(to bottom, #e0e0e0, #ffffff); /* Gradient backgrounds */
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Prominent shadows */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Soft shadows */
 }
 
+/* Retro 2000s Styles */
+body.retro {
+    background-color: #c0c0c0; /* Windows 95 grey */
+    font-family: 'Arial', sans-serif;
+    color: #000000;
+}
+
+body.retro header, body.retro nav, body.retro footer, body.retro .box, body.retro .hero, body.retro .code-box {
+    background-color: #ffffff;
+    border: 2px solid #000000; /* Stronger borders */
+    padding: 10px;
+    margin: 20px;
+    border-radius: 0; /* No rounded corners in retro style */
+    box-shadow: none; /* No shadows in retro style */
+}
+
+/* Typography */
 h1, h2 {
-    font-size: 26px; /* Bigger headings */
+    font-size: 26px;
     color: #333333;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Popular text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Modern text shadow */
 }
 
+body.retro h1, body.retro h2 {
+    font-size: 20px;
+    color: #000000;
+    text-shadow: none; /* No shadow for retro */
+}
+
+/* Hero Section */
 .hero {
     text-align: center;
     padding: 40px;
     background-color: #f9f9f9;
     border: 1px solid #cccccc;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
-    background: linear-gradient(to bottom, #f9f9f9, #e0e0e0); /* Subtle gradient */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to bottom, #f9f9f9, #e0e0e0);
 }
 
+body.retro .hero {
+    text-align: left;
+    padding: 20px;
+    border: 2px solid #000000;
+    background-color: #c0c0c0;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+}
 
+/* Form Elements */
 input[type="text"], 
 input[type="password"],
 input[type="email"],
@@ -67,14 +95,35 @@ textarea {
     font-family: 'Verdana', sans-serif;
     font-size: 14px;
     border-radius: 5px;
-    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1); /* Soft inner shadow */
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1); /* Modern inner shadow */
 }
 
+body.retro input[type="text"], 
+body.retro input[type="password"],
+body.retro input[type="email"],
+body.retro input[type="tel"],
+body.retro select,
+body.retro textarea {
+    background-color: #ffffff;
+    border: 2px solid #000000; /* Stronger retro border */
+    padding: 5px;
+    font-family: 'Arial', sans-serif;
+    font-size: 12px;
+    border-radius: 0; /* No border radius */
+    box-shadow: none; /* No shadow in retro style */
+}
+
+/* Navbar */
 .navbar {
     text-align: center;
     padding: 10px 0;
-    background: linear-gradient(to bottom, #333333, #111111); /* Dark glossy navbar */
+    background: linear-gradient(to bottom, #333333, #111111); /* Modern dark gradient */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Strong shadow */
+}
+
+body.retro .navbar {
+    background-color: #c0c0c0; /* Retro solid background */
+    box-shadow: none;
 }
 
 .navbar li {
@@ -87,24 +136,44 @@ textarea {
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 5px;
-    background: linear-gradient(to bottom, #666666, #444444); /* Gradient links */
+    background: linear-gradient(to bottom, #666666, #444444); /* Modern gradient */
+}
+
+body.retro .navbar a {
+    color: #0000ff; /* Retro blue link */
+    text-decoration: underline;
+    background: none;
+    border-radius: 0;
 }
 
 .navbar a:hover {
-    background: linear-gradient(to bottom, #444444, #222222); /* Darker gradient on hover */
-    text-decoration: none;
+    background: linear-gradient(to bottom, #444444, #222222); /* Modern hover effect */
 }
 
+body.retro .navbar a:hover {
+    background: none; /* No hover effect in retro */
+}
+
+/* Footer */
 footer {
     font-size: 12px;
     color: #666666;
-    background: linear-gradient(to bottom, #333333, #111111); /* Dark glossy footer */
-    color: #ffffff;
+    background: linear-gradient(to bottom, #333333, #111111);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 }
 
+body.retro footer {
+    font-size: 12px;
+    color: #000000;
+    background-color: #c0c0c0;
+    border: 2px solid #000000;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Code Box */
 .code-box {
     font-family: 'Courier New', monospace;
     font-size: 14px;
@@ -113,27 +182,46 @@ footer {
     padding: 10px;
     color: #333333;
     border-radius: 5px;
-    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
+body.retro .code-box {
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    padding: 5px;
+    border-radius: 0;
+    box-shadow: none;
+}
 
-.button-switch-retro {
-    background-color: #c0c0c0; /* Retro grey background */
-    color: #000000; /* Black text */
-    border: 2px solid #000000; /* Strong black border */
-    border-radius: 5px; /* Slightly rounded corners */
+/* Retro Button Switch */
+.button-switch {
     padding: 8px 16px;
     font-size: 14px;
     cursor: pointer;
-    font-family: 'Arial', sans-serif; /* Standard font of the era */
-    box-shadow: 2px 2px 0 #808080; /* 3D blocky shadow */
     transition: background-color 0.2s ease;
 }
 
-.button-switch-retro:hover {
-    background-color: #dcdcdc; /* Lighter grey on hover */
+.button-switch-modern {
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
 }
 
-body {
-    transition: background-color 0.3s, color 0.3s;
+.button-switch-retro {
+    background-color: #c0c0c0;
+    color: #000000;
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 0 #808080;
+    border-radius: 0;
+}
+
+.button-switch-modern:hover {
+    background-color: #0056b3;
+}
+
+.button-switch-retro:hover {
+    background-color: #dcdcdc;
 }
