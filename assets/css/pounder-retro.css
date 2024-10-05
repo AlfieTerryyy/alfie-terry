@@ -8,58 +8,66 @@ html, body {
     height: 100%;
     margin: 0;
     background-color: #e0e0e0; /* Lighter grey background */
-    font-family: 'Verdana', sans-serif; /* 2000s popular font */
-    color: #333333; /* Softer dark grey text */
+    font-family: 'Verdana', sans-serif; /* Popular 2000s font */
+    color: #333333;
 }
 
 body {
     display: block;
-    background-color: #e0e0e0; /* Light grey background */
-    background-image: url('background.png'); /* Subtle background image */
-    font-size: 14px; /* Larger font size */
-    line-height: 1.6; /* More space between lines */
+    background-color: #e0e0e0;
+    background-image: url('background.png'); /* Soft background texture */
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 header, nav, footer, .box, .hero, .code-box {
-    background-color: #ffffff; /* White content area */
-    border: 1px solid #cccccc; /* Light grey borders */
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
     padding: 15px;
     margin: 20px;
-    border-radius: 5px; /* Rounded corners */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
 header, footer {
     text-align: center;
-    font-size: 16px; /* Larger text */
+    font-size: 18px; /* Larger text */
+    background: linear-gradient(to bottom, #e0e0e0, #ffffff); /* Gradient backgrounds */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Prominent shadows */
 }
 
 h1, h2 {
-    font-size: 22px; /* Larger headings */
-    color: #333333; /* Dark grey heading text */
+    font-size: 26px; /* Bigger headings */
+    color: #333333;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Popular text shadow */
 }
 
 .hero {
     text-align: center;
-    padding: 30px;
-    background-color: #f9f9f9; /* Light background for hero */
+    padding: 40px;
+    background-color: #f9f9f9;
     border: 1px solid #cccccc;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+    background: linear-gradient(to bottom, #f9f9f9, #e0e0e0); /* Subtle gradient */
 }
 
 .button, .button-switch {
-    background-color: #0073e6; /* Bright blue buttons */
-    color: #ffffff; /* White text */
+    background: linear-gradient(to bottom, #0073e6, #005bb5); /* Glossy gradient button */
+    color: #ffffff;
     border: none;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 15px; /* Large rounded corners */
     padding: 10px 20px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Text shadow for buttons */
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 3px 5px rgba(0, 0, 0, 0.2); /* Inner and outer shadows for depth */
 }
 
 .button:hover, .button-switch:hover {
-    background-color: #005bb5; /* Darker blue on hover */
+    background: linear-gradient(to bottom, #005bb5, #004494); /* Darker blue on hover */
 }
 
 input[type="text"], 
@@ -70,17 +78,18 @@ select,
 textarea {
     background-color: #ffffff;
     border: 1px solid #cccccc;
-    padding: 8px;
+    padding: 10px;
     font-family: 'Verdana', sans-serif;
     font-size: 14px;
-    border-radius: 3px; /* Slightly rounded corners */
-    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1); /* Inset shadow */
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1); /* Soft inner shadow */
 }
 
 .navbar {
     text-align: center;
     padding: 10px 0;
-    background-color: #333333; /* Darker navbar */
+    background: linear-gradient(to bottom, #333333, #111111); /* Dark glossy navbar */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Strong shadow */
 }
 
 .navbar li {
@@ -89,22 +98,26 @@ textarea {
 }
 
 .navbar a {
-    color: #ffffff; /* White links in navbar */
+    color: #ffffff;
     text-decoration: none;
-    padding: 5px 10px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #666666, #444444); /* Gradient links */
 }
 
 .navbar a:hover {
-    text-decoration: underline;
-    color: #ffcc00; /* Yellow hover effect */
+    background: linear-gradient(to bottom, #444444, #222222); /* Darker gradient on hover */
+    text-decoration: none;
 }
 
 footer {
-    font-size: 12px; /* Footer text slightly larger */
-    color: #666666; /* Light grey text */
-    background-color: #333333;
-    color: #ffffff; /* White footer text */
-    padding: 15px;
+    font-size: 12px;
+    color: #666666;
+    background: linear-gradient(to bottom, #333333, #111111); /* Dark glossy footer */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow */
 }
 
 .code-box {
@@ -114,5 +127,6 @@ footer {
     border: 1px solid #dddddd;
     padding: 10px;
     color: #333333;
-    border-radius: 3px; /* Slight rounding for code box */
+    border-radius: 5px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
 }
