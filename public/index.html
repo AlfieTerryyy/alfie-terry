@@ -20,11 +20,9 @@
     <button onclick="sendMessage()">Send</button>
 
     <script type="module">
-        // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
         import { getFirestore, collection, addDoc, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
 
-        // Your web app's Firebase configuration
         const firebaseConfig = {
             apiKey: "AIzaSyBdTeNwtn0wqP3DDaZYt-b-TiopSc9Bzrk",
             authDomain: "asat-2de14.firebaseapp.com",
@@ -35,11 +33,9 @@
             measurementId: "G-9W4TK25MT0"
         };
 
-        // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const db = getFirestore(app);
 
-        // Listen for real-time updates
         const q = query(collection(db, "messages"), orderBy("timestamp", "asc"));
         const chat = document.getElementById('chat');
 
@@ -55,7 +51,6 @@
             });
         });
 
-        // Send message
         window.sendMessage = async function () {
             const message = document.getElementById('message').value;
             await addDoc(collection(db, "messages"), {
