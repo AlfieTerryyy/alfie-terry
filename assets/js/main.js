@@ -62,3 +62,27 @@ function adjustFooter() {
 
 document.addEventListener('DOMContentLoaded', adjustFooter);
 window.addEventListener('resize', adjustFooter);
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Function to apply the theme
+    function applyTheme(theme) {
+        document.body.className = theme;
+    }
+
+    // Check if a theme is already stored in localStorage
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    }
+
+    // Event listeners for the buttons
+    document.getElementById("lightTheme").addEventListener("click", function () {
+        applyTheme("light-theme");
+        localStorage.setItem("theme", "light-theme");
+    });
+
+    document.getElementById("retroTheme").addEventListener("click", function () {
+        applyTheme("retro-theme");
+        localStorage.setItem("theme", "retro-theme");
+    });
+});
