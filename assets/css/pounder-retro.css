@@ -133,3 +133,7 @@ footer {
 .button-switch-retro:hover {
     background-color: #dcdcdc; /* Lighter grey on hover */
 }
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
