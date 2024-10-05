@@ -1,10 +1,12 @@
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.error-container {
+
+    background: rgba(0, 0, 0, 0.8);
 
     border: 3px solid #fff;
 
     border-radius: 10px;
 
-    text-align: center;
+    padding: 2rem;
 
     color: #00ff7f;
 
@@ -35,5 +37,3 @@
     text-decoration: none;
 
     color: #ff69b4;
-
-    font-weight: bold;
