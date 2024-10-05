@@ -7,47 +7,59 @@ body, h1, h2, p, ul, li {
 html, body {
     height: 100%;
     margin: 0;
-    background-color: #c0c0c0; /* Classic grey background */
-    font-family: 'Times New Roman', serif; /* 90s standard font */
-    color: #000000; /* Simple black text */
+    background-color: #e0e0e0; /* Lighter grey background */
+    font-family: 'Verdana', sans-serif; /* 2000s popular font */
+    color: #333333; /* Softer dark grey text */
 }
 
 body {
     display: block;
-    background-color: #c0c0c0; /* Windows 95 grey */
-    background-image: none; /* No background images */
-    font-size: 12px;
+    background-color: #e0e0e0; /* Light grey background */
+    background-image: url('background.png'); /* Subtle background image */
+    font-size: 14px; /* Larger font size */
+    line-height: 1.6; /* More space between lines */
 }
 
 header, nav, footer, .box, .hero, .code-box {
-    background-color: #ffffff; /* White boxes */
-    border: 1px solid #000000; /* Black solid border */
-    padding: 10px;
+    background-color: #ffffff; /* White content area */
+    border: 1px solid #cccccc; /* Light grey borders */
+    padding: 15px;
     margin: 20px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
 }
 
 header, footer {
     text-align: center;
-    font-size: 14px;
+    font-size: 16px; /* Larger text */
 }
 
 h1, h2 {
-    font-size: 18px; /* Smaller headings */
+    font-size: 22px; /* Larger headings */
+    color: #333333; /* Dark grey heading text */
 }
 
 .hero {
-    text-align: left;
-    padding: 20px;
-    border: 2px solid #000000;
+    text-align: center;
+    padding: 30px;
+    background-color: #f9f9f9; /* Light background for hero */
+    border: 1px solid #cccccc;
+    border-radius: 5px;
 }
 
 .button, .button-switch {
-    background-color: #c0c0c0; /* Grey buttons */
-    color: #000000; /* Black text */
-    border: 2px solid #000000; /* Black border */
-    padding: 5px 15px;
-    font-size: 12px;
+    background-color: #0073e6; /* Bright blue buttons */
+    color: #ffffff; /* White text */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 20px;
+    font-size: 14px;
     cursor: pointer;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); /* Subtle text shadow */
+}
+
+.button:hover, .button-switch:hover {
+    background-color: #005bb5; /* Darker blue on hover */
 }
 
 input[type="text"], 
@@ -57,36 +69,50 @@ input[type="tel"],
 select,
 textarea {
     background-color: #ffffff;
-    border: 1px solid #000000;
-    padding: 2px;
-    font-family: inherit;
-    font-size: 12px;
+    border: 1px solid #cccccc;
+    padding: 8px;
+    font-family: 'Verdana', sans-serif;
+    font-size: 14px;
+    border-radius: 3px; /* Slightly rounded corners */
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1); /* Inset shadow */
 }
 
 .navbar {
-    display: block;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333333; /* Darker navbar */
 }
 
 .navbar li {
     display: inline;
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 .navbar a {
-    color: #0000ff; /* Blue links */
+    color: #ffffff; /* White links in navbar */
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.navbar a:hover {
     text-decoration: underline;
+    color: #ffcc00; /* Yellow hover effect */
 }
 
 footer {
-    font-size: 10px; /* Smaller footer text */
-    color: #000000; /* Black text */
+    font-size: 12px; /* Footer text slightly larger */
+    color: #666666; /* Light grey text */
+    background-color: #333333;
+    color: #ffffff; /* White footer text */
+    padding: 15px;
 }
 
 .code-box {
     font-family: 'Courier New', monospace;
-    font-size: 12px;
-    background-color: #ffffff;
-    border: 1px solid #000000;
-    padding: 5px;
-    color: #000000;
+    font-size: 14px;
+    background-color: #f4f4f4;
+    border: 1px solid #dddddd;
+    padding: 10px;
+    color: #333333;
+    border-radius: 3px; /* Slight rounding for code box */
 }
