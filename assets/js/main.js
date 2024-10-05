@@ -1,40 +1,3 @@
-// Save theme preference to localStorage
-function saveThemePreference(theme) {
-    localStorage.setItem('theme', theme);
-}
-
-// Apply saved theme preference on page load
-function applySavedTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-    } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.body.classList.toggle('dark-mode', prefersDark);
-        saveThemePreference(prefersDark ? 'dark' : 'light');
-    }
-}
-
-// Update footer year dynamically
-function updateFooterYear() {
-    const year = new Date().getFullYear();
-    document.getElementById('current-year').textContent = year;
-}
-
-// Scroll progress bar functionality
-function updateScrollProgress() {
-    const scrollTop = window.scrollY;
-    const docHeight = document.documentElement.scrollHeight;
-    const winHeight = window.innerHeight;
-    const scrollPercent = (scrollTop / (docHeight - winHeight)) * 100;
-    document.getElementById('scroll-progress').style.width = scrollPercent + '%';
-}
-
-// Navbar toggle functionality
-function toggleNavbar() {
-    const navbar = document.getElementById('navbar');
-    navbar.classList.toggle('open');
-}
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
@@ -68,21 +31,3 @@ document.addEventListener("DOMContentLoaded", function () {
     function applyTheme(theme) {
         document.body.className = theme;
     }
-
-    // Check if a theme is already stored in localStorage
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    }
-
-    // Event listeners for the buttons
-    document.getElementById("lightTheme").addEventListener("click", function () {
-        applyTheme("light-theme");
-        localStorage.setItem("theme", "light-theme");
-    });
-
-    document.getElementById("retroTheme").addEventListener("click", function () {
-        applyTheme("retro-theme");
-        localStorage.setItem("theme", "retro-theme");
-    });
-});
