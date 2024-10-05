@@ -543,4 +543,7 @@ header.main > :last-child {
     transform: translateY(-2px); /* Lift effect */
 }
 
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
 
