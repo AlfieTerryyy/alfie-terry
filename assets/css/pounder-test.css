@@ -1,121 +1,3 @@
-body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    background-color: #eaeaea; /* Light grey background */
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    font-family: 'Verdana', sans-serif; /* Common 2000s font */
-    color: #333;
-    line-height: 1.5;
-    font-size: 14px;
-    background-image: url('http://www.example.com/background.png'); /* Example background image */
-}
-
-form {
-    margin: 0 0 2em 0;
-}
-
-label {
-    color: #4f4f4f; /* Dark grey */
-    display: block;
-    font-size: 0.9em;
-    font-weight: bold;
-    margin: 0 0 1em 0;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="tel"],
-input[type="search"],
-input[type="url"],
-select,
-textarea {
-    background: #ffffff;
-    border-radius: 3px; /* Slightly sharper corners */
-    border: solid 2px #0073e6; /* Blue border */
-    color: inherit;
-    display: block;
-    outline: none;
-    padding: 5px; /* Reduced padding */
-    width: 100%;
-    height: 30px; /* Smaller height */
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    border-color: #ffcc00; /* Yellow border on focus */
-    box-shadow: 0 0 5px rgba(255, 204, 0, 0.5); /* Yellow glow */
-}
-
-select {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(210, 215, 217, 0.75)' /%3E%3C/svg%3E");
-    background-size: 1.25em;
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    padding-right: 30px; /* Adjusted for dropdown arrow */
-}
-
-.box {
-    border: solid 2px #0073e6; /* Blue box */
-    margin-bottom: 20px;
-    padding: 20px;
-    border-radius: 5px; /* Sharper corners */
-    background-color: #fff;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Classic shadow */
-}
-
-.header {
-    background-color: #fff;
-    border-bottom: 2px solid #0073e6; /* Blue underline */
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.header-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo img {
-    height: 50px; /* Slightly larger logo */
-}
-
-.navbar {
-    display: flex;
-    gap: 20px;
-}
-.navbar li a {
-    text-decoration: none;
-    color: #0073e6; /* Bright blue */
-    font-size: 16px;
-    padding: 5px 10px;
-    font-weight: bold; /* Bold links */
-}
-
-.navbar li a:hover {
-    text-decoration: underline; /* Underline on hover */
-    color: #ffcc00; /* Change color on hover */
-}
-
 .hero {
     text-align: center;
     padding: 50px 20px;
@@ -135,59 +17,19 @@ select {
     color: #555;
 }
 
-.button {
-    background-color: #0073e6; /* Bright blue */
-    color: #fff;
-    border: 2px solid #ffffff; /* White border */
-    border-radius: 25px;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s, transform 0.3s;
-}
 
-.button:hover {
-    background-color: #005bb5; /* Darker blue */
-    transform: translateY(-2px);
-}
 
-footer {
-    padding: 20px;
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    font-size: 12px; /* Smaller footer text */
-}
 
-.code-box {
-    background-color: #f9f9f9; /* Light background */
-    border: 2px solid #000; /* Black border */
-    padding: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 12px; /* Smaller font for code */
-    color: #000;
-    box-shadow: 5px 5px 0 #000; /* Retro shadow */
-    white-space: pre-wrap;
-}
 
-.button-switch {
-    background-color: #ffcc00; /* Button color */
-    color: #1e1e1e; /* Text color */
-    border: none; /* Remove default border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding for the button */
-    font-size: 16px; /* Font size */
-    font-weight: bold; /* Bold text */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, color 0.3s; /* Transition effects */
-}
 
-.button-switch:hover {
-    background-color: #ffa500; /* Darker color on hover */
-    color: #ffffff; /* Change text color on hover */
-}
 
-.button-switch:focus {
-    outline: none; /* Remove outline on focus */
-    box-shadow: 0 0 5px rgba(255, 204, 0, 0.5); /* Shadow effect on focus */
-}
+
+
+
+
+
+
+
+
+
+
