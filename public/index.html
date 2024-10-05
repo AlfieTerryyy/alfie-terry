@@ -2,10 +2,6 @@
 <html>
 <head>
     <title>Chat App</title>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/firebase@8.6.1/dist/firebase.js"></script>
     <style>
         #chat {
             width: 300px;
@@ -23,6 +19,46 @@
     <input type="text" id="message" placeholder="Type a message">
     <button onclick="sendMessage()">Send</button>
 
-    <script src="app.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, query, orderBy, onSnapshot } from "https://www.gstatic.com/firebasejs/10.14.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBdTeNwtn0wqP3DDaZYt-b-TiopSc9Bzrk",
+            authDomain: "asat-2de14.firebaseapp.com",
+            projectId: "asat-2de14",
+            storageBucket: "asat-2de14.appspot.com",
+            messagingSenderId: "164396856153",
+            appId: "1:164396856153:web:12feb77f72ef666de81248",
+            measurementId: "G-9W4TK25MT0"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        const q = query(collection(db, "messages"), orderBy("timestamp", "asc"));
+        const chat = document.getElementById('chat');
+
+        onSnapshot(q, (snapshot) => {
+            snapshot.docChanges().forEach((change) => {
+                if (change.type === "added") {
+                    const message = change.doc.data();
+                    const newMessage = document.createElement('div');
+                    newMessage.textContent = message.content;
+                    chat.appendChild(newMessage);
+                    chat.scrollTop = chat.scrollHeight;
+                }
+            });
+        });
+
+        function sendMessage() {
+            const message = document.getElementById('message').value;
+            addDoc(collection(db, "messages"), {
+                content: message,
+                timestamp: new Date()
+            });
+            document.getElementById('message').value = '';
+        }
+    </script>
 </body>
 </html>
