@@ -524,3 +524,10 @@ header.main > :last-child {
   white-space: pre;
   overflow-x: auto;
 }
+
+ .responsive-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }  
