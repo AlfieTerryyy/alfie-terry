@@ -62,3 +62,14 @@ function adjustFooter() {
 
 document.addEventListener('DOMContentLoaded', adjustFooter);
 window.addEventListener('resize', adjustFooter);
+
+document.addEventListener("DOMContentLoaded", function() {
+    if (!document.cookie.includes("accepted_cookies=true")) {
+        document.querySelector(".cookie-overlay").style.display = "block";
+    }
+
+    document.querySelector(".accept-cookies").addEventListener("click", function() {
+        document.cookie = "accepted_cookies=true; path=/; max-age=" + 60*60*24*365;
+        document.querySelector(".cookie-overlay").style.display = "none";
+    });
+});
