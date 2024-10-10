@@ -104,13 +104,12 @@
         <h1>Page Under Construction</h1>
         <p>Our website is currently under construction. Please check back later!</p>
     </div>
-
     <script>
         const binaryContainer = document.getElementById('binary');
         const binaryCode = '01000011 01001111 01001110 01010011 01010100 01010010 01010101 01000011 01010100 01001001 01001111 01001110 ';
         for (let i = 0; i < 20; i++) {
             let span = document.createElement('span');
-            span.textContent = binaryCode.repeat(10);
+            span.textContent = binaryCode.repeat(250);
             span.style.animationDuration = `${2 + Math.random() * 5}s`;
             binaryContainer.appendChild(span);
         }
