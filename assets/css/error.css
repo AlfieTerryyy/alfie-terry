@@ -2,7 +2,7 @@ body {
     display: flex;
     flex-direction: column;
     font-family: 'Press Start 2P', cursive;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     color: #333;
     margin: 0;
     justify-content: center;
@@ -10,9 +10,8 @@ body {
     height: 100vh;
     text-align: center;
 }
-
 .header {
-    background-color: #f4f4f9; /* Light grey background */
+    background-color: #f4f4f9;
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
     width: 100%;
@@ -23,14 +22,12 @@ body {
     justify-content: center;
     z-index: 1000;
 }
-
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 90%;
 }
-
 .navbar ul {
     list-style: none;
     display: flex;
@@ -38,38 +35,31 @@ body {
     margin: 0;
     padding: 0;
 }
-
 .navbar li {
     display: inline;
 }
-
 .navbar a {
     text-decoration: none;
-    color: #0073e6; /* Blue links */
+    color: #0073e6;
     font-weight: bold;
 }
-
 .error-container {
     margin-top: 100px;
 }
-
 .error-container .logo img {
     width: 100px;
     animation: bounce 2s infinite;
 }
-
 h1 {
     font-size: 3em;
     margin: 20px 0;
     color: #e74c3c; /* Red for error text */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
-
 p {
     font-size: 1.5em;
     margin-bottom: 20px;
 }
-
 a {
     text-decoration: none;
     font-size: 1.2em;
@@ -79,12 +69,10 @@ a {
     border-radius: 10px;
     transition: background-color 0.3s ease;
 }
-
 a:hover {
     background-color: #0073e6;
     color: #ffffff;
 }
-
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateY(0);
