@@ -18,21 +18,7 @@
             font-family: Arial, sans-serif;
             color: #333;
             overflow: hidden;
-        }
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #f4f4f9, #ffffff);
-            z-index: -1;
-            animation: backgroundMove 15s linear infinite;
-        }
-        @keyframes backgroundMove {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+            position: relative;
         }
         .container {
             text-align: center;
@@ -57,46 +43,39 @@
             font-size: 3em;
             margin-bottom: 20px;
             color: #0073e6;
+            animation: slideIn 1s ease-out forwards;
         }
         p {
             font-size: 1.2em;
             color: #555;
+            animation: slideIn 1.5s ease-out forwards;
         }
-        .binary {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 0;
-        }
-        .binary span {
-            display: block;
-            font-size: 24px;
-            color: rgba(52, 52, 52, 0.1);
-            animation: scroll 5s linear infinite;
-            white-space: nowrap;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-        @keyframes scroll {
+        @keyframes slideIn {
             from {
-                transform: translateY(0);
+                transform: translateX(-100%);
+                opacity: 0;
             }
             to {
-                transform: translateY(100%);
+                transform: translateX(0);
+                opacity: 1;
             }
+        }
+        .floating-logo {
+            position: absolute;
+            width: 50px;
+            opacity: 0.2;
+            animation: floatAround 20s linear infinite;
+        }
+        @keyframes floatAround {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(100px, -50px); }
+            50% { transform: translate(-100px, 50px); }
+            75% { transform: translate(-200px, -100px); }
+            100% { transform: translate(0, 0); }
         }
     </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="binary" id="binary"></div>
     <div class="container">
         <div class="logo">
             <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
@@ -104,15 +83,5 @@
         <h1>Page Under Construction</h1>
         <p>Our website is currently under construction. Please check back later!</p>
     </div>
-    <script>
-        const binaryContainer = document.getElementById('binary');
-        const binaryCode = '01000011 01001111 01001110 01010011 01010100 01010010 01010101 01000011 01010100 01001001 01001111 01001110 ';
-        for (let i = 0; i < 20; i++) {
-            let span = document.createElement('span');
-            span.textContent = binaryCode.repeat(250);
-            span.style.animationDuration = `${2 + Math.random() * 5}s`;
-            binaryContainer.appendChild(span);
-        }
-    </script>
 </body>
 </html>
