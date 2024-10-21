@@ -11,87 +11,28 @@
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
     <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
     <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
-    <script>
-        function loadHTML(element, file) {
-            fetch(file)
-                .then(response => {
-                    if (!response.ok) throw new Error('Network response was not ok');
-                    return response.text();
-                })
-                .then(data => {
-                    document.querySelector(element).innerHTML = data;
-                    initNav(); // Call the navigation initialization function
-                })
-                .catch(error => console.error('Error loading header:', error));
-        }
-
-        function initNav() {
-            const menuToggle = document.getElementById('menuToggle');
-            const navbar = document.getElementById('navbar');
-            const closeMenu = document.getElementById('closeMenu');
-
-            if (menuToggle && navbar && closeMenu) {
-                menuToggle.addEventListener('click', () => {
-                    navbar.classList.toggle('open');
-                    closeMenu.classList.toggle('open');
-                });
-
-                closeMenu.addEventListener('click', () => {
-                    navbar.classList.remove('open');
-                    closeMenu.classList.remove('open');
-                });
-
-                // Load navigation links from JSON
-                loadNavLinks();
-            }
-        }
-
-        function loadNavLinks() {
-            fetch('https://alfieterry.co.uk/easier/nav-links.json')
-                .then(response => response.json())
-                .then(data => {
-                    const ul = document.createElement('ul');
-                    data.forEach(link => {
-                        const li = document.createElement('li');
-                        const a = document.createElement('a');
-                        a.href = link.url;
-                        a.textContent = link.name;
-                        li.appendChild(a);
-                        ul.appendChild(li);
-                    });
-                    document.getElementById('navbar').appendChild(ul);
-                })
-                .catch(error => console.error('Error loading navigation links:', error));
-        }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            loadHTML("header", "https://alfieterry.co.uk/easier/header.html");
-        });
-    </script>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
-        </div>
-        <div id="menuToggle" class="menu-toggle">
-            <div></div>
-            <div></div>
-            <div></div>
+    <header class="header">
+        <div class="header-container">
+            <a href="https://alfieterry.co.uk" class="logo">
+                <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
     </header>
-
-    <nav class="navbar" id="navbar">
-        <div class="close-menu" id="closeMenu">✖</div>
+    <nav class="side-menu" id="sideMenu">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <ul id="navList">
+            <!-- Navigation links will be populated here -->
+        </ul>
     </nav>
-
     <main>
-        <section id="home" class="hero">
-            <h1>Welcome to ASAT Web</h1>
-            <p>The One Space For All My Work.</p>
-            <a href="about.html" class="button" style="color: #ffffff;">Learn More</a>
-        </section>
-        <!-- Add your content here -->
+        <!-- Main content goes here -->
     </main>
 
     <footer>
@@ -100,6 +41,22 @@
 
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Fetch the navigation links from the JSON file
+        fetch('nav-links.json')
+            .then(response => response.json())
+            .then(data => {
+                const navList = document.getElementById('navList');
+                data.forEach(link => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = link.url;
+                    a.textContent = link.text;
+                    li.appendChild(a);
+                    navList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error loading navigation links:', error));
     </script>
 </body>
 </html>
