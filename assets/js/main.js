@@ -30,18 +30,11 @@ function updateScrollProgress() {
     document.getElementById('scroll-progress').style.width = scrollPercent + '%';
 }
 
-// Navbar toggle functionality
-function toggleNavbar() {
-    const navbar = document.getElementById('navbar');
-    navbar.classList.toggle('open');
-}
-
 // Event listeners
 document.addEventListener('DOMContentLoaded', () => {
     applySavedTheme();
     updateFooterYear();
     window.addEventListener('scroll', updateScrollProgress);
-    document.querySelector('.menu-toggle').addEventListener('click', toggleNavbar);
 });
 
 // Adjust footer height
@@ -63,13 +56,14 @@ function adjustFooter() {
 document.addEventListener('DOMContentLoaded', adjustFooter);
 window.addEventListener('resize', adjustFooter);
 
+// Cookie consent functionality
 document.addEventListener("DOMContentLoaded", function() {
     if (!document.cookie.includes("accepted_cookies=true")) {
         document.querySelector(".cookie-overlay").style.display = "block";
     }
 
     document.querySelector(".accept-cookies").addEventListener("click", function() {
-        document.cookie = "accepted_cookies=true; path=/; max-age=" + 60*60*24*365;
+        document.cookie = "accepted_cookies=true; path=/; max-age=" + 60 * 60 * 24 * 365;
         document.querySelector(".cookie-overlay").style.display = "none";
     });
 });
