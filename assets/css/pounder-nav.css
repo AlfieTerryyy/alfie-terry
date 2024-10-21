@@ -1,34 +1,89 @@
-/* Make sure dropdown is hidden by default */
-.navbar .dropdown {
-    display: none; /* Hide dropdown */
-    position: absolute; /* Position relative to parent */
-    top: 100%; /* Position below parent */
-    left: 0; /* Align with left edge */
-    background-color: #fff; /* Adjust background color */
-    min-width: 150px; /* Set a minimum width for the dropdown */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional shadow */
-    z-index: 1; /* Ensure dropdown appears above other elements */
+/* Logo styles */
+.logo img {
+    height: 40px;
+    transition: transform 0.3s ease;
 }
 
-/* Show dropdown when parent li is hovered */
+/* Navbar styles */
+.navbar {
+    display: flex;
+    gap: 15px; 
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar li {
+    position: relative; /* Required for dropdown positioning */
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effects for navbar links */
+.navbar li a:hover {
+    transform: scale(1.05);
+    color: #1e90ff;
+}
+
+/* Underline effect on hover */
+.navbar a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #1e90ff;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+/* Full underline effect on hover */
+.navbar a:hover::after {
+    width: 100%;
+}
+
+/* Dropdown styles */
+.dropdown {
+    display: none; /* Initially hide dropdown */
+    position: absolute; /* Positioning relative to parent */
+    top: 100%; /* Align it directly below the parent li */
+    left: 0; /* Align with the left edge of the parent */
+    background-color: #fff; /* Background color of dropdown */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for dropdown */
+    z-index: 1; /* Ensure dropdown appears above other content */
+}
+
+/* Show dropdown on hover */
 .navbar li:hover .dropdown {
-    display: block; /* Show dropdown on hover */
+    display: block; /* Show dropdown when hovering over parent li */
 }
 
 /* Style for dropdown items */
 .dropdown li {
-    display: block; /* Stack items vertically */
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 /* Style for links in the dropdown */
 .dropdown li a {
-    padding: 10px 15px; /* Padding for dropdown links */
-    color: #000; /* Text color */
     text-decoration: none; /* No underline */
-    display: block; /* Block display for links */
+    color: #333; /* Same color as the main links */
+    font-size: 16px; /* Same font size as main links */
+    padding: 10px 15px; /* Same padding for consistency */
+    display: block; /* Block display to make the entire area clickable */
+    transition: color 0.3s ease; /* Transition for color change */
 }
 
 /* Hover effect for dropdown links */
 .dropdown li a:hover {
-    background-color: #ddd; /* Change background on hover */
+    color: #1e90ff; /* Same hover color as main links */
 }
