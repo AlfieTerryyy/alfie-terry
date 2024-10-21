@@ -4,29 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Welcome to The Terrance Territory, showcasing the work and services of Alfie Terry.">
-    <meta name="keywords" content="Alfie Terry, AlfieTerry, alfie terry, alfieterry, alfieterry.co, alfieterry.com, alfieterry.co.uk, alfieterry.co.u, alfieterry.co.eu, web development, computer science, services, contact">
+    <meta name="keywords" content="Alfie Terry, AlfieTerry, alfieterry, alfieterry.co.uk, web development, computer science, services, contact">
     <meta name="author" content="Alfie Terry">
     <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png" />
-    <title>ASAT - home</title>
+    <title>ASAT - Home</title>
     <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
     <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
     <style>
-        /* Styles for the image, footer, etc. */
+        /* Image */
         .responsive-image {
             max-width: 100%;
             max-height: 100%;
             width: auto;
             height: auto;
-        }  
+        }
+        
+        /* Footer */
         .footer-navfoot {
             background-color: #1e1e1e;
             padding: 40px 20px;
             text-align: center;
             color: #f0f0f0;
+            position: relative;
             margin-top: 50px;
+            width: 100%;
         }
         .footer-navfoot p {
             font-size: 14px;
@@ -36,9 +40,13 @@
         .navfoot ul {
             list-style: none;
             padding: 0;
+            margin: 0;
             display: flex;
             justify-content: center;
             gap: 30px;
+        }
+        .navfoot ul li {
+            display: inline;
         }
         .navfoot ul li a {
             text-decoration: none;
@@ -50,25 +58,13 @@
         .navfoot ul li a:hover {
             color: #ffcc00;
         }
-    </style>
-    <script>
-        function loadHTML(element, file) {
-            fetch(file)
-                .then(response => response.text())
-                .then(data => {
-                    document.querySelector(element).innerHTML = data;
-                })
-                .catch(error => console.error('Error:', error));
+        .navfoot ul li a:active {
+            color: #ffa500;
         }
-
-        document.addEventListener("DOMContentLoaded", function() {
-            loadHTML("header", "header.html");
-            loadHTML("footer", "footer.html");
-        });
-    </script>
+    </style>
 </head>
 <body>
-    <header></header>
+    <div id="header-placeholder"></div>
 
     <main>
         <section id="home" class="hero">
@@ -76,11 +72,9 @@
             <p>The One Space For All My Work.</p>
             <a href="about.html" class="button" style="color: #ffffff;">Learn More</a>
         </section>
-
         <a href="https://alfieterry.co.uk/events/codecompetition">
-            <img src="https://alfieterry.co.uk/assets/images/competition002.png" alt="img" class="responsive-image">
+        <img src="https://alfieterry.co.uk/assets/images/competition002.png" alt="img" class="responsive-image">
         </a>
-
         <section class="grid-container">
             <article class="grid-item">
                 <h2>About Me</h2>
@@ -88,19 +82,22 @@
             </article>
             <article class="grid-item">
                 <h2>DnD</h2>
-                <p>Go check out my DnD experience at <a href="https://alfieterry.co.uk/dnd/" style="color: #1e90ff;">this page</a>.</p>
+                <p>Go check out my DnD experience at <a href="https://alfieterry.co.uk/dnd/" style="color: #1e90ff;">this page</a></p>
             </article>
             <article class="grid-item">
                 <h2>Contact Me</h2>
-                <p>Reach out to me at <a href="/cdn-cgi/l/email-protection#384c59545e515d0f0a0c0b785f55595154165b5755" style="color: #1e90ff;"><span class="__cf_email__" data-cfemail="a4d0c5c8c2cdc193969097e4c3c9c5cdc88ac7cbc9">[email&nbsp;protected]</span></a>.</p>
+                <p>Reach out to me at <a href="mailto:[email protected]" style="color: #1e90ff;">[email protected]</a>.</p>
             </article>
-        </section>
+        </section>        
     </main>
 
-    <footer></footer>
+    <div id="footer-placeholder"></div>
 
     <div id="scroll-progress"></div>
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/2da8fc4dc8652b6cbb405dc2f6d68675.js"></script>
+    <script>
+        // Load header and footer dynamically
+        document.getElementById("header-placeholder").innerHTML = '<object type="text/html" data="header.html" ></object>';
+        document.getElementById("footer-placeholder").innerHTML = '<object type="text/html" data="footer.html" ></object>';
+    </script>
 </body>
 </html>
