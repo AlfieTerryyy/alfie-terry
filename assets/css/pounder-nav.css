@@ -1,0 +1,34 @@
+/* Make sure dropdown is hidden by default */
+.navbar .dropdown {
+    display: none; /* Hide dropdown */
+    position: absolute; /* Position relative to parent */
+    top: 100%; /* Position below parent */
+    left: 0; /* Align with left edge */
+    background-color: #fff; /* Adjust background color */
+    min-width: 150px; /* Set a minimum width for the dropdown */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    z-index: 1; /* Ensure dropdown appears above other elements */
+}
+
+/* Show dropdown when parent li is hovered */
+.navbar li:hover .dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+/* Style for dropdown items */
+.dropdown li {
+    display: block; /* Stack items vertically */
+}
+
+/* Style for links in the dropdown */
+.dropdown li a {
+    padding: 10px 15px; /* Padding for dropdown links */
+    color: #000; /* Text color */
+    text-decoration: none; /* No underline */
+    display: block; /* Block display for links */
+}
+
+/* Hover effect for dropdown links */
+.dropdown li a:hover {
+    background-color: #ddd; /* Change background on hover */
+}
