@@ -3,24 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to The Terrance Territory, showcasing the work and services of Alfie Terry.">
-    <meta name="keywords" content="Alfie Terry, AlfieTerry, alfie terry, alfieterry, alfieterry.co, alfieterry.com, alfieterry.co.uk, alfieterry.co.u, alfieterry.co.eu, web development, computer science, services, contact">
-    <meta name="author" content="Alfie Terry">
-    <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png" />
-    <title>ASAT - Home</title>
+    <title>Responsive Hamburger Menu</title>
     <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
-    <link rel="stylesheet" href="https://alfieterry.co.uk//assets/css/pounder-nav.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
     <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
     <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
 </head>
-
-
-
-
-<header class="header">
+<body>
+    <header class="header">
         <div class="header-container">
             <a href="https://alfieterry.co.uk" class="logo">
                 <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
@@ -32,15 +25,38 @@
             </div>
         </div>
     </header>
-
     <nav class="side-menu" id="sideMenu">
         <button class="close-btn" id="closeBtn">&times;</button>
-        <ul>
-            <li><a href="https://alfieterry.co.uk/">Home</a></li>
-            <li></li><a href="https://alfieterry.co.uk/blog/">Blog</a></li>       
-            <li><a href="https://alfieterry.co.uk/code">Code</a></li>        
-            <li><a href="https://alfieterry.co.uk/about">About</a></li>
-            <li><a href="https://alfieterry.co.uk/contact">Contact</a></li>
-            <li><a href="https://alfieterry.co.uk/policys">Policies</a></li>
+        <ul id="navList">
+            <!-- Navigation links will be populated here -->
         </ul>
     </nav>
+    <main>
+        <!-- Main content goes here -->
+    </main>
+
+    <footer>
+        <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Fetch the navigation links from the JSON file
+        fetch('navLinks.json')
+            .then(response => response.json())
+            .then(data => {
+                const navList = document.getElementById('navList');
+                data.forEach(link => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = link.url;
+                    a.textContent = link.text;
+                    li.appendChild(a);
+                    navList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Error loading navigation links:', error));
+    </script>
+</body>
+</html>
