@@ -210,46 +210,6 @@ main {
     transition: transform 0.3s ease;
 }
 
-.navbar {
-    display: flex;
-    gap: 15px; 
-}
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.navbar li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    padding: 10px 15px;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar li a:hover {
-    transform: scale(1.05);
-    color: #1e90ff;
-}
-
-.navbar a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #1e90ff;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    transition: width 0.3s ease;
-}
-
-.navbar a:hover::after {
-    width: 100%;
-}
-
 .hero {
     text-align: center;
     padding: 100px 20px;
