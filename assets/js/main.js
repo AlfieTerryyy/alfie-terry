@@ -1,20 +1,3 @@
-// Save theme preference to localStorage
-function saveThemePreference(theme) {
-    localStorage.setItem('theme', theme);
-}
-
-// Apply saved theme preference on page load
-function applySavedTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.body.classList.toggle('dark-mode', savedTheme === 'dark');
-    } else {
-        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.body.classList.toggle('dark-mode', prefersDark);
-        saveThemePreference(prefersDark ? 'dark' : 'light');
-    }
-}
-
 // Update footer year dynamically
 function updateFooterYear() {
     const year = new Date().getFullYear();
@@ -56,14 +39,4 @@ function adjustFooter() {
 document.addEventListener('DOMContentLoaded', adjustFooter);
 window.addEventListener('resize', adjustFooter);
 
-// Cookie consent functionality
-document.addEventListener("DOMContentLoaded", function() {
-    if (!document.cookie.includes("accepted_cookies=true")) {
-        document.querySelector(".cookie-overlay").style.display = "block";
-    }
 
-    document.querySelector(".accept-cookies").addEventListener("click", function() {
-        document.cookie = "accepted_cookies=true; path=/; max-age=" + 60 * 60 * 24 * 365;
-        document.querySelector(".cookie-overlay").style.display = "none";
-    });
-});
