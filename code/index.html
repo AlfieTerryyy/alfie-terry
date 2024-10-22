@@ -9,73 +9,32 @@
     <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png" />
     <title>ASAT - Code</title>
     <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
+        <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
     <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
-    <style>
-        .footer-navfoot {
-            background-color: #1e1e1e;
-            padding: 40px 20px;
-            text-align: center;
-            color: #f0f0f0;
-            position: relative;
-            margin-top: 50px;
-        }
-
-        .footer-navfoot p {
-            font-size: 14px;
-            margin-top: 20px;
-            color: #aaa;
-        }
-
-        .navfoot ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-        }
-
-        .navfoot ul li {
-            display: inline;
-        }
-
-        .navfoot ul li a {
-            text-decoration: none;
-            color: #f0f0f0;
-            font-weight: bold;
-            font-size: 16px;
-            transition: color 0.3s ease;
-        }
-
-        .navfoot ul li a:hover {
-            color: #ffcc00;
-        }
-
-        .navfoot ul li a:active {
-            color: #ffa500;
-        }
-
-    </style>
+    <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
 </head>
 <body>
     <header class="header">
         <div class="header-container">
-            <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo"></a>
-            <nav class="navbar" id="navbar">
-                <ul>
-            <li><a href="https://alfieterry.co.uk/">Home</a></li>
-            <li><a href="https://alfieterry.co.uk/blog/">Blog</a></li>        
-            <li><a href="https://alfieterry.co.uk/code">Code</a></li>        
-            <li><a href="https://alfieterry.co.uk/about">About</a></li>
-            <li><a href="https://alfieterry.co.uk/contact">Contact</a></li>
-            <li><a href="https://alfieterry.co.uk/policys">Policys</a></li>
-                </ul>
-            </nav>
+            <a href="https://alfieterry.co.uk" class="logo">
+                <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
+            </a>
+            <div class="menu-toggle" id="menuToggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
         </div>
     </header>
+    <nav class="side-menu" id="sideMenu">
+        <button class="close-btn" id="closeBtn">&times;</button>
+        <ul id="navList">
+            <!-- Navigation links will be populated here -->
+        </ul>
+    </nav>
     <main>
                    <!-- <img src="https://alfieterry.co.uk/img/" alt="img" width="2100" height="1280"> -->
          <section id="home" class="hero">
