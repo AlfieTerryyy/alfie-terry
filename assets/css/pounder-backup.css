@@ -1,3 +1,4 @@
+
 body, h1, h2, p, ul, li {
     margin: 0;
     padding: 0;
@@ -209,46 +210,6 @@ main {
     transition: transform 0.3s ease;
 }
 
-.navbar {
-    display: flex;
-    gap: 15px; 
-}
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-}
-
-.navbar li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-    padding: 10px 15px;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar li a:hover {
-    transform: scale(1.05);
-    color: #1e90ff;
-}
-
-.navbar a::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 2px;
-    background: #1e90ff;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    transition: width 0.3s ease;
-}
-
-.navbar a:hover::after {
-    width: 100%;
-}
-
 .hero {
     text-align: center;
     padding: 100px 20px;
@@ -356,44 +317,6 @@ footer {
         transform: translateY(0);
     }
 }
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .navbar.open {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-    }
-
-    .navbar ul {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .navbar li {
-        margin: 0;
-        text-align: center;
-    }
-
-    .navbar a {
-        padding: 10px;
-        font-size: 16px;
-    }
-
     .hero h1 {
         font-size: 36px;
     }
@@ -430,118 +353,9 @@ header.major > :last-child {
 header.main > :last-child {
   margin: 0 0 1em 0; }
 
-.error-container {
-    max-width: 600px;
-    margin: 100px auto;
-    padding: 2rem;
-    background: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.error-container h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
-.error-container p {
-    margin-bottom: 1.5rem;
-}
-
-.error-container a {
-    text-decoration: none;
-    color: #3498db;
-    font-weight: bold;
-}
-
-.error-container a:hover {
-    text-decoration: underline;
-}
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-.error-container .logo img {
-    animation: spin 4s linear infinite;
-}
-
-.footer-navfoot {
-    background-color: #1e1e1e;
-    padding: 40px 20px;
-    text-align: center;
-    color: #f0f0f0;
-    position: relative;
-    margin-top: 50px;
-}
-
-.footer-navfoot p {
-    font-size: 14px;
-    margin-top: 20px;
-    color: #aaa;
-}
-
-.navfoot ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-}
-
-.navfoot ul li {
-    display: inline;
-}
-
-.navfoot ul li a {
-    text-decoration: none;
-    color: #f0f0f0;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.navfoot ul li a:hover {
-    color: #ffcc00;
-}
-.navfoot ul li a:active {
-    color: #ffa500;
-}
-.code-box {
-  background-color: #eaeaea;
-  border: 2px solid #000;
-  padding: 20px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 1rem;
-  color: #000;
-  box-shadow: 8px 8px 0 #000;
-  white-space: pre-wrap;
-}
-.code-box code {
-  display: block;
-  white-space: pre;
-  overflow-x: auto;
-}
-
-.button-switch {
-    background: linear-gradient(to bottom, #add8e6, #87ceeb); /* Light blue gradient */
-    color: #ffffff; /* White text */
-    border: none;
-    border-radius: 15px; /* Large rounded corners */
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Soft text shadow */
-    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.6), 0 3px 5px rgba(0, 0, 0, 0.2); /* Glossy inner and outer shadows */
-    transition: background 0.3s ease, transform 0.3s ease; /* Smooth transition */
-}
-
-.button-switch:hover {
-    background: linear-gradient(to bottom, #87ceeb, #4682b4); /* Darker blue on hover */
-    transform: translateY(-2px); /* Lift effect */
-}
-
-body {
-    transition: background-color 0.3s, color 0.3s;
-}
+ .responsive-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }  
