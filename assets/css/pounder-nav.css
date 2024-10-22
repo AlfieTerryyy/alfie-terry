@@ -16,11 +16,16 @@ body, html {
     padding: 10px 20px;
 }
 
+/* Ensure the menu-toggle button is always visible */
 .menu-toggle {
-    display: none;
+    position: fixed;  /* Fixed position */
+    top: 10px;
+    right: 20px;  /* Stays at the top-right corner */
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
+    z-index: 1001;  /* Make sure it stays above other content */
 }
 
 .menu-toggle .bar {
@@ -30,10 +35,11 @@ body, html {
     transition: all 0.3s ease;
 }
 
-/* New styles for desktop navbar */
+/* Navbar styling */
 .navbar {
     display: flex;
     gap: 15px; 
+    position: relative;
 }
 
 .navbar ul {
@@ -76,7 +82,7 @@ body, html {
     width: 100%;
 }
 
-/* Side menu for mobile */
+/* Side menu styling */
 .side-menu {
     position: fixed;
     top: 0;
@@ -123,18 +129,17 @@ body, html {
     color: #333;
 }
 
-/* Show navbar and hide menu toggle on desktops */
+/* Ensure the menu-toggle is always visible on all screen sizes */
 @media (min-width: 769px) {
     .menu-toggle {
-        display: none;
+        display: flex;
     }
 
     .navbar {
-        display: flex;
+        display: none;  /* Hide traditional navbar on larger screens */
     }
 }
 
-/* Hide navbar and show menu toggle on smaller screens */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
