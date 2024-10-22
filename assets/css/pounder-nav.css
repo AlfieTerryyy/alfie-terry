@@ -2,7 +2,6 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #ffffff; /* Ensure a nice background for your site */
 }
 
 .logo img {
@@ -20,7 +19,7 @@ body, html {
 }
 
 .menu-toggle {
-    display: flex;
+    display: none; /* Hide by default */
     flex-direction: column;
     cursor: pointer;
     gap: 5px;
@@ -129,20 +128,20 @@ body, html {
     color: #f0f0f0; /* Matching text color */
 }
 
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show hamburger menu on smaller screens */
+    }
+    .navbar {
+        display: none;
+    }
+}
+
 @media (min-width: 769px) {
     .menu-toggle {
         display: none;
     }
     .navbar {
         display: flex; /* Show traditional navbar on larger screens */
-    }
-}
-
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: flex;
-    }
-    .navbar {
-        display: none;
     }
 }
