@@ -30,6 +30,7 @@ body, html {
     transition: all 0.3s ease;
 }
 
+/* New styles for desktop navbar */
 .navbar {
     display: flex;
     gap: 15px; 
@@ -75,6 +76,7 @@ body, html {
     width: 100%;
 }
 
+/* Side menu for mobile */
 .side-menu {
     position: fixed;
     top: 0;
@@ -121,6 +123,18 @@ body, html {
     color: #333;
 }
 
+/* Show navbar and hide menu toggle on desktops */
+@media (min-width: 769px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .navbar {
+        display: flex;
+    }
+}
+
+/* Hide navbar and show menu toggle on smaller screens */
 @media (max-width: 768px) {
     .menu-toggle {
         display: flex;
