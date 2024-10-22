@@ -317,28 +317,6 @@ footer {
         transform: translateY(0);
     }
 }
-@media (max-width: 768px) {
-    .navbar {
-        display: none;
-    }
-
-    .menu-toggle {
-        display: block;
-    }
-
-    .navbar.open {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 20px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        border-radius: 8px;
-    }
-
     .hero h1 {
         font-size: 36px;
     }
