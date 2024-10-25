@@ -2,13 +2,13 @@
 
 // Array of questions and answers structured as { index: number, question: string, answer: string }
 const questions = [
-    { index: 0, question: "What is the most beautiful memory you have from our time together?", answer: "" },
-    { index: 1, question: "If you could have any superpower, what would it be and why?", answer: "" },
-    { index: 2, question: "What's one song that always makes you think of us?", answer: "" },
-    { index: 3, question: "Describe your perfect day from morning to night.", answer: "" },
-    { index: 4, question: "What’s your favorite thing about our relationship?", answer: "" },
-    { index: 5, question: "If we could travel anywhere together, where would you want to go?", answer: "" },
-    { index: 6, question: "What’s a dream you hope to achieve in the next few years?", answer: "" },
+    { index: 0, question: "whare dose Mr. Musquée come from", answer: "france" },
+    { index: 1, question: "", answer: "" },
+    { index: 2, question: "", answer: "" },
+    { index: 3, question: "", answer: "" },
+    { index: 4, question: "", answer: "" },
+    { index: 5, question: "", answer: "" },
+    { index: 6, question: "", answer: "" },
     // Add more questions as needed...
 ];
 
