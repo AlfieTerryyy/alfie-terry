@@ -1,34 +1,31 @@
 // script.js
 
-// Function to check answers and transition to the next stage
-function checkAnswer(stage, correctAnswer) {
-    const userAnswer = document.getElementById(`answer${stage}`).value.toLowerCase().trim();
-    
-    if (userAnswer === correctAnswer) {
-        alert("Correct!");
+// Function to load the question of the day
+function loadQuestion() {
+    // Get today's date in MM-DD-YY format
+    const today = new Date();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
+    const day = String(today.getDate()).padStart(2, '0');
+    const year = String(today.getFullYear()).slice(-2);
+    const fileName = `q/${month}-${day}-${year}.txt`;
 
-        // Hide the current stage with a fade-out effect
-        document.getElementById(`stage${stage}`).classList.add('hidden');
-        
-        // Show the next stage or final message with a fade-in effect
-        setTimeout(() => {
-            if (stage < 3) {
-                document.getElementById(`stage${stage + 1}`).classList.remove('hidden');
-            } else {
-                document.getElementById('finalMessage').classList.remove('hidden');
+    // Fetch the question file
+    fetch(fileName)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Question not found for today.");
             }
-        }, 500);
-    } else {
-        alert("Oops, try again!");
-    }
+            return response.text();
+        })
+        .then(questionText => {
+            // Display the question in the questionBox
+            document.getElementById("questionBox").innerText = questionText;
+        })
+        .catch(error => {
+            document.getElementById("questionBox").innerText = "Sorry, no question available for today.";
+            console.error("Error loading question:", error);
+        });
 }
 
-// Function to toggle hint visibility
-function showHint(stage) {
-    const hint = document.getElementById(`hint${stage}`);
-    if (hint.classList.contains('hidden')) {
-        hint.classList.remove('hidden');
-    } else {
-        hint.classList.add('hidden');
-    }
-}
+// Load the question when the page is loaded
+window.onload = loadQuestion;
