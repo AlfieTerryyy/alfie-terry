@@ -2,12 +2,12 @@
 
 // Function to load the question of the day
 function loadQuestion() {
-    // Get today's date in MM-DD-YY format
+    // Get today's date in DD-MM-YY format
     const today = new Date();
-    const month = String(today.getMonth() + 1).padStart(2, '0');
     const day = String(today.getDate()).padStart(2, '0');
+    const month = String(today.getMonth() + 1).padStart(2, '0');
     const year = String(today.getFullYear()).slice(-2);
-    const fileName = `q/${month}-${day}-${year}.txt`;
+    const fileName = `q/${day}-${month}-${year}.txt`;
 
     // Fetch the question file
     fetch(fileName)
