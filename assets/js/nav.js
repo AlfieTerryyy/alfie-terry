@@ -16,34 +16,48 @@ async function fetchNavLinks() {
     }
 }
 
-// Populate mobile nav
+// Populate mobile and desktop nav
 function populateNav(links) {
-    const navListMobile = document.getElementById('navList');
+    const navListMobile = document.getElementById('navList'); // Mobile menu list
+    const navListDesktop = document.getElementById('navListDesktop'); // Desktop nav list
 
     // Clear existing items
     navListMobile.innerHTML = '';
+    navListDesktop.innerHTML = '';
 
     links.forEach(link => {
+        // Create mobile nav link
         const liMobile = document.createElement('li');
         const aMobile = document.createElement('a');
         aMobile.href = link.url;
         aMobile.textContent = link.text;
         liMobile.appendChild(aMobile);
         navListMobile.appendChild(liMobile);
+
+        // Create desktop nav link
+        const liDesktop = document.createElement('li');
+        const aDesktop = document.createElement('a');
+        aDesktop.href = link.url;
+        aDesktop.textContent = link.text;
+        liDesktop.appendChild(aDesktop);
+        navListDesktop.appendChild(liDesktop);
     });
 }
 
 // Switch between mobile and desktop navbar
 function switchNavbar() {
     const sideMenu = document.getElementById('sideMenu');
+    const navListDesktop = document.getElementById('navListDesktop');
 
     if (window.innerWidth < 769) {
         // Mobile view
         sideMenu.style.display = 'flex'; // Show side menu on mobile
+        navListDesktop.style.display = 'none'; // Hide desktop navbar
         sideMenu.classList.remove('active');
     } else {
         // Desktop view
         sideMenu.style.display = 'none'; // Hide side menu on desktop
+        navListDesktop.style.display = 'flex'; // Show desktop navbar
     }
 }
 
