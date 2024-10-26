@@ -1,79 +1,70 @@
-body, html {
+/* Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: Arial, sans-serif;
 }
 
-.logo img {
-    height: 40px;
-    transition: transform 0.3s ease;
-}
-
+/* Header styling */
 .header-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #1e1e1e;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 25px;
+    background-color: #222;
+}
+
+.logo img {
+    height: 45px;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
 }
 
 .menu-toggle {
-    display: none; /* Hide by default */
-    flex-direction: column;
+    display: none;
     cursor: pointer;
-    gap: 5px;
-    z-index: 1001;
 }
 
 .menu-toggle .bar {
-    width: 25px;
+    width: 28px;
     height: 3px;
     background-color: #ffcc00;
-    transition: all 0.3s ease;
+    margin: 4px 0;
+    transition: 0.3s;
 }
 
 .navbar {
-    display: flex; /* Display links inline on desktop */
-    gap: 15px;
-    position: relative;
-}
-
-.navbar ul {
-    list-style: none;
     display: flex;
-    gap: 15px;
-    margin: 0;
+    gap: 20px;
 }
 
-.navbar li {
+.navbar a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    transition: color 0.3s ease;
     position: relative;
 }
 
-.navbar li a {
-    text-decoration: none;
-    color: #f0f0f0;
-    font-size: 16px;
-    padding: 10px 15px;
-    font-weight: 500;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-.navbar li a:hover {
-    transform: scale(1.05);
+.navbar a:hover {
     color: #1e90ff;
 }
 
 .navbar a::after {
     content: '';
     display: block;
-    width: 0;
     height: 2px;
     background: #1e90ff;
-    position: absolute;
-    bottom: -2px;
-    left: 0;
     transition: width 0.3s ease;
+    width: 0;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .navbar a:hover::after {
@@ -84,16 +75,15 @@ body, html {
     position: fixed;
     top: 0;
     right: -300px;
-    width: 250px;
+    width: 260px;
     height: 100%;
-    background-color: rgba(30, 30, 30, 0.95);
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
-    transition: right 0.3s ease;
-    z-index: 1000;
+    background-color: #333;
+    box-shadow: -3px 0 6px rgba(0, 0, 0, 0.3);
+    transition: right 0.4s ease;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
+    z-index: 1000;
 }
 
 .side-menu.active {
@@ -102,49 +92,39 @@ body, html {
 
 .side-menu ul {
     list-style: none;
-    padding: 20px;
     flex-grow: 1;
 }
 
-.side-menu li a {
-    text-decoration: none;
+.side-menu a {
     color: #f0f0f0;
-    display: block;
+    text-decoration: none;
+    font-size: 1.1rem;
     padding: 10px 0;
     transition: color 0.3s ease;
+    display: block;
 }
 
-.side-menu li a:hover {
+.side-menu a:hover {
     color: #1e90ff;
 }
 
 .close-btn {
     align-self: flex-end;
-    margin: 10px;
+    font-size: 24px;
+    color: #f0f0f0;
     background: none;
     border: none;
-    font-size: 24px;
     cursor: pointer;
-    color: #f0f0f0;
 }
 
+/* Responsive */
 @media (max-width: 768px) {
-    .menu-toggle {
-        display: flex; /* Show hamburger menu on smaller screens */
-    }
     .navbar {
-        display: none; /* Hide traditional navbar on smaller screens */
-    }
-}
-
-@media (min-width: 769px) {
-    .menu-toggle {
         display: none;
     }
-    .side-menu {
-        display: none; /* Hide side menu on desktop */
-    }
-    .navbar {
-        display: flex; /* Ensure navbar links are visible on larger screens */
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 }
