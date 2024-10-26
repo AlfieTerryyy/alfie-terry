@@ -1,74 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Hamburger Menu</title>
-    <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.css">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
-    <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
-    <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
+<html><head><base href="https://alfieterry.co.uk/">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="/style.css" rel="stylesheet">    
 </head>
 <body>
-    <header class="header">
-        <div class="header-container">
-            <a href="https://alfieterry.co.uk" class="logo">
-                <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
-            </a>
-            <div class="menu-toggle" id="menuToggle">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
-            </div>
+<nav>
+    <div class="nav-container">
+        <a href="/" class="logo">
+            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo" width="40" height="40">
+            Alfie Terry
+        </a>
+        <button class="mobile-menu-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12H21" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 6H21" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M3 18H21" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+        <div class="nav-links">
+            <a href="/about" class="nav-link">About</a>
+            <a href="/projects" class="nav-link">Projects</a>
+            <a href="/blog" class="nav-link">Blog</a>
+            <a href="/contact" class="nav-link contact-button">Contact</a>
         </div>
-    </header>
-    <nav class="side-menu" id="sideMenu">
-        <button class="close-btn" id="closeBtn">&times;</button>
-        <ul id="navList">
-            <!-- Navigation links will be populated here -->
-        </ul>
-    </nav>
-    <main>
-        <!-- Main content goes here -->
-    </main>
+    </div>
+</nav>
 
-    <footer>
-        <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
-    </footer>
+<script>
+// Smooth scroll navbar
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 0) {
+        nav.classList.add('nav-scrolled');
+    } else {
+        nav.classList.remove('nav-scrolled');
+    }
+});
 
-    <script>
+// Mobile menu toggle
+const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
-          fetch('https://alfieterry.co.uk/easier/nav-links.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Fetched navigation links:', data);  // Log the fetched data
-        const navList = document.getElementById('navList');
-        data.forEach(link => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.textContent = link.text;
-            li.appendChild(a);
-            navList.appendChild(li);
-        });
-    })
-    .catch(error => console.error('Error loading navigation links:', error));
+mobileMenuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+});
 
-        
-    </script>
-
-    <div id="scroll-progress"></div>
-
-<script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/2da8fc4dc8652b6cbb405dc2f6d68675.js"></script>
-
-
-</body>
-</html>
+// Close mobile menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.nav-container')) {
+        navLinks.classList.remove('active');
+    }
+});
+</script>
+</body></html>
