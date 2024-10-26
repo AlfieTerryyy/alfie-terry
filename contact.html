@@ -20,24 +20,28 @@
     <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
 </head>
 <body>
+<!------- start nav------->
+    
+    <header class="header">
     <header class="header">
         <div class="header-container">
             <a href="https://alfieterry.co.uk" class="logo">
-                <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
+                <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo">
             </a>
             <div class="menu-toggle" id="menuToggle">
-                <div class="bar"></div>
-                <div class="bar"></div>
-                <div class="bar"></div>
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </div>
+            <nav class="navbar" id="navbar"></nav>
         </div>
     </header>
-    <nav class="side-menu" id="sideMenu">
+    <div class="side-menu" id="sideMenu">
         <button class="close-btn" id="closeBtn">&times;</button>
-        <ul id="navList">
-            <!-- Navigation links will be populated here -->
-        </ul>
-    </nav>
+        <ul id="navList"></ul>
+    </div>
+
+<!------end nav------->
     <main>
                    <!-- <img src="https://alfieterry.co.uk/img/" alt="img" width="2100" height="1280"> -->
          <section id="home" class="hero">
@@ -80,32 +84,6 @@
     <footer>
         <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
-
-    <script>
-
-          fetch('https://alfieterry.co.uk/easier/nav-links.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Fetched navigation links:', data);  // Log the fetched data
-        const navList = document.getElementById('navList');
-        data.forEach(link => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.textContent = link.text;
-            li.appendChild(a);
-            navList.appendChild(li);
-        });
-    })
-    .catch(error => console.error('Error loading navigation links:', error));
-
-        
-    </script>
 
     <div id="scroll-progress"></div>
 
