@@ -34,8 +34,8 @@ function populateNav(links) {
 // Adjust display based on screen size
 function updateNavDisplay() {
     const sideMenu = document.getElementById('sideMenu');
-    if (window.innerWidth < 769) {
-        sideMenu.classList.remove('active');
+    if (window.innerWidth >= 769) {
+        sideMenu.classList.remove('active'); // Hide the side menu if screen is wide enough
     }
 }
 
