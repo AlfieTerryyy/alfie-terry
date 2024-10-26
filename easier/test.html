@@ -1,54 +1,31 @@
-<html><head><base href="https://alfieterry.co.uk/">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link href="https://alfieterry.co.uk/easier/style.css" rel="stylesheet">    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alfie Terry | Creative Developer</title>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://alfieterry.co.uk/easier/style.css">
+    
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-<nav>
-    <div class="nav-container">
-        <a href="/" class="logo">
-            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo" width="40" height="40">
-            Alfie Terry
-        </a>
-        <button class="mobile-menu-btn">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 12H21" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 6H21" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M3 18H21" stroke="#E2E8F0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </button>
-        <div class="nav-links">
-            <a href="/about" class="nav-link">About</a>
-            <a href="/projects" class="nav-link">Projects</a>
-            <a href="/blog" class="nav-link">Blog</a>
-            <a href="/contact" class="nav-link contact-button">Contact</a>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <a href="https://alfieterry.co.uk/" class="logo">
+                <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="nav-links"></div> <!-- Empty div for dynamic links -->
         </div>
-    </div>
-</nav>
-
-<script>
-// Smooth scroll navbar
-window.addEventListener('scroll', () => {
-    const nav = document.querySelector('nav');
-    if (window.scrollY > 0) {
-        nav.classList.add('nav-scrolled');
-    } else {
-        nav.classList.remove('nav-scrolled');
-    }
-});
-
-// Mobile menu toggle
-const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-const navLinks = document.querySelector('.nav-links');
-
-mobileMenuBtn.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!e.target.closest('.nav-container')) {
-        navLinks.classList.remove('active');
-    }
-});
-</script>
-</body></html>
+    </nav>
+    
+    <!-- External JavaScript -->
+    <script src="https://alfieterry.co.uk/easier/script.js"></script>
+</body>
+</html>
