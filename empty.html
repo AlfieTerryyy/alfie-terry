@@ -9,8 +9,12 @@
     <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png" />
     <title>ASAT - title</title>
     <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/all.css">
-    <script src="https://alfieterry.co.uk/assets/js/all.js" defer></script>
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
+    <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
+    <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
 </head>
 <body>
     <header class="header">
@@ -57,8 +61,36 @@
         <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
 
+    <script>
+
+          fetch('https://alfieterry.co.uk/easier/nav-links.json')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Fetched navigation links:', data);  // Log the fetched data
+        const navList = document.getElementById('navList');
+        data.forEach(link => {
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = link.url;
+            a.textContent = link.text;
+            li.appendChild(a);
+            navList.appendChild(li);
+        });
+    })
+    .catch(error => console.error('Error loading navigation links:', error));
+
+        
+    </script>
+
     <div id="scroll-progress"></div>
+
+<script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/2da8fc4dc8652b6cbb405dc2f6d68675.js"></script>
+
 
 </body>
 </html>
-
