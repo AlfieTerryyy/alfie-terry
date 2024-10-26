@@ -266,3 +266,15 @@ footer::before {
         scroll-behavior: auto !important;
     }
 }
+
+
+/* Scroll Progress Indicator */
+#scroll-progress {
+    position: fixed; /* Fix position for scroll progress */
+    top: 0; /* Align to top */
+    left: 0; /* Align to left */
+    height: 5px; /* Height of the indicator */
+    background-color: #007bff; /* Color of the indicator */
+    width: 0; /* Start with no width */
+    transition: width 0.2s ease; /* Smooth transition for width changes */
+}
