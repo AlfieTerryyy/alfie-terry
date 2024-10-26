@@ -1,5 +1,6 @@
-// Fetch navigation links from JSON
-async function fetchNavLinks() {
+
+ Fetch navigation links from JSON
+//async function fetchNavLinks() {
     try {
         const response = await fetch('https://alfieterry.co.uk/easier/nav-links.json');
         if (!response.ok) throw new Error('Failed to fetch links: ' + response.statusText);
