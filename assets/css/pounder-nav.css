@@ -13,6 +13,8 @@
     justify-content: space-between;
     padding: 15px 25px;
     background-color: #222;
+    position: relative; /* Allow positioning of side menu */
+    z-index: 1000;
 }
 
 .logo img {
@@ -83,7 +85,7 @@
     padding: 20px;
     display: flex;
     flex-direction: column;
-    z-index: 1000;
+    z-index: 999; /* Make sure it’s above the rest of the content */
 }
 
 .side-menu.active {
