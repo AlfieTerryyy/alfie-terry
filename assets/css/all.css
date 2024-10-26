@@ -1,6 +1,5 @@
-/* Main CSS file: main.css */
+/* Main CSS file: all.css */
 
 @import url('https://alfieterry.co.uk/assets/css/pounder2.css');
 @import url('https://alfieterry.co.uk/assets/pounder-nav.css');
-
-/* You can add additional styles or overrides here if needed */
+@import url('https://alfieterry.co.uk/assets/css/pounder-btns.css')
