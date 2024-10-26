@@ -213,3 +213,10 @@ footer::before {
     .button { font-size: 14px; padding: 10px 20px; }
 }
 
+
+ .responsive-image {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+        }  
