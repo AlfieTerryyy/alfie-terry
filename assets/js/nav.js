@@ -1,6 +1,4 @@
-// nav.js
-
-// Fetch navigation links from JSON
+// Fetch navigation links from JSON and apply to both desktop and mobile layouts
 async function fetchNavLinks() {
     try {
         const response = await fetch('https://alfieterry.co.uk/easier/nav-links.json');
@@ -10,58 +8,54 @@ async function fetchNavLinks() {
         const data = await response.json();
         console.log('Fetched navigation links:', data);
         populateNav(data);
-        switchNavbar(); // Call to set initial navbar based on screen size
+        updateNavDisplay(); // Set initial nav display based on screen size
     } catch (error) {
         console.error('Error loading navigation links:', error);
     }
 }
 
-// Populate mobile and desktop nav
+// Populate navigation links for both mobile and desktop views
 function populateNav(links) {
-    const navListMobile = document.getElementById('navList'); // Mobile menu list
-    const navListDesktop = document.getElementById('navListDesktop'); // Desktop nav list
+    const navList = document.getElementById('navList');
 
     // Clear existing items
-    navListMobile.innerHTML = '';
-    navListDesktop.innerHTML = '';
+    navList.innerHTML = '';
 
+    // Create navigation links
     links.forEach(link => {
-        // Create mobile nav link
-        const liMobile = document.createElement('li');
-        const aMobile = document.createElement('a');
-        aMobile.href = link.url;
-        aMobile.textContent = link.text;
-        liMobile.appendChild(aMobile);
-        navListMobile.appendChild(liMobile);
-
-        // Create desktop nav link
-        const liDesktop = document.createElement('li');
-        const aDesktop = document.createElement('a');
-        aDesktop.href = link.url;
-        aDesktop.textContent = link.text;
-        liDesktop.appendChild(aDesktop);
-        navListDesktop.appendChild(liDesktop);
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = link.url;
+        a.textContent = link.text;
+        li.appendChild(a);
+        navList.appendChild(li);
     });
 }
 
-// Switch between mobile and desktop navbar
-function switchNavbar() {
+// Handle navigation display based on screen size
+function updateNavDisplay() {
     const sideMenu = document.getElementById('sideMenu');
-    const navListDesktop = document.getElementById('navListDesktop');
+    const headerContainer = document.querySelector('.header-container');
+    const navList = document.getElementById('navList');
 
     if (window.innerWidth < 769) {
         // Mobile view
         sideMenu.style.display = 'flex'; // Show side menu on mobile
-        navListDesktop.style.display = 'none'; // Hide desktop navbar
         sideMenu.classList.remove('active');
+        navList.style.flexDirection = 'column'; // Stack links in side menu
     } else {
         // Desktop view
         sideMenu.style.display = 'none'; // Hide side menu on desktop
-        navListDesktop.style.display = 'flex'; // Show desktop navbar
+
+        // Display navigation links inline in the header
+        headerContainer.appendChild(navList);
+        navList.style.display = 'flex';
+        navList.style.flexDirection = 'row'; // Arrange links horizontally
+        navList.style.gap = '15px'; // Optional: add space between links
     }
 }
 
-// Toggle side menu visibility
+// Toggle side menu visibility for mobile
 function setupMobileMenuToggle() {
     const menuToggle = document.getElementById('menuToggle');
     const sideMenu = document.getElementById('sideMenu');
@@ -86,5 +80,5 @@ function setupMobileMenuToggle() {
 fetchNavLinks();
 setupMobileMenuToggle();
 
-// Add event listener for window resize
-window.addEventListener('resize', switchNavbar);
+// Adjust navigation display when the window is resized
+window.addEventListener('resize', updateNavDisplay);
