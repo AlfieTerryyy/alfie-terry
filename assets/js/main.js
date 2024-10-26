@@ -19,10 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-
-
-
-
 // Function to simulate fetching more content
 function fetchMoreContent() {
     // Simulating an API call or fetching data
