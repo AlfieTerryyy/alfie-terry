@@ -70,32 +70,6 @@ open_html_auto()
         <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
 
-    <script>
-
-          fetch('https://alfieterry.co.uk/easier/nav-links.json')
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.json();
-    })
-    .then(data => {
-        console.log('Fetched navigation links:', data);  // Log the fetched data
-        const navList = document.getElementById('navList');
-        data.forEach(link => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.url;
-            a.textContent = link.text;
-            li.appendChild(a);
-            navList.appendChild(li);
-        });
-    })
-    .catch(error => console.error('Error loading navigation links:', error));
-
-        
-    </script>
-
     <div id="scroll-progress"></div>
 
 <script type="text/javascript" charset="UTF-8" src="//cdn.cookie-script.com/s/2da8fc4dc8652b6cbb405dc2f6d68675.js"></script>
