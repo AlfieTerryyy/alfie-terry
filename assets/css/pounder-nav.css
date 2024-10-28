@@ -163,21 +163,21 @@
     .navbar {
         display: none;
     }
-    
+
     .menu-toggle {
         display: flex;
         flex-direction: column;
     }
-    
+
     /* Animated hamburger to X */
     .menu-toggle.active .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
-    
+
     .menu-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
-    
+
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
@@ -191,4 +191,9 @@
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
+}
+
+/* Main Button Styling */
+#main-button {
+    z-index: -1; /* This ensures the button goes behind the nav */
 }
