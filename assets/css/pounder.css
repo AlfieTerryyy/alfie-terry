@@ -1,13 +1,10 @@
 /* Modern CSS Reset with Performance Optimizations */
-*,
-*::before,
-*::after {
+*,*::before,*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 }
-
 :root {
     /* Modern Color Palette */
     --primary: #2563eb;
@@ -16,17 +13,14 @@
     --dark-lighter: #1e293b;
     --text: #f1f5f9;
     --text-muted: #94a3b8;
-    
     /* Common Values */
     --border-radius: 12px;
     --container-width: 1200px;
 }
-
 html {
     scroll-behavior: smooth;
     font-size: 16px;
 }
-
 body {
     min-height: 100vh; /* Ensure the body is at least the height of the viewport */
     font-family: 'Roboto', system-ui, -apple-system, sans-serif;
@@ -38,9 +32,8 @@ body {
         radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
     display: block; /* Changed to block to allow normal flow */
-overflow: auto !important; /* Ensure scrolling is enabled */
+    overflow: auto !important; /* Ensure scrolling is enabled */
 }
-
 /* Improved Scroll Progress Bar */
 #scroll-progress {
     position: fixed;
@@ -53,7 +46,6 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     transform: scaleX(0);
     z-index: 1001;
 }
-
 /* Modern Header */
 .header {
     background: rgba(15, 23, 42, 0.8);
@@ -65,7 +57,6 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     top: 0;
     z-index: 1000;
 }
-
 .header-container {
     max-width: var(--container-width);
     margin: 0 auto;
@@ -74,7 +65,6 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     justify-content: space-between;
     align-items: center;
 }
-
 .header-container a {
     color: var(--primary-light);
     text-decoration: none;
@@ -83,12 +73,10 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     border-radius: var(--border-radius);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 .header-container a:hover {
     background-color: rgba(37, 99, 235, 0.1);
     color: var(--text);
 }
-
 /* Enhanced Hero Section */
 .hero {
     padding: 8rem 1rem 4rem;
@@ -96,7 +84,6 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     position: relative;
     overflow: hidden;
 }
-
 .hero::before {
     content: '';
     position: absolute;
@@ -107,7 +94,6 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     background: radial-gradient(circle at 50% 0%, rgba(37, 99, 235, 0.15), transparent 70%);
     pointer-events: none;
 }
-
 .hero h1 {
     font-size: clamp(2.5rem, 5vw, 4rem);
     font-weight: 700;
@@ -117,14 +103,12 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     color: transparent;
     margin-bottom: 1.5rem;
 }
-
 .hero p {
     font-size: clamp(1rem, 2vw, 1.25rem);
     color: var(--text-muted);
     max-width: 800px;
     margin: 0 auto 2rem;
 }
-
 /* Modern Card Design */
 .glow-border {
     position: relative;
@@ -133,7 +117,6 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
 }
-
 .glow-border::before {
     content: '';
     position: absolute;
@@ -146,11 +129,9 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     opacity: 0;
     transition: opacity 0.3s ease;
 }
-
 .glow-border:hover::before {
     opacity: 1;
 }
-
 /* Improved Grid Layout */
 .grid-container {
     display: grid;
@@ -160,7 +141,6 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     max-width: var(--container-width);
     margin: 0 auto;
 }
-
 .grid-item {
     background: rgba(30, 41, 59, 0.5);
     border-radius: var(--border-radius);
@@ -168,11 +148,9 @@ overflow: auto !important; /* Ensure scrolling is enabled */
     border: 1px solid rgba(37, 99, 235, 0.1);
     transition: transform 0.3s ease;
 }
-
 .grid-item:hover {
     transform: translateY(-5px);
 }
-
 /* Modern Footer */
 footer {
     background: var(--dark-lighter);
@@ -183,7 +161,6 @@ footer {
     margin-top: auto; /* Ensures footer pushes down */
     width: 100%; /* Full width */
 }
-
 footer::before {
     content: '';
     position: absolute;
@@ -191,7 +168,6 @@ footer::before {
     background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent 70%);
     pointer-events: none;
 }
-
 /* Modern Button Design */
 .button {
     display: inline-flex;
@@ -208,50 +184,42 @@ footer::before {
     box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1),
                 0 2px 4px -1px rgba(37, 99, 235, 0.06);
 }
-
 .button:hover {
     background: var(--primary-light);
     transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2),
                 0 4px 6px -2px rgba(37, 99, 235, 0.1);
 }
-
 /* Text Effects */
 .neon-text {
     color: var(--primary-light);
     text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
 }
-
 .highlight {
     background: linear-gradient(90deg, var(--primary), var(--primary-light));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
-
 /* Responsive Images */
 .responsive-image {
     max-width: 100%;
     height: auto;
     border-radius: var(--border-radius);
 }
-
 /* Modern Media Queries */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         gap: 1rem;
     }
-    
     .grid-container {
         padding: 1rem;
     }
-    
     .button {
         padding: 0.5rem 1rem;
     }
 }
-
 /* Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
     *,
@@ -263,7 +231,6 @@ footer::before {
         scroll-behavior: auto !important;
     }
 }
-
 /* Scroll Progress Indicator */
 #scroll-progress {
     position: fixed; /* Fix position for scroll progress */
@@ -274,8 +241,3 @@ footer::before {
     width: 0; /* Start with no width */
     transition: width 0.2s ease; /* Smooth transition for width changes */
 }
-
-
-
- 
-    
