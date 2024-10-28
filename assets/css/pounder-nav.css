@@ -201,3 +201,7 @@
 
 
 
+/* Hide Hamburger Button When Side Menu Is Open */
+.side-menu.active + .menu-toggle {
+    visibility: hidden;
+}
