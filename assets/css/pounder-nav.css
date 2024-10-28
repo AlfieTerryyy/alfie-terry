@@ -169,7 +169,19 @@
         flex-direction: column;
     }
 
-    /* Animated hamburger to X */
+    /* Hamburger to Circle Animation */
+    .menu-toggle.active {
+        background: var(--dark);
+        border-radius: 50%;
+        padding: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .menu-toggle.active .bar {
+        background-color: var(--dark);
+        transition: background-color 0.3s ease;
+    }
+
     .menu-toggle.active .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
@@ -191,17 +203,4 @@
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
     }
-}
-
-/* Main Button Styling */
-#main-button {
-    z-index: -1; /* This ensures the button goes behind the nav */
-}
-
-
-
-
-/* Hide Hamburger Button When Side Menu Is Open */
-.side-menu.active + .menu-toggle {
-    visibility: hidden;
 }
