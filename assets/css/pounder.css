@@ -224,3 +224,7 @@ footer::before {
     width: 0; /* Start with no width */
     transition: width 0.2s ease; /* Smooth transition for width changes */
 }
+
+.content {
+    margin-top: 80px; /* Adjust the value to your desired gap size */
+}
