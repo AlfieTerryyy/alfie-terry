@@ -103,16 +103,10 @@ document.addEventListener('DOMContentLoaded', () => {
     menuToggle.addEventListener('click', () => {
         sideMenu.classList.toggle('active');
         menuToggle.classList.toggle('active');
-        if (sideMenu.classList.contains('active')) {
-            menuToggle.style.visibility = 'hidden';
-        } else {
-            menuToggle.style.visibility = 'visible';
-        }
     });
 
     closeBtn.addEventListener('click', () => {
         sideMenu.classList.remove('active');
         menuToggle.classList.remove('active');
-        menuToggle.style.visibility = 'visible';
     });
 });
