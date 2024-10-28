@@ -1,96 +1,179 @@
-// navigation.js - Handle mobile menu and navigation
-document.addEventListener('DOMContentLoaded', () => {
-    // Get DOM elements
-    const menuToggle = document.getElementById('menuToggle');
-    const sideMenu = document.getElementById('sideMenu');
-    const closeBtn = document.getElementById('closeBtn');
-    const navbar = document.getElementById('navbar');
-    const navList = document.getElementById('navList');
+/* Color Palette and Common Styles */
+:root {
+    --primary: #2563eb;
+    --primary-light: #60a5fa;
+    --dark: #0f172a;
+    --dark-lighter: #1e293b;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border-radius: 12px;
+}
 
-    // Toggle mobile menu
-    if (menuToggle && sideMenu) {
-        menuToggle.addEventListener('click', () => {
-            sideMenu.classList.add('active');
-            menuToggle.classList.add('active');
-        });
+/* Header and Navigation */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+}
+
+/* Logo Styling */
+.logo img {
+    height: 45px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+
+.menu-toggle .bar {
+    width: 28px;
+    height: 2px;
+    background-color: var(--primary-light);
+    margin: 5px 0;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 2px;
+}
+
+/* Main Navigation */
+.navbar {
+    display: flex;
+    gap: 1.25rem;
+}
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.975rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+.navbar a:hover {
+    color: var(--primary-light);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+.navbar a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+.navbar a:hover::after {
+    width: calc(100% - 2rem);
+}
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100vh;
+    background: var(--dark-lighter);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(37, 99, 235, 0.1);
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -10px 0 30px -15px rgba(0, 0, 0, 0.3);
+}
+.side-menu.active {
+    right: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+    flex-grow: 1;
+    margin-top: 2rem;
+}
+.side-menu a {
+    color: var(--text);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    margin: 0.25rem 0;
+    border-radius: var(--border-radius);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: block;
+}
+.side-menu a:hover {
+    color: var(--primary-light);
+    background-color: rgba(37, 99, 235, 0.1);
+    transform: translateX(5px);
+}
+
+.close-btn {
+    align-self: flex-end;
+    font-size: 1.5rem;
+    color: var(--text);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-btn:hover {
+    color: var(--primary-light);
+    background-color: rgba(37, 99, 235, 0.1);
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .navbar {
+        display: none;
     }
-
-    // Close mobile menu
-    if (closeBtn && sideMenu) {
-        closeBtn.addEventListener('click', () => {
-            sideMenu.classList.remove('active');
-            menuToggle?.classList.remove('active');
-        });
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
     }
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
 
-    // Close menu when clicking outside
-    document.addEventListener('click', (event) => {
-        if (sideMenu && menuToggle && 
-            !sideMenu.contains(event.target) && 
-            !menuToggle.contains(event.target)) {
-            sideMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
-        }
-    });
-
-    // Handle navigation links
-    const loadNavLinks = async () => {
-        try {
-            const response = await fetch('https://alfieterry.co.uk/easier/nav-links.json');
-            if (!response.ok) throw new Error('Failed to fetch navigation');
-            
-            const links = await response.json();
-            
-            // Populate desktop navigation
-            if (navbar) {
-                navbar.innerHTML = links.map(link => 
-                    `<a href="${link.url}">${link.text}</a>`
-                ).join('');
-            }
-            
-            // Populate mobile navigation
-            if (navList) {
-                navList.innerHTML = links.map(link => 
-                    `<li><a href="${link.url}">${link.text}</a></li>`
-                ).join('');
-            }
-        } catch (error) {
-            console.error('Error loading navigation:', error);
-            // Fallback navigation
-            const fallbackLinks = [
-                { url: '/', text: 'Home' },
-                { url: '/about', text: 'About' },
-                { url: '/contact', text: 'Contact' }
-            ];
-            
-            if (navbar) {
-                navbar.innerHTML = fallbackLinks.map(link => 
-                    `<a href="${link.url}">${link.text}</a>`
-                ).join('');
-            }
-            
-            if (navList) {
-                navList.innerHTML = fallbackLinks.map(link => 
-                    `<li><a href="${link.url}">${link.text}</a></li>`
-                ).join('');
-            }
-        }
-    };
-
-    // Load navigation links
-    loadNavLinks();
-
-    // Handle window resize
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 769 && sideMenu) {
-            sideMenu.classList.remove('active');
-            menuToggle?.classList.remove('active');
-        }
-    });
-});
-
-
-
-
-
-
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
