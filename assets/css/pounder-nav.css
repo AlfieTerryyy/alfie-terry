@@ -1,5 +1,5 @@
 :root {
-    /* Modern Color Palette attempt */
+    /* Modern Color Palette */
     --primary: #2563eb;
     --primary-light: #60a5fa;
     --dark: #0f172a;
@@ -34,42 +34,29 @@
     transform: scale(1.05);
 }
 
-/* Updated Hamburger Menu Toggle */
+/* Hamburger Menu Toggle */
 .menu-toggle {
     display: none;
     cursor: pointer;
     padding: 0.5rem;
-    background: rgba(15, 23, 42, 0.8); /* Matches nav menu background */
+    background: transparent;
     border: none;
-    border-radius: var(--border-radius);
     z-index: 1001;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: opacity 0.5s ease;
+    border-radius: var(--border-radius);
 }
-
+.menu-toggle.active {
+    opacity: 0; /* Makes the button disappear when active */
+    pointer-events: none; /* Prevents further clicks when transparent */
+    transition: opacity 0.5s ease;
+}
 .menu-toggle .bar {
     width: 28px;
     height: 2px;
-    background-color: var(--text); /* Matches nav text color */
+    background-color: var(--primary-light);
     margin: 5px 0;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease;
+    transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 2px;
-}
-
-.menu-toggle:hover {
-    background-color: rgba(37, 99, 235, 0.1); /* Matches nav link hover background */
-}
-
-/* Animated Hamburger to X on Toggle */
-.menu-toggle.active .bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-}
-
-.menu-toggle.active .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.menu-toggle.active .bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Main Navigation */
