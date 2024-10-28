@@ -201,7 +201,8 @@
 
 
 
-/* mobile stff and stufffffff... */
+/*  stff and stufffffff... */
+
 
 .menu-toggle {
     display: flex;
@@ -211,7 +212,6 @@
     background: transparent;
     border: none;
     z-index: 1001;
-    transition: opacity 0.3s ease;
 }
 
 .menu-toggle .bar {
@@ -224,8 +224,8 @@
 }
 
 /* Ensure the menu-toggle is hidden when the side menu is active */
-.side-menu.active ~ .menu-toggle {
-    opacity: 0;
+.side-menu.active + .menu-toggle {
+    visibility: hidden;
 }
 
 /* Mobile Responsive Styles */
