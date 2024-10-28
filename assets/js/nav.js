@@ -90,3 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+
+// Toggle Menu Button and Nav Menu
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    this.classList.toggle('active');
+    document.querySelector('.nav-menu').classList.toggle('active');
+});
+
