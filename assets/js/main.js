@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Enable scrolling
     document.body.style.overflow = 'auto';
     console.log('Scrolling enabled');
-
+    
     // Update scroll progress bar
     const scrollProgress = document.getElementById('scroll-progress');
     window.addEventListener('scroll', () => {
