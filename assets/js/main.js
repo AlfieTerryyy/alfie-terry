@@ -45,5 +45,6 @@ window.addEventListener('scroll', handleScroll);
 
 // scrolling
         document.addEventListener('DOMContentLoaded', (event) => {
-            document.body.style.overflow = 'auto';
-        });
+    document.body.style.overflow = 'auto';
+    console.log('Scrolling enabled');
+});
