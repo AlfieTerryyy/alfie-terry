@@ -6,22 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('closeBtn');
     const navbar = document.getElementById('navbar');
     const navList = document.getElementById('navList');
-    
-    let hasOpenedOnce = false; // Track if the menu has opened once
 
     // Toggle mobile menu
     if (menuToggle && sideMenu) {
         menuToggle.addEventListener('click', () => {
             sideMenu.classList.add('active');
             menuToggle.classList.add('active');
-            
-            // Set clear opacity after first animation
-            if (!hasOpenedOnce) {
-                hasOpenedOnce = true;
-                setTimeout(() => {
-                    menuToggle.classList.add('clear'); // Set clear opacity
-                }, 400); // Match this duration with the CSS transition time
-            }
         });
     }
 
@@ -29,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (closeBtn && sideMenu) {
         closeBtn.addEventListener('click', () => {
             sideMenu.classList.remove('active');
-            menuToggle.classList.remove('active');
+            menuToggle?.classList.remove('active');
         });
     }
 
@@ -45,7 +35,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Handle navigation links
     const loadNavLinks = async () => {
-        // ... (your existing code for loading navigation links)
+        try {
+            const response = await fetch('https://alfieterry.co.uk/easier/nav-links.json');
+            if (!response.ok) throw new Error('Failed to fetch navigation');
+            
+            const links = await response.json();
+            
+            // Populate desktop navigation
+            if (navbar) {
+                navbar.innerHTML = links.map(link => 
+                    `<a href="${link.url}">${link.text}</a>`
+                ).join('');
+            }
+            
+            // Populate mobile navigation
+            if (navList) {
+                navList.innerHTML = links.map(link => 
+                    `<li><a href="${link.url}">${link.text}</a></li>`
+                ).join('');
+            }
+        } catch (error) {
+            console.error('Error loading navigation:', error);
+            // Fallback navigation
+            const fallbackLinks = [
+                { url: '/', text: 'Home' },
+                { url: '/about', text: 'About' },
+                { url: '/contact', text: 'Contact' }
+            ];
+            
+            if (navbar) {
+                navbar.innerHTML = fallbackLinks.map(link => 
+                    `<a href="${link.url}">${link.text}</a>`
+                ).join('');
+            }
+            
+            if (navList) {
+                navList.innerHTML = fallbackLinks.map(link => 
+                    `<li><a href="${link.url}">${link.text}</a></li>`
+                ).join('');
+            }
+        }
     };
 
     // Load navigation links
