@@ -273,3 +273,10 @@ footer::before {
     width: 0; /* Start with no width */
     transition: width 0.2s ease; /* Smooth transition for width changes */
 }
+
+
+
+        body {
+            overflow: auto !important; /* Ensure scrolling is enabled */
+        }
+    
