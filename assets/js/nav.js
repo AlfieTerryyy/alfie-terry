@@ -90,23 +90,3 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menuToggle');
-    const sideMenu = document.getElementById('sideMenu');
-    const closeBtn = document.getElementById('closeBtn');
-
-    menuToggle.addEventListener('click', () => {
-        sideMenu.classList.toggle('active');
-        menuToggle.classList.toggle('active');
-    });
-
-    closeBtn.addEventListener('click', () => {
-        sideMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-    });
-});
