@@ -1,5 +1,5 @@
 :root {
-    /* Modern Color Palette */
+    /* Modern Color Palette (matching previous design) */
     --primary: #2563eb;
     --primary-light: #60a5fa;
     --dark: #0f172a;
@@ -30,6 +30,7 @@
     height: 45px;
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .logo img:hover {
     transform: scale(1.05);
 }
@@ -42,14 +43,8 @@
     background: transparent;
     border: none;
     z-index: 1001;
-    transition: opacity 0.5s ease;
-    border-radius: var(--border-radius);
 }
-.menu-toggle.active {
-    opacity: 0; /* Makes the button disappear when active */
-    pointer-events: none; /* Prevents further clicks when transparent */
-    transition: opacity 0.5s ease;
-}
+
 .menu-toggle .bar {
     width: 28px;
     height: 2px;
@@ -64,6 +59,7 @@
     display: flex;
     gap: 1.25rem;
 }
+
 .navbar a {
     color: var(--text);
     text-decoration: none;
@@ -74,6 +70,7 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
 }
+
 .navbar a:hover {
     color: var(--primary-light);
     background-color: rgba(37, 99, 235, 0.1);
@@ -92,18 +89,19 @@
     transform: translateX(-50%);
     border-radius: 2px;
 }
+
 .navbar a:hover::after {
     width: calc(100% - 2rem);
 }
 
-/* Updated Side Menu */
+/* Side Menu */
 .side-menu {
     position: fixed;
     top: 0;
     right: -300px;
     width: 280px;
     height: 100vh;
-    background: rgba(30, 41, 59, 0.85); /* Slight opacity */
+    background: var(--dark-lighter);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-left: 1px solid rgba(37, 99, 235, 0.1);
@@ -114,6 +112,7 @@
     transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: -10px 0 30px -15px rgba(0, 0, 0, 0.3);
 }
+
 .side-menu.active {
     right: 0;
 }
@@ -123,6 +122,7 @@
     flex-grow: 1;
     margin-top: 2rem;
 }
+
 .side-menu a {
     color: var(--text);
     text-decoration: none;
@@ -134,13 +134,13 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: block;
 }
+
 .side-menu a:hover {
     color: var(--primary-light);
     background-color: rgba(37, 99, 235, 0.1);
     transform: translateX(5px);
 }
 
-/* Close Button */
 .close-btn {
     align-self: flex-end;
     font-size: 1.5rem;
@@ -152,6 +152,7 @@
     border-radius: var(--border-radius);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .close-btn:hover {
     color: var(--primary-light);
     background-color: rgba(37, 99, 235, 0.1);
@@ -162,17 +163,21 @@
     .navbar {
         display: none;
     }
+    
     .menu-toggle {
         display: flex;
         flex-direction: column;
     }
+    
     /* Animated hamburger to X */
     .menu-toggle.active .bar:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
+    
     .menu-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
+    
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-7px) rotate(-45deg);
     }
