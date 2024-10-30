@@ -33,22 +33,21 @@ body {
 .header {
     background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     width: 100%;
     position: fixed;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+    animation: slideDown 0.5s ease; /* Slide down animation */
 }
 
 .header-container {
-    max-width: 100%;
+    max-width: var(--container-width);
     margin: 0 auto;
     padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 
 .header .logo img {
@@ -66,15 +65,16 @@ body {
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius);
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .navbar a:hover {
     background-color: rgba(37, 99, 235, 0.1);
     color: var(--text);
+    transform: scale(1.05); /* Scale effect on hover */
 }
 
-/* Original Button Styles */
+/* Button Styles */
 .button {
     display: inline-flex;
     align-items: center;
@@ -88,6 +88,7 @@ body {
     cursor: pointer;
     transform: translateY(0);
     box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
 .button:hover {
@@ -102,6 +103,7 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    padding: 0.5rem;
 }
 
 .menu-toggle .bar {
@@ -124,13 +126,14 @@ body {
     z-index: 1001;
     padding-top: 2rem;
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Added opacity transition */
 }
 
 .side-menu.active {
     transform: translateX(0);
     display: flex;
     flex-direction: column;
+    opacity: 1; /* Set opacity when active */
 }
 
 .side-menu .close-btn {
@@ -155,11 +158,12 @@ body {
     color: var(--primary-light);
     font-size: 1.2rem;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
 .side-menu ul li a:hover {
     color: var(--text);
+    transform: translateX(5px); /* Slide effect on hover */
 }
 
 /* Responsive adjustments */
@@ -169,5 +173,17 @@ body {
     }
     .menu-toggle {
         display: block;
+    }
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
