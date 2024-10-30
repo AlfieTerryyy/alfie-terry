@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Populate desktop navigation
             if (navbar) {
                 navbar.innerHTML = links.map(link => 
-                    `<a href="${link.url}">${link.text}</a>`
+                    `<a href="${link.url}" style="flex-grow: 1; text-align: center;">${link.text}</a>`
                 ).join('');
             }
             
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (navbar) {
                 navbar.innerHTML = fallbackLinks.map(link => 
-                    `<a href="${link.url}">${link.text}</a>`
+                    `<a href="${link.url}" style="flex-grow: 1; text-align: center;">${link.text}</a>`
                 ).join('');
             }
             
@@ -86,5 +86,14 @@ document.addEventListener('DOMContentLoaded', () => {
             sideMenu.classList.remove('active');
             menuToggle?.classList.remove('active');
         }
+        // Make navbar full-width on resize
+        if (navbar) {
+            navbar.style.width = `${window.innerWidth}px`;
+        }
     });
+
+    // Initial navbar width
+    if (navbar) {
+        navbar.style.width = `${window.innerWidth}px`;
+    }
 });
