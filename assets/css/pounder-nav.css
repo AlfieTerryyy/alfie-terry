@@ -50,10 +50,7 @@ body {
     align-items: center;
 }
 
-.header .logo img {
-    max-height: 50px;
-}
-
+/* Navbar Links */
 .navbar {
     display: flex;
     align-items: center;
@@ -71,7 +68,7 @@ body {
 .navbar a:hover {
     background-color: rgba(37, 99, 235, 0.1);
     color: var(--text);
-    transform: scale(1.05); /* Scale effect on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
 }
 
 /* Button Styles */
@@ -134,6 +131,7 @@ body {
     display: flex;
     flex-direction: column;
     opacity: 1; /* Set opacity when active */
+    animation: slideIn 0.5s ease forwards; /* Slide in animation */
 }
 
 .side-menu .close-btn {
@@ -152,6 +150,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.side-menu ul li {
+    opacity: 0;
+    animation: fadeIn 0.5s forwards; /* Fade in for each list item */
 }
 
 .side-menu ul li a {
@@ -184,6 +187,26 @@ body {
     }
     to {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
     }
 }
