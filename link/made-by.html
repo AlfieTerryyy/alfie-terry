@@ -5,36 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
     <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #60a5fa;
+            --dark: #0f172a;
+            --dark-lighter: #1e293b;
+            --text: #f1f5f9;
+            --border-radius: 12px;
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f0f0f0;
-            font-family: Arial, sans-serif;
+            background-color: var(--dark);
+            font-family: 'Roboto', Arial, sans-serif;
+            color: var(--text);
             text-align: center;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: var(--dark-lighter);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            animation: slideUp 0.5s ease-in-out;
         }
+
+        @keyframes slideUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
         .logo {
-            max-width: 100px;
+            max-width: 120px;
             margin-bottom: 20px;
+            animation: grow 1s ease-in-out;
         }
+
+        @keyframes grow {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
         .button {
-            background-color: #007BFF;
-            color: white;
-            padding: 10px 20px;
+            background-color: var(--primary);
+            color: var(--text);
+            padding: 12px 24px;
             border: none;
-            border-radius: 5px;
+            border-radius: var(--border-radius);
             cursor: pointer;
             font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         .button:hover {
-            background-color: #0056b3;
+            background-color: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2),
+                        0 4px 6px -2px rgba(37, 99, 235, 0.1);
         }
     </style>
     <meta http-equiv="refresh" content="3; url=https://www.canva.com/design/DAGStzhwA8E/QouL06hEmBZsXRReBC3T4w/view?utm_content=DAGStzhwA8E&utm_campaign=designshare&utm_medium=link&utm_source=editor">
