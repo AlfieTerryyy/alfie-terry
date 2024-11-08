@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enhanced Flashcard System</title>
+<style>
+    /* Reset Styles */
+    *, *::before, *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: #0f172a;
+        color: #f1f5f9;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: clamp(2rem, 4vw, 3rem);
+        background: linear-gradient(90deg, #2563eb, #60a5fa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 20px;
+    }
+
+    .button {
+        padding: 0.75rem 1.5rem;
+        background-color: #2563eb;
+        color: #fff;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        margin-bottom: 20px;
+        transition: transform 0.2s ease;
+    }
+
+    .button:hover {
+        background-color: #60a5fa;
+        transform: translateY(-3px);
+    }
+
+    .flashcards-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
+        max-width: 900px;
+    }
+
+    .flashcard {
+        background: #1e293b;
+        border: 1px solid rgba(37, 99, 235, 0.3);
+        border-radius: 12px;
+        padding: 20px;
+        cursor: pointer;
+        perspective: 1000px;
+        position: relative;
+        width: 100%;
+        max-width: 300px;
+        min-height: 150px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .flashcard:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+    }
+
+    .front, .back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        backface-visibility: hidden;
+        padding: 20px;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        line-height: 1.4;
+        overflow-y: auto;
+    }
+
+    .front {
+        background: rgba(15, 23, 42, 0.9);
+    }
+
+    .back {
+        background: rgba(37, 99, 235, 0.3);
+        transform: rotateY(180deg);
+    }
+
+    .flashcard.flipped .front {
+        transform: rotateY(180deg);
+    }
+
+    .flashcard.flipped .back {
+        transform: rotateY(0deg);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 600px) {
+        .flashcards-container {
+            gap: 10px;
+        }
+
+        .flashcard {
+            max-width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+    <h1>Flashcard System</h1>
+    <a href="https://alfieterry.co.uk" class="button">Go to alfieterry.co.uk</a>
+
+    <div class="flashcards-container">
+        <!-- Flashcard 1 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="front">What is HTML?</div>
+            <div class="back">HyperText Markup Language is the standard language for creating web pages.</div>
+        </div>
+        
+        <!-- Flashcard 2 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="front">What is CSS?</div>
+            <div class="back">Cascading Style Sheets describe the look and formatting of a document written in HTML.</div>
+        </div>
+        
+        <!-- Flashcard 3 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="front">What is JavaScript?</div>
+            <div class="back">JavaScript is a versatile programming language used to create dynamic content on websites.</div>
+        </div>
+        
+        <!-- Flashcard 4 -->
+        <div class="flashcard" onclick="this.classList.toggle('flipped')">
+            <div class="front">What does DOM stand for?</div>
+            <div class="back">The Document Object Model is a programming interface for web documents.</div>
+        </div>
+    </div>
+</body>
+</html>
