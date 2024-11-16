@@ -100,6 +100,12 @@
       color: var(--primary-light);
       text-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
     }
+
+    .score-timer {
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+    }
   </style>
 </head>
 <body>
@@ -127,11 +133,18 @@
       <button onclick="checkAnswer()">Check Answer</button>
       <p id="result" class="result"></p>
     </div>
+
+    <div class="score-timer">
+      <p id="score">Score: 0</p>
+    </div>
   </div>
 
   <script>
     let currentQuestion = {};
     let correctAnswer;
+    let score = 0;
+    let timeLeft = 60;
+    let timerInterval;
 
     // Function to generate a new multiplication question
     function generateQuestion() {
@@ -152,6 +165,8 @@
         resultElement.textContent = "Correct! 🎉";
         resultElement.classList.add("correct");
         resultElement.classList.remove("incorrect");
+        score++;
+        document.getElementById("score").innerText = `Score: ${score}`;
       } else {
         resultElement.textContent = `Incorrect. The correct answer is ${correctAnswer}.`;
         resultElement.classList.add("incorrect");
@@ -163,10 +178,35 @@
       generateQuestion();
     }
 
-    // Listen for changes to the select menu and generate the first question
-    document.getElementById("tableSelect").addEventListener("change", generateQuestion);
+    // Function to update the timer
+    function updateTimer() {
+      const minutes = Math.floor(timeLeft / 60);
+      const seconds = timeLeft % 60;
+      document.getElementById("timer").innerText = `Time: ${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+      if (timeLeft === 0) {
+        clearInterval(timerInterval);
+        alert("Time's up! Your final score is: " + score);
+      } else {
+        timeLeft--;
+      }
+    }
 
-    // Generate the first question on page load
+    // Listen for changes to the select menu and generate the first question
+    document.getElementById("tableSelect").addEventListener("change", function() {
+      generateQuestion();
+      if (timerInterval) clearInterval(timerInterval); // Reset timer if changed
+      timeLeft = 60; // Reset time
+      timerInterval = setInterval(updateTimer, 1000); // Start timer
+    });
+
+    // Listen for 'Enter' key press to check answer
+    document.getElementById("answer").addEventListener("keydown", function(event) {
+      if (event.key === "Enter") {
+        checkAnswer();
+      }
+    });
+
+    // Generate the first question and start the timer on page load
     window.onload = generateQuestion;
   </script>
 </body>
