@@ -142,21 +142,24 @@ body {
     transform: translateY(-5px);
 }
 footer {
-    background: var(--dark-lighter);
-    padding: 2rem 1rem;
-    text-align: center;
-    border-top: 1px solid rgba(37, 99, 235, 0.1);
-    position: relative; /* Changed to relative for better flow */
+    background: none; /* Remove background for a clean look */
+    padding: 1rem 0; /* Minimal padding */
+    text-align: center; /* Center-align the text */
+    color: var(--text-muted); /* Use muted text color */
+    font-size: 0.875rem; /* Small, non-distracting font size */
+    border-top: 1px solid rgba(37, 99, 235, 0.1); /* Subtle border */
+    margin-top: auto; /* Stick to the bottom of the page */
     width: 100%; /* Full width */
-    margin-top: auto; /* Ensures footer pushes down */
 }
-footer::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent 70%);
-    pointer-events: none;
+footer a {
+    color: var(--primary-light); /* Make links consistent with the theme */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
 }
+footer a:hover {
+    color: var(--primary); /* Highlight on hover */
+}
+
 .button {
     display: inline-flex;
     align-items: center;
