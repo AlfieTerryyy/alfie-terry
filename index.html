@@ -3,12 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to The alfieterry.co.uk, showcasing the work and services of Alfie Terry.">
-    <meta name="keywords" content="Alfie Terry, AlfieTerry, alfie terry, alfieterry, alfieterry.co, alfieterry.com, alfieterry.co.uk, alfieterry.co.u, alfieterry.co.eu, web development, computer science, services, contact">
+    <meta name="description" content="Welcome to the official website of Alfie Terry, showcasing his work and expertise in Computer Science and web development.">
+    <meta name="keywords" content="Alfie Terry, web development, computer science, technology, projects, contact, DnD, portfolio">
     <meta name="author" content="Alfie Terry">
     <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png" />
-    <title>ASAT - home</title>
-    <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
+    <meta property="og:title" content="Alfie Terry | Developer Portfolio">
+    <meta property="og:description" content="Explore the work and projects of Alfie Terry, a budding Computer Science enthusiast and developer.">
+    <meta property="og:url" content="https://alfieterry.co.uk">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alfie Terry | Developer Portfolio">
+    <meta name="twitter:description" content="Explore the work and projects of Alfie Terry, a budding Computer Science enthusiast and developer.">
+    <meta name="twitter:image" content="https://alfieterry.co.uk/assets/images/pre.png">
+    <meta name="robots" content="index, follow">
+    <title>Alfie Terry - Home</title>
+    <link rel="icon" href="https://alfieterry.co.uk/assets/images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
@@ -17,75 +25,78 @@
     <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
     <style>
         body {
-            overflow: auto !important; /* Ensure scrolling is enabled */
+            overflow: auto !important;
         }
     </style>
 </head>
 <body>
-    <!-- Start nav -->
     <header class="header">
         <div class="header-container">
             <div class="logo">
                 <a href="/">
-                    <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo">
+                    <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
                 </a>
             </div>
-            <!-- Desktop Navigation -->
             <nav class="navbar" id="navbar">
-                <!-- Navigation links will be inserted here by JavaScript -->
+                <!-- Navigation links inserted by JavaScript -->
             </nav>
-            <!-- Mobile Menu Toggle -->
             <button class="menu-toggle" id="menuToggle">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </button>
-            <!-- Mobile Side Menu -->
             <div class="side-menu" id="sideMenu">
                 <button class="close-btn" id="closeBtn">×</button>
                 <ul id="navList">
-                    <!-- Mobile navigation links will be inserted here by JavaScript -->
+                    <!-- Mobile navigation links inserted here -->
                 </ul>
             </div>
         </div>
     </header>
-    <!-- End nav -->
     <main>
         <section id="home" class="hero">
-            <h1>Welcome to alfieterry.co.uk,</h1>
-            <p>The One Space For All My Work.</p>
-            <a href="about.html" class="button" style="color: #ffffff;">Learn More</a>
+            <h1>Welcome to AlfieTerry.co.uk</h1>
+            <p>Your go-to space for all my projects and work.</p>
+            <a href="about.html" class="button">Learn More</a>
         </section>
-        </a>
+
         <section class="grid-container">
-    
             <article class="grid-item">
                 <h2>About Me</h2>
-                <p>I'm Alfie Terry, a Computer Science enthusiast.</p>
+                <p>I'm Alfie Terry, a Computer Science enthusiast with a passion for web development and technology.</p>
             </article>
+
             <article class="grid-item">
                 <h2>DnD</h2>
-                <p>Go check out my DnD experience at <a href="https://alfieterry.co.uk/dnd/" style="color: #1e90ff;">this page</a></p>
+                <p>Check out my DnD experience at <a href="https://alfieterry.co.uk/dnd/" class="highlight">this page</a>.</p>
             </article>
+
             <article class="grid-item">
                 <h2>Contact Me</h2>
-                <p>Reach out to me at <a href="mailto:talfie7243@gmail.com" style="color: #1e90ff;">talfie7243@gmail.com</a>.</p>
+                <p>Reach out to me at <a href="mailto:talfie7243@gmail.com" class="highlight">talfie7243@gmail.com</a>.</p>
             </article>
-       
-<h2>my current PC specs ( laptop )</h2>
-<a title="My Pc specs"><img src="https://www.pcgamebenchmark.com/signature/intel-core-i3-1215u/8gb/intel-uhd-graphics-620/forum.png"></a>
 
-
+            <article class="grid-item">
+                <h2>My PC Specs (Laptop)</h2>
+                <a href="https://www.pcgamebenchmark.com/signature/intel-core-i3-1215u/8gb/intel-uhd-graphics-620/forum.png" title="My PC Specs">
+                    <img src="https://www.pcgamebenchmark.com/signature/intel-core-i3-1215u/8gb/intel-uhd-graphics-620/forum.png" alt="PC Specifications">
+                </a>
+            </article>
         </section>
     </main>
+
     <footer class="footer">
         <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
+
     <div id="scroll-progress"></div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
+        document.addEventListener('DOMContentLoaded', function () {
             document.body.style.overflow = 'auto';
         });
+
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
