@@ -241,3 +241,195 @@ footer a:hover {
         scroll-behavior: auto !important;
     }
 }
+
+
+
+
+
+
+
+
+/* Cards Section */
+.card {
+    background: rgba(30, 41, 59, 0.85);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: var(--primary-light);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Code Box Section */
+.code-box {
+    background: #1e293b;
+    border: 1px solid rgba(37, 99, 235, 0.4);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    font-family: 'Courier New', monospace;
+    color: #f1f5f9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-x: auto;
+    transition: transform 0.3s ease;
+}
+
+.code-box:hover {
+    transform: scale(1.02);
+}
+
+/* Quiz Section */
+.quiz-container {
+    background: rgba(15, 23, 42, 0.85);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    max-width: 700px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.quiz-container:hover {
+    transform: scale(1.02);
+}
+
+.quiz-question {
+    margin-bottom: 1.25rem;
+    font-size: 1.5rem;
+    color: var(--text);
+    font-weight: bold;
+}
+
+.quiz-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quiz-options li {
+    background: var(--primary-light);
+    color: #fff;
+    margin: 0.75rem 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.quiz-options li:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+}
+
+.quiz-options li:active {
+    transform: translateY(2px);
+}
+
+/* Form Section */
+.form-container {
+    max-width: 600px;
+    margin: 3rem auto;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 2.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.form-container:hover {
+    transform: scale(1.02);
+}
+
+.form-container input,
+.form-container textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    background: #1e293b;
+    color: #f1f5f9;
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.form-container input:focus,
+.form-container textarea:focus {
+    border-color: var(--primary);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.3);
+}
+
+.form-container input[type="submit"] {
+    background: var(--primary);
+    color: #fff;
+    padding: 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.form-container input[type="submit"]:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+}
+
+.form-container input[type="submit"]:active {
+    transform: translateY(2px);
+}
+
+/* Smooth Transitions for Interactive Elements */
+.card, .code-box, .quiz-container, .form-container {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.card:hover, .code-box:hover, .quiz-container:hover, .form-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Accessibility Enhancements for Focus States */
+:focus-visible {
+    outline: 3px solid var(--primary-light);
+    outline-offset: 2px;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .card, .code-box, .quiz-container, .form-container {
+        padding: 1rem;
+    }
+
+    .form-container input[type="submit"], .quiz-options li {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .card h3 {
+        font-size: 1.25rem;
+    }
+
+    .quiz-container {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
