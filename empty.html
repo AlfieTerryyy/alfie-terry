@@ -3,47 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to alfieterry.co.uk, showcasing the work and services of Alfie Terry.">
-    <meta name="keywords" content="Alfie Terry, web development, computer science, services, contact, portfolio, alfieterry.co.uk">
+    <meta name="description" content="Welcome to Alfie Terry's portfolio showcasing work and services in web development and design.">
+    <meta name="keywords" content="Alfie Terry, web development, design, services, portfolio, AlfieTerry">
     <meta name="author" content="Alfie Terry">
-    <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png" />
-    <meta property="og:title" content="ASAT - Title">
-    <meta property="og:description" content="Welcome to alfieterry.co.uk">
-    <title>ASAT - Title</title>
-    <link rel="icon" href="https://alfieterry.co.uk/assets/images/logo.png" type="image/x-icon">
+    <meta property="og:title" content="Alfie Terry - Web Developer and Designer | Portfolio">
+    <meta property="og:description" content="Explore the portfolio of Alfie Terry, offering web development, design, and creative services.">
+    <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png">
+    <meta property="og:url" content="https://alfieterry.co.uk">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AlfieTerry">
+    <meta name="theme-color" content="#2563eb"> <!-- Optimize color theme -->
+    <title>Alfie Terry - Web Developer and Designer | Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
     
-    <!-- Preconnect to improve loading of external resources -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://alfieterry.co.uk" crossorigin>
-
-    <!-- Stylesheets (minified for performance) -->
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.min.css">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.min.css">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.min.css">
-    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.min.css">
-
-    <!-- Scripts (deferred to improve performance) -->
-    <script src="https://alfieterry.co.uk/assets/js/main.min.js" defer></script>
-    <script src="https://alfieterry.co.uk/assets/js/nav.min.js" defer></script>
-
-    <style>
-        body {
-            overflow: auto !important; /* Ensure scrolling is enabled */
-        }
-    </style>
+    <!-- Preload important assets for faster page load -->
+    <link rel="preload" href="https://alfieterry.co.uk/assets/css/pounder.css" as="style">
+    <link rel="preload" href="https://alfieterry.co.uk/assets/js/main.js" as="script">
+    <link rel="preload" href="https://alfieterry.co.uk/assets/js/nav.js" as="script">
     
-    <!-- Lazy Loading for Images -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const images = document.querySelectorAll('img');
-            images.forEach(image => {
-                image.setAttribute('loading', 'lazy');
-            });
-        });
+    <!-- Optimized Stylesheets -->
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
+    
+    <!-- External JavaScript files -->
+    <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
+    <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
+    
+
+    <!-- Structured Data (Schema Markup) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alfie Terry",
+      "url": "https://alfieterry.co.uk",
+      "image": "https://alfieterry.co.uk/assets/images/logo.png",
+      "sameAs": [
+        "https://twitter.com/AlfieTerry",
+        "https://www.linkedin.com/in/alfie-terry"
+      ],
+      "jobTitle": "Web Developer and Designer",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Alfie Terry's Web Solutions"
+      }
+    }
     </script>
 
-    <!-- Enable Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://alfieterry.co.uk; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' data:;">
 </head>
 <body>
     <!-- Start nav -->
@@ -54,67 +62,86 @@
                     <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo" loading="lazy">
                 </a>
             </div>
-            <!-- Desktop Navigation -->
             <nav class="navbar" id="navbar">
-                <!-- Navigation links will be inserted here by JavaScript -->
+                <!-- Navigation links dynamically inserted by JS -->
             </nav>
-            <!-- Mobile Menu Toggle -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+            <button class="menu-toggle" id="menuToggle">
                 <div class="bar"></div>
                 <div class="bar"></div>
                 <div class="bar"></div>
             </button>
-            <!-- Mobile Side Menu -->
             <div class="side-menu" id="sideMenu">
-                <button class="close-btn" id="closeBtn" aria-label="Close menu">×</button>
+                <button class="close-btn" id="closeBtn">×</button>
                 <ul id="navList">
-                    <!-- Mobile navigation links will be inserted here by JavaScript -->
+                    <!-- Mobile navigation links inserted here by JS -->
                 </ul>
             </div>
         </div>
     </header>
     <!-- End nav -->
+    
     <main>
-        <!-- Hero Section -->
         <section id="home" class="hero">
-            <h1>Welcome to alfieterry.co.uk</h1>
-            <p>Explore the world of web development and digital services.</p>
+            <h1>Welcome to Alfie Terry's Website</h1>
+            <p>Discover my work, services, and creative projects.</p>
             <a href="about" class="button">Learn More</a>
         </section>
         
-        <!-- Grid Section -->
+        <!-- Cards Section -->
         <section class="grid-container">
-            <article class="grid-item">
-                <h2>Web Development</h2>
-                <p>Creating beautiful, functional websites.</p>
+            <article class="grid-item card">
+                <h3>Project 1</h3>
+                <p>Details about Project 1.</p>
             </article>
-            <article class="grid-item">
-                <h2>Computer Science</h2>
-                <p>Exploring new tech and innovations.</p>
+            <article class="grid-item card">
+                <h3>Project 2</h3>
+                <p>Details about Project 2.</p>
             </article>
-            <article class="grid-item">
-                <h2>Consulting</h2>
-                <p>Providing expert advice for businesses.</p>
+            <article class="grid-item card">
+                <h3>Project 3</h3>
+                <p>Details about Project 3.</p>
             </article>
+        </section>
+
+        <!-- Code Box Section -->
+        <section>
+            <h2>Code Example</h2>
+            <div class="code-box">
+                <code>
+                    &lt;div class="container"&gt;
+                    &lt;h1&gt;Hello, World!&lt;/h1&gt;
+                    &lt;/div&gt;
+                </code>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section class="quiz-container">
+            <h2>Test Your Knowledge</h2>
+            <div class="quiz-question">What is the capital of France?</div>
+            <ul class="quiz-options">
+                <li>Berlin</li>
+                <li>Paris</li>
+                <li>Madrid</li>
+            </ul>
+        </section>
+
+        <!-- Form Section -->
+        <section>
+            <h2>Contact Me</h2>
+            <div class="form-container">
+                <form action="#" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                    <input type="submit" value="Send Message">
+                </form>
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
+    <footer>
+        <p>&copy; 2024 Alfie Terry. All rights reserved.</p>
     </footer>
-
-    <!-- Scroll Progress -->
-    <div id="scroll-progress"></div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.body.style.overflow = 'auto';
-
-            // Update the current year
-            const currentYear = new Date().getFullYear();
-            document.getElementById('current-year').textContent = currentYear;
-        });
-    </script>
 </body>
 </html>
