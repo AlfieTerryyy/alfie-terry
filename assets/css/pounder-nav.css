@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 :root {
@@ -17,6 +17,7 @@
     --text-muted: #94a3b8;
     --border-radius: 12px;
     --container-width: 1200px;
+    --gradient-bg: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
 }
 
 body {
@@ -25,8 +26,9 @@ body {
     line-height: 1.6;
     color: var(--text);
     background: var(--dark);
-    background-image: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+    background-image: var(--gradient-bg);
     display: block;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 /* Navbar Styling */
@@ -38,7 +40,8 @@ body {
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(37, 99, 235, 0.1);
-    animation: slideDown 0.5s ease; /* Slide down animation */
+    animation: slideDown 0.5s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15); /* Added subtle shadow */
 }
 
 .header-container {
@@ -63,15 +66,16 @@ body {
     color: var(--primary-light);
     text-decoration: none;
     font-weight: 500;
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.25rem;
     border-radius: var(--border-radius);
-    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, letter-spacing 0.2s ease;
 }
 
 .navbar a:hover {
     background-color: rgba(37, 99, 235, 0.1);
     color: var(--text);
-    transform: scale(1.05); /* Scale effect on hover */
+    transform: scale(1.05);
+    letter-spacing: 0.5px; /* Slight spacing effect on hover */
 }
 
 /* Button Styles */
@@ -88,12 +92,12 @@ body {
     cursor: pointer;
     transform: translateY(0);
     box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease, scale 0.2s ease-in-out;
 }
 
 .button:hover {
     background: var(--primary-light);
-    transform: translateY(-2px);
+    transform: translateY(-2px) scale(1.05);
     box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
 }
 
@@ -126,14 +130,14 @@ body {
     z-index: 1001;
     padding-top: 2rem;
     transform: translateX(100%);
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Added opacity transition */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease;
 }
 
 .side-menu.active {
     transform: translateX(0);
     display: flex;
     flex-direction: column;
-    opacity: 1; /* Set opacity when active */
+    opacity: 1;
 }
 
 .side-menu .close-btn {
@@ -163,7 +167,7 @@ body {
 
 .side-menu ul li a:hover {
     color: var(--text);
-    transform: translateX(5px); /* Slide effect on hover */
+    transform: translateX(5px);
 }
 
 /* Responsive adjustments */
@@ -186,4 +190,18 @@ body {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+/* Scroll Progress Bar */
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    z-index: 1001;
+    transition: width 0.2s ease;
 }
