@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://alfieterry.co.uk/sitemap.xml
