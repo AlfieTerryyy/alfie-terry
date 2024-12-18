@@ -434,7 +434,7 @@ footer a:hover {
     }
 }
 
-/* Scoped section styling */
+/* Scoped showcase section styling */
 .showcase {
     background: var(--dark);
     padding: 4rem 1rem;
@@ -454,15 +454,15 @@ footer a:hover {
     text-transform: uppercase;
 }
 
-/* Card Layout */
-.showcase .cards {
+/* Cards Layout */
+.showcase .showcase-cards {
     display: flex;
     justify-content: center;
     gap: 2rem;
     flex-wrap: wrap;
 }
 
-.showcase .card {
+.showcase .showcase-card {
     background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
     border-radius: var(--border-radius);
@@ -473,38 +473,38 @@ footer a:hover {
     transition: transform 0.3s ease;
 }
 
-.showcase .card:hover {
+.showcase .showcase-card:hover {
     transform: translateY(-5px);
 }
 
 /* Card Header */
-.showcase .card-header {
+.showcase .showcase-card-header {
     display: flex;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
-.showcase .card-icon {
+.showcase .showcase-card-icon {
     font-size: 3rem;
     color: var(--primary-light);
 }
 
 /* Card Content */
-.showcase .card h3 {
+.showcase .showcase-card h3 {
     font-size: 1.5rem;
     color: var(--text);
     margin: 0;
 }
 
-.showcase .card p {
+.showcase .showcase-card p {
     color: var(--text-muted);
     font-size: 1rem;
     margin-bottom: 1.5rem;
 }
 
-/* Button Styling */
-.showcase .button {
+/* Button Styling (only affects showcase section) */
+.showcase .showcase-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -518,7 +518,7 @@ footer a:hover {
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.showcase .button:hover {
+.showcase .showcase-button:hover {
     background: var(--primary-light);
     transform: translateY(-2px);
     box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
