@@ -41,17 +41,6 @@ async function loadMoreContent() {
 window.addEventListener('scroll', handleScroll);
 
 
-document.querySelectorAll('.showcase .showcase-button').forEach(button => {
-    button.addEventListener('click', (e) => {
-        e.preventDefault();
-        const cardType = button.closest('.showcase-card').querySelector('h3').textContent;
-        alert(`You clicked on the ${cardType} section!`);
-    });
-});
-
-
-
-
 
 
 
