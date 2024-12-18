@@ -1,21 +1,16 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    // Create the maintenance overlay HTML
     const maintenanceMessage = `
-        <div class="maintenance-overlay">
+        <div class="maintenance-overlay" role="alert" aria-live="assertive">
             <div class="maintenance-container">
                 <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="alfieterry.co.uk Logo" class="logo">
                 <h1>alfieterry.co.uk is temporarily down for maintenance</h1>
-                <p>We will be back in 2-3 months. Come back soon!</p>
+                <p>Come back soon!</p>
             </div>
         </div>
     `;
 
-    // Append the message to the body of the page
     document.body.insertAdjacentHTML('beforeend', maintenanceMessage);
 
-    // Add styles directly into the document
     const style = document.createElement('style');
     style.innerHTML = `
         :root {
@@ -55,6 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
             text-align: center;
             flex-direction: column;
             animation: fadeIn 1s ease-in-out;
+            will-change: opacity;
         }
 
         @keyframes fadeIn {
@@ -67,9 +63,10 @@ document.addEventListener("DOMContentLoaded", function () {
             padding: 30px;
             border-radius: var(--border-radius);
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            animation: slideUp 0.5s ease-in-out;
+            animation: fadeIn 0.5s ease-in-out, slideUp 0.5s ease-in-out;
             max-width: 90%;
             width: 500px;
+            will-change: transform, opacity;
         }
 
         @keyframes slideUp {
@@ -81,6 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
             max-width: 120px;
             margin-bottom: 20px;
             animation: grow 1s ease-in-out;
+            will-change: transform, opacity;
         }
 
         @keyframes grow {
@@ -96,6 +94,39 @@ document.addEventListener("DOMContentLoaded", function () {
         p {
             font-size: 1.1rem;
             margin-bottom: 2rem;
+        }
+
+        /* Additional styling */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: var(--primary-light);
+            text-decoration: underline;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: var(--text);
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--primary-light);
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-light);
         }
     `;
     document.head.appendChild(style);
