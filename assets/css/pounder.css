@@ -434,4 +434,94 @@ footer a:hover {
     }
 }
 
+/* Scoped section styling */
+.showcase {
+    background: var(--dark);
+    padding: 4rem 1rem;
+    text-align: center;
+}
+
+.showcase-container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+/* Title Styling */
+.showcase .section-title {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+/* Card Layout */
+.showcase .cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.showcase .card {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    width: 280px;
+    text-align: left;
+    border: 1px solid rgba(37, 99, 235, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.showcase .card:hover {
+    transform: translateY(-5px);
+}
+
+/* Card Header */
+.showcase .card-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.showcase .card-icon {
+    font-size: 3rem;
+    color: var(--primary-light);
+}
+
+/* Card Content */
+.showcase .card h3 {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin: 0;
+}
+
+.showcase .card p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Button Styling */
+.showcase .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 9999px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.showcase .button:hover {
+    background: var(--primary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
+}
+
 
