@@ -196,3 +196,14 @@ body {
 .header.hidden {
     transform: translateY(0); /* Removed translateY(-100%) to keep it always at top */
 }
+.header {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0; /* Ensure it stays at the left side */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional: adds shadow for better visibility */
+}
