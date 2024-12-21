@@ -37,3 +37,16 @@ window.addEventListener('scroll', () => {
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative values
 });
 
+let lastScrollTop = 0;
+const header = document.querySelector('.header');
+window.addEventListener('scroll', () => {
+    // Keep the header at the top
+    // You can remove the hide on scroll logic if you want it always visible
+    // const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    // if (scrollTop > lastScrollTop) {
+    //     header.classList.add('hidden');
+    // } else {
+    //     header.classList.remove('hidden');
+    // }
+    // lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative values
+});
