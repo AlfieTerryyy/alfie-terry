@@ -67,18 +67,47 @@
             <code class="code-box"> 
 import subprocess
 import sys
+import os
 def install(package):
     subprocess.check_call([sys.executable, "-m", "pip", "install", package])
 try:
     import webview
+    import ctypes
+    import requests
 except ImportError:
     print("App Failed to start...")
-    print("installing dependencys...")
+    print("Installing dependencies...")
     install("pywebview")
+    install("requests")
+def download_icon():
+    logo_url = "https://alfieterry.co.uk/assets/images/logo.png"
+    logo_path = os.path.join(os.getcwd(), "logo.ico")
+    if not os.path.exists(logo_path):
+        try:
+            response = requests.get(logo_url)
+            if response.status_code == 200:
+                with open(logo_path, "wb") as out_file:
+                    out_file.write(response.content)
+                print("Icon downloaded successfully.")
+            else:
+                print(f"Failed to download icon. Status code: {response.status_code}")
+        except requests.exceptions.RequestException as e:
+            print(f"Error during download: {e}")
+    return logo_path
+def set_window_icon():
+    if sys.platform.startswith("win"):
+        logo_path = download_icon()
+        myappid = "alfieterry.app"
+        ctypes.windll.shell32.SetCurrentProcessExplicitAppUserModelID(myappid)
+        return logo_path
+    return None
 def open_html_auto():
-    webview.create_window("App", "./index.html")
+    logo_path = set_window_icon()
+    webview.create_window("alfieterry.co.uk", "https://alfieterry.co.uk/index.html")
     webview.start()
 open_html_auto()
+
+
             </code>
         </section>
 
