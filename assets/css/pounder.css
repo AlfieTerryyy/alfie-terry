@@ -243,3 +243,29 @@ footer a:hover {
         transform: scale(1);
     }
 }
+
+
+.codebox {
+    background: var(--dark-lighter);
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    overflow-x: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 1.5rem 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.codebox:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.codebox pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
