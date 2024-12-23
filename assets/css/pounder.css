@@ -243,25 +243,3 @@ footer a:hover {
         transform: scale(1);
     }
 }
-
-
-.code-box {
-    background: rgba(15, 23, 42, 0.9);
-    color: #f1f5f9;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 0.9rem;
-    padding: 1rem;
-    border: 1px solid rgba(37, 99, 235, 0.3);
-    border-radius: var(--border-radius);
-    overflow-x: auto;
-    white-space: pre;
-    text-align: left;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    tab-size: 4;
-}
-
-.code-box:hover {
-    box-shadow: 0 8px 15px rgba(37, 99, 235, 0.5);
-    transform: scale(1.01);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
