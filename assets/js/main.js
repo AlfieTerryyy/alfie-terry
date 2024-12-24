@@ -41,6 +41,20 @@ async function loadMoreContent() {
 window.addEventListener('scroll', handleScroll);
 
 
+document.addEventListener("DOMContentLoaded", () => {
+    const root = document.documentElement;
+
+    window.addEventListener("scroll", () => {
+        const scrollTop = window.scrollY;
+        const scrollHeight = document.body.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / scrollHeight) * 100;
+
+        // Dynamically change scrollbar color based on scroll position
+        const hue = Math.round((scrollPercent / 100) * 240); // Range: 0-240 (blue to red)
+        root.style.setProperty("--primary-light", `hsl(${hue}, 90%, 60%)`);
+        root.style.setProperty("--primary", `hsl(${hue}, 90%, 50%)`);
+    });
+});
 
 
 
