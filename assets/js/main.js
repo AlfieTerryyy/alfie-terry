@@ -37,32 +37,22 @@ async function loadMoreContent() {
     container.appendChild(newContent);
 }
 
-// Event listener for scroll
-window.addEventListener('scroll', handleScroll);
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.documentElement;
+    const scrollbarThumb = document.querySelector("::-webkit-scrollbar-thumb");
 
     window.addEventListener("scroll", () => {
         const scrollTop = window.scrollY;
         const scrollHeight = document.body.scrollHeight - window.innerHeight;
         const scrollPercent = (scrollTop / scrollHeight) * 100;
 
-        // Dynamically change scrollbar color based on scroll position
+        // Dynamically change scrollbar thumb's glow color
         const hue = Math.round((scrollPercent / 100) * 240); // Range: 0-240 (blue to red)
-        root.style.setProperty("--primary-light", `hsl(${hue}, 90%, 60%)`);
-        root.style.setProperty("--primary", `hsl(${hue}, 90%, 50%)`);
+        const dynamicColor = `hsl(${hue}, 90%, 50%)`;
+
+        root.style.setProperty("--primary-light", dynamicColor);
     });
 });
-
-
-
-
-
-
-
-
 
 
 
