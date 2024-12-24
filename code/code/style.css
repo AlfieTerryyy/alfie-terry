@@ -91,29 +91,3 @@ iframe {
     border-radius: 8px;
 }
 
-/* Custom Scrollbar Styling */
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-}
-
-::-webkit-scrollbar-track {
-    background: rgba(15, 23, 42, 0.8); /* Matches dark theme */
-    border-radius: 6px;
-    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3); /* Adds depth */
-}
-
-::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, var(--primary-light), var(--primary));
-    border-radius: 6px;
-    box-shadow: inset 0 0 5px rgba(37, 99, 235, 0.4); /* Glow effect */
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
-    box-shadow: 0 0 10px rgba(37, 99, 235, 0.6); /* Stronger glow on hover */
-}
-
-::-webkit-scrollbar-corner {
-    background: transparent; /* Removes default corner styling */
-}
