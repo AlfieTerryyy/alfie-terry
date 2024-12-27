@@ -15,11 +15,10 @@
         <div class="header-container">
             <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="60"></a>
             <nav class="navbar" id="navbar">
-                                <ul>
+                <ul>
                     <li><a href="https://alfieterry.co.uk/">Home</a></li>
                     <li><a href="https://alfieterry.co.uk/about">About</a></li>
                 </ul>
-
             </nav>
         </div>
     </header>
@@ -32,9 +31,38 @@
         <h1>404</h1>
         <p>Not Found.</p>
         <br>
-        <p>This page is like your last Tinder date—didn’t show up. Let’s swipe back to safety!</p>
+        <p class="insult"></p> <!-- Insult placeholder -->
         <br>
         <a href="https://alfieterry.co.uk">Return to Home</a>
     </div>
+
+    <!-- JavaScript for dynamic roasting -->
+    <script>
+        // Define the roasts for various error codes
+        const roasts = [
+            "404 Error: Congratulations! You've found the only page that doesn't care about your existence.",
+            "404 Error: You’ve reached a dead end... much like your sense of direction. Nice try though!",
+            "404 Error: This page is as lost as your attention span. Try again, if you dare.",
+            "404 Error: This page went on vacation, just like your common sense. Come back when you’re ready."
+          "404 Error: This page is like your last Tinder date—didn’t show up. Let’s swipe back to safety!"
+        ];
+
+        // Function to randomly select a roast
+        function getRandomRoast() {
+            const randomIndex = Math.floor(Math.random() * roasts.length);
+            return roasts[randomIndex];
+        }
+
+        // Function to replace the <p class="insult"> with a random roast
+        function roastUser() {
+            const insultElement = document.querySelector('.insult');
+            if (insultElement) {
+                insultElement.innerText = getRandomRoast(); // Set the random roast text
+            }
+        }
+
+        // Run the roast function when the page loads
+        document.addEventListener("DOMContentLoaded", roastUser);
+    </script>
 </body>
 </html>
