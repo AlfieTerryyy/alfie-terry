@@ -26,11 +26,39 @@
     <!-- 400 Error Page Content -->
     <div class="error-container">
         <div class="logo">
-            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Retro Logo" width="100">
+            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="100">
         </div>
         <h1>400</h1>
-        <p>Bad Request. The server could not understand the request due to invalid syntax.</p>
+        <p>Bad Request.</p>
+        <br>
+        <p class="insult">Insult will appear here.</p> <!-- Insult placeholder -->
+        <br>
         <a href="https://alfieterry.co.uk">Return to Home</a>
     </div>
+
+    <!-- JavaScript for dynamic roasting -->
+    <script>
+        // Define the roasts for various error codes
+        const roasts = {
+            "400": [
+                "400 Error: You tried to make a request, but it looks like your brain sent the wrong signal.",
+                "400 Error: This request is as confused as your attempt to follow directions.",
+                "400 Error: Invalid request! Maybe next time, check if your keyboard is on.",
+                "400 Error: Bad request, worse decision-making."
+            ]
+        };
+
+        // Function to randomly select a roast for a specific error code
+        function getRandomRoast(errorCode) {
+            const randomIndex = Math.floor(Math.random() * roasts[errorCode].length);
+            return roasts[errorCode][randomIndex];
+        }
+
+        // Display the random roast for the error code
+        document.addEventListener("DOMContentLoaded", function() {
+            const insultElement = document.querySelector('.insult');
+            insultElement.innerText = getRandomRoast("400");
+        });
+    </script>
 </body>
 </html>
