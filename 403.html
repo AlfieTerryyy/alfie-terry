@@ -10,28 +10,37 @@
     <script src="https://alfieterry.co.uk/assets/js/error.js"></script>
 </head>
 <body>
-    <!-- Header Section -->
     <header class="header">
         <div class="header-container">
             <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="60"></a>
-            <nav class="navbar" id="navbar">
-                               <ul>
-                    <li><a href="https://alfieterry.co.uk/">Home</a></li>
-                    <li><a href="https://alfieterry.co.uk/about">About</a></li>
-                </ul>
-
-            </nav>
         </div>
     </header>
 
-    <!-- 403 Error Page Content -->
     <div class="error-container">
-        <div class="logo">
-            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Retro Logo" width="100">
-        </div>
         <h1>403</h1>
-        <p>Forbidden. You do not have permission to access this resource.</p>
+        <p>Forbidden.</p>
+        <p class="insult">Insult will appear here.</p>
         <a href="https://alfieterry.co.uk">Return to Home</a>
     </div>
+
+    <script>
+        const roasts = {
+            "403": [
+                "403 Error: You're not welcome here! Try knocking, but we still won’t let you in.",
+                "403 Error: No access for you! Maybe next time.",
+                "403 Error: Forbidden! Your invite was lost in the mail.",
+                "403 Error: Nice try! But no, this is not your page."
+            ]
+        };
+        function getRandomRoast(errorCode) {
+            const randomIndex = Math.floor(Math.random() * roasts[errorCode].length);
+            return roasts[errorCode][randomIndex];
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const insultElement = document.querySelector('.insult');
+            insultElement.innerText = getRandomRoast("403");
+        });
+    </script>
 </body>
 </html>
