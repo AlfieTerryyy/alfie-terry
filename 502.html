@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>502 Bad Gateway - ASAT</title>
+    <link rel="icon" type="image/x-icon" href="https://alfieterry.co.uk/assets/images/logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/error.css">
+    <script src="https://alfieterry.co.uk/assets/js/error.js"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="60"></a>
+        </div>
+    </header>
+
+    <div class="error-container">
+        <h1>502</h1>
+        <p>Bad Gateway.</p>
+        <p class="insult">Insult will appear here.</p>
+        <a href="https://alfieterry.co.uk">Return to Home</a>
+    </div>
+
+    <script>
+        const roasts = {
+            "502": [
+                "502 Error: Bad Gateway. The server’s having a tantrum, and it’s not your fault... kind of.",
+                "502 Error: Something’s gone wrong, but it’s not on your end. Promise.",
+                "502 Error: Gateway’s broke! Try again in a bit, we’ll fix it.",
+                "502 Error: Server is unhappy. Give it a moment to cool down."
+            ]
+        };
+        function getRandomRoast(errorCode) {
+            const randomIndex = Math.floor(Math.random() * roasts[errorCode].length);
+            return roasts[errorCode][randomIndex];
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const insultElement = document.querySelector('.insult');
+            insultElement.innerText = getRandomRoast("502");
+        });
+    </script>
+</body>
+</html>
