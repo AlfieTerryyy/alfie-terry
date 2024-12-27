@@ -15,11 +15,10 @@
         <div class="header-container">
             <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="60"></a>
             <nav class="navbar" id="navbar">
-                            <ul>
+                <ul>
                     <li><a href="https://alfieterry.co.uk/">Home</a></li>
                     <li><a href="https://alfieterry.co.uk/about">About</a></li>
                 </ul>
-
             </nav>
         </div>
     </header>
@@ -27,11 +26,39 @@
     <!-- 401 Error Page Content -->
     <div class="error-container">
         <div class="logo">
-            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Retro Logo" width="100">
+            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="100">
         </div>
         <h1>401</h1>
-        <p>Unauthorized. Access is denied due to invalid credentials.</p>
+        <p>Unauthorized.</p>
+        <br>
+        <p class="insult">Insult will appear here.</p> <!-- Insult placeholder -->
+        <br>
         <a href="https://alfieterry.co.uk">Return to Home</a>
     </div>
+
+    <!-- JavaScript for dynamic roasting -->
+    <script>
+        // Define the roasts for various error codes
+        const roasts = {
+            "401": [
+                "401 Error: Unauthorized access... much like your attempt to use my Wi-Fi without permission.",
+                "401 Error: Not allowed! Maybe if you ask nicely, the internet might let you in.",
+                "401 Error: Unauthorized? Are you sure you even know what you're doing here?",
+                "401 Error: This page requires a password, and you clearly forgot the combination to your brain."
+            ]
+        };
+
+        // Function to randomly select a roast for a specific error code
+        function getRandomRoast(errorCode) {
+            const randomIndex = Math.floor(Math.random() * roasts[errorCode].length);
+            return roasts[errorCode][randomIndex];
+        }
+
+        // Display the random roast for the error code
+        document.addEventListener("DOMContentLoaded", function() {
+            const insultElement = document.querySelector('.insult');
+            insultElement.innerText = getRandomRoast("401");
+        });
+    </script>
 </body>
 </html>
