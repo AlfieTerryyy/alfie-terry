@@ -15,11 +15,10 @@
         <div class="header-container">
             <a href="https://alfieterry.co.uk" class="logo"><img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="60"></a>
             <nav class="navbar" id="navbar">
-                                <ul>
+                <ul>
                     <li><a href="https://alfieterry.co.uk/">Home</a></li>
                     <li><a href="https://alfieterry.co.uk/about">About</a></li>
                 </ul>
-
             </nav>
         </div>
     </header>
@@ -27,14 +26,39 @@
     <!-- 500 Error Page Content -->
     <div class="error-container">
         <div class="logo">
-            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Retro Logo" width="100">
+            <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="100">
         </div>
         <h1>500</h1>
-        <p>Internal Server Error. </p>
+        <p>Internal Server Error.</p>
         <br>
-        <p>Something broke on our end. Our servers are currently in therapy, talking through their issues. We’ll have them fixed and feeling better soon!</p>
+        <p class="insult">Insult will appear here.</p> <!-- Insult placeholder -->
         <br>
         <a href="https://alfieterry.co.uk">Return to Home</a>
     </div>
+
+    <!-- JavaScript for dynamic roasting -->
+    <script>
+        // Define the roasts for various error codes
+        const roasts = {
+            "500": [
+                "500 Error: Oops! The server had a panic attack. It needs a moment to collect itself.",
+                "500 Error: Something went wrong... maybe the server just realized it was working for you.",
+                "500 Error: Internal Server Error? More like internal crisis. The server is having a meltdown.",
+                "500 Error: The server is down. It's probably hiding from your terrible decision-making."
+            ]
+        };
+
+        // Function to randomly select a roast for a specific error code
+        function getRandomRoast(errorCode) {
+            const randomIndex = Math.floor(Math.random() * roasts[errorCode].length);
+            return roasts[errorCode][randomIndex];
+        }
+
+        // Display the random roast for the error code
+        document.addEventListener("DOMContentLoaded", function() {
+            const insultElement = document.querySelector('.insult');
+            insultElement.innerText = getRandomRoast("500");
+        });
+    </script>
 </body>
 </html>
