@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Enable scrolling
     document.body.style.overflow = 'auto';
     console.log('Scrolling enabled');
-    
+
     // Update scroll progress bar
     const scrollProgress = document.getElementById('scroll-progress');
     window.addEventListener('scroll', () => {
@@ -39,38 +39,39 @@ async function loadMoreContent() {
 
 document.addEventListener("DOMContentLoaded", () => {
     const root = document.documentElement;
-    const scrollbarThumb = document.querySelector("::-webkit-scrollbar-thumb");
 
     window.addEventListener("scroll", () => {
         const scrollTop = window.scrollY;
         const scrollHeight = document.body.scrollHeight - window.innerHeight;
         const scrollPercent = (scrollTop / scrollHeight) * 100;
 
-        // Dynamically change scrollbar thumb's glow color
+        // Dynamically change a scrollbar-specific color variable
         const hue = Math.round((scrollPercent / 100) * 240); // Range: 0-240 (blue to red)
         const dynamicColor = `hsl(${hue}, 90%, 50%)`;
 
-        root.style.setProperty("--primary-light", dynamicColor);
+        // Use a scrollbar-specific variable
+        root.style.setProperty("--scrollbar-color", dynamicColor);
     });
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+    const footer = document.querySelector('footer');
+    const content = document.querySelector('main'); // Assuming main holds the rest of the page content
 
+    const adjustFooter = () => {
+        const footerHeight = footer.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const contentHeight = content.offsetHeight;
 
-
-document.addEventListener("DOMContentLoaded", () => {
-    window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const scrollHeight = document.body.scrollHeight - window.innerHeight;
-        const scrollPercent = (scrollTop / scrollHeight) * 100;
-
-        // Dynamically change scrollbar thumb's glow color
-        const hue = Math.round((scrollPercent / 100) * 240); // Range: 0-240 (blue to red)
-        const dynamicColor = `hsl(${hue}, 90%, 50%)`;
-
-        // Apply color only to the scrollbar thumb
-        const scrollbarThumb = document.querySelector("::-webkit-scrollbar-thumb");
-        if (scrollbarThumb) {
-            scrollbarThumb.style.backgroundColor = dynamicColor;
+        // If the content height is less than the viewport height, adjust the footer
+        if (contentHeight + footerHeight < windowHeight) {
+            content.style.minHeight = `${windowHeight - footerHeight}px`;
+        } else {
+            content.style.minHeight = 'auto';
         }
-    });
+    };
+
+    // Adjust footer position on page load and resize
+    adjustFooter();
+    window.addEventListener('resize', adjustFooter);
 });
