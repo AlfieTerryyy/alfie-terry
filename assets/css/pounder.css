@@ -247,7 +247,7 @@ footer a:hover {
 /* Universal Custom Scrollbar Styling */
 html {
     scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: var(--primary-light) rgba(15, 23, 42, 0.8);
+    scrollbar-color: var(--primary-light) rgba(15, 23, 42, 0.8); /* Only affects scrollbar */
 }
 
 ::-webkit-scrollbar {
