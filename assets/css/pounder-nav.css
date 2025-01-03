@@ -1,4 +1,4 @@
-/* General Reset */
+
 *,
 *::before,
 *::after {
@@ -8,7 +8,6 @@
     transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Variables */
 :root {
     --primary: #2563eb;
     --primary-light: #60a5fa;
@@ -20,7 +19,7 @@
     --container-width: 1200px;
 }
 
-/* Body Styles */
+
 body {
     min-height: 100vh;
     font-family: 'Roboto', system-ui, -apple-system, sans-serif;
@@ -32,7 +31,7 @@ body {
     scroll-behavior: smooth;
 }
 
-/* Header Styles */
+
 .header {
     background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(10px);
@@ -56,12 +55,11 @@ body {
     align-items: center;
 }
 
-/* Logo */
 .header .logo img {
     max-height: 50px;
 }
 
-/* Navbar */
+
 .navbar {
     display: flex;
     align-items: center;
@@ -88,7 +86,7 @@ body {
     transform: scale(1.05);
 }
 
-/* Button */
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -110,7 +108,6 @@ body {
     box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
 }
 
-/* Menu Toggle for Mobile */
 .menu-toggle {
     display: none;
     background: none;
@@ -127,7 +124,6 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Side Menu for Mobile */
 .side-menu {
     display: none;
     position: fixed;
@@ -165,7 +161,6 @@ body {
     transform: translateX(5px);
 }
 
-/* Close Button */
 .close-btn {
     background: var(--primary);
     color: var(--text);
@@ -186,7 +181,6 @@ body {
     transform: scale(1.1);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .navbar {
         display: none;
@@ -196,7 +190,6 @@ body {
     }
 }
 
-/* Scroll Header Logic */
 .header.hidden {
     transform: translateY(-100%);
 }
