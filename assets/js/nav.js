@@ -4,38 +4,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('closeBtn');
     const navList = document.getElementById('navList');
     const navbar = document.getElementById('navbar');
-
-    // Toggle side menu visibility
     menuToggle.addEventListener('click', () => {
         sideMenu.classList.toggle('active');
         menuToggle.classList.toggle('active');
     });
-
-    // Close side menu
     closeBtn.addEventListener('click', () => {
         sideMenu.classList.remove('active');
     });
-
-    // Fetch and populate navigation links dynamically
     const loadNavLinks = async () => {
         try {
-            const response = await fetch('https://alfieterry.co.uk/easier/nav-links.json');
+            const response = await fetch('./easier/nav-links.json');
             if (!response.ok) throw new Error('Failed to fetch navigation');
 
             const links = await response.json();
             const linkElements = links.map(link => `<li><a href="${link.url}">${link.text}</a></li>`).join('');
-
-            // Populate both desktop and mobile nav
             navbar.innerHTML = `<ul>${linkElements}</ul>`;
             navList.innerHTML = linkElements;
         } catch (error) {
             console.error('Error loading navigation:', error);
         }
     };
-
     loadNavLinks();
-
-    // Show or hide header on scroll
     let lastScrollTop = 0;
     const header = document.querySelector('.header');
     window.addEventListener('scroll', () => {
@@ -45,6 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             header.classList.remove('hidden');
         }
-        lastScrollTop = Math.max(scrollTop, 0); // Prevent negative values
+        lastScrollTop = Math.max(scrollTop, 0);
     });
 });
