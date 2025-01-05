@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Redirecting...</title>
     <style>
+        /* Reset Styles */
         * {
             margin: 0;
             padding: 0;
@@ -25,7 +26,7 @@
             position: absolute;
             width: 200vmax;
             height: 200vmax;
-            background: conic-gradient(from 0deg, #ff0000, #ff4747, #ff0000, #ff0000);
+            background: conic-gradient(from 0deg, #4400ff, #6347ff, #2600ff, #1900ff);
             animation: swirl 4s linear infinite, shrink 4s ease-in-out forwards;
             border-radius: 50%;
         }
@@ -72,11 +73,12 @@
 </head>
 <body>
     <div class="swirl"></div>
-    <img class="logo" src="https://alfieterry.co.uk/assets/images/logo.png" alt="Logo" width="200">
+    <img class="logo" src="https://alfieterry.co.uk/assets/images/logo.png" alt="Your Logo" width="200">
     <script>
+        // Redirect after animation
         setTimeout(() => {
-            window.location.href = "https://alfieterry.co.uk/home";
-        }, 6000);
+            window.location.href = "https://alfieterry.co.uk/";
+        }, 6000); // Adjust timing as per animation duration
     </script>
 </body>
 </html>
