@@ -148,6 +148,23 @@
                 transform: translateX(-100%);
             }
         }
+
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            .pulsing-circle {
+                width: 100px;
+                height: 100px;
+            }
+
+            .scrolling-text {
+                font-size: 1rem;
+                padding: 0.3rem 0;
+            }
+
+            .scrolling-text span {
+                animation-duration: 7s; /* Faster scroll for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
