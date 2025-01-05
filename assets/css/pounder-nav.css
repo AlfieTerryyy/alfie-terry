@@ -58,21 +58,6 @@ body {
     max-height: 50px;
 }
 
-.header .logo {
-    position: relative;
-    display: inline-block;
-    transition: transform 0.3s ease;
-}
-
-.header .logo img {
-    max-height: 50px;
-    transition: transform 0.3s ease;
-}
-
-.header .logo:hover img {
-    transform: scale(1.1);
-}
-
 .navbar {
     display: flex;
     align-items: center;
