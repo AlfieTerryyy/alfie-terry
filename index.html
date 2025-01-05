@@ -3,24 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Redirecting...</title>
     <style>
+        /* Universal Reset */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Fullscreen Centering */
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background: radial-gradient(circle, #0f172a, #1e293b);
-            overflow: hidden;
             font-family: Arial, sans-serif;
+            overflow: hidden;
         }
 
+        /* Animated Swirl */
         .swirl {
             position: absolute;
             width: 200vmax;
@@ -31,25 +35,26 @@
         }
 
         @keyframes swirl {
-            0% {
+            from {
                 transform: rotate(0deg);
             }
-            100% {
+            to {
                 transform: rotate(360deg);
             }
         }
 
         @keyframes shrink {
-            0% {
+            from {
                 width: 200vmax;
                 height: 200vmax;
             }
-            100% {
+            to {
                 width: 0;
                 height: 0;
             }
         }
 
+        /* Logo Animation */
         .logo {
             position: absolute;
             opacity: 0;
@@ -58,22 +63,27 @@
         }
 
         @keyframes grow {
-            0% {
+            from {
                 transform: scale(0);
                 opacity: 0;
             }
-            100% {
+            to {
                 transform: scale(1);
                 opacity: 1;
             }
         }
-
     </style>
 </head>
 <body>
+    <!-- Swirl Animation -->
     <div class="swirl"></div>
+
+    <!-- Logo -->
     <img class="logo" src="https://alfieterry.co.uk/assets/images/logo.png" alt="Your Logo" width="200">
+
+    <!-- Redirect Script -->
     <script>
+        // Redirect after 6 seconds
         setTimeout(() => {
             window.location.href = "https://alfieterry.co.uk/home";
         }, 6000);
