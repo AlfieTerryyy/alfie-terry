@@ -1,210 +1,139 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Redirecting...</title>
+    <meta name="description" content="Welcome to the official website of Alfie Terry, showcasing his work and expertise in Computer Science and web development.">
+    <meta name="keywords" content="Alfie Terry, web development, computer science, technology, projects, contact, DnD, portfolio">
+    <meta name="author" content="Alfie Terry">
+    <meta property="og:image" content="https://alfieterry.co.uk/assets/images/pre.png" />
+    <meta property="og:title" content="Alfie Terry | Developer Portfolio">
+    <meta property="og:description" content="Explore the work and projects of Alfie Terry, a budding Computer Science enthusiast and developer.">
+    <meta property="og:url" content="https://alfieterry.co.uk">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alfie Terry | Developer Portfolio">
+    <meta name="twitter:description" content="Explore the work and projects of Alfie Terry, a budding Computer Science enthusiast and developer.">
+    <meta name="twitter:image" content="https://alfieterry.co.uk/assets/images/pre.png">
+    <meta name="robots" content="index, follow">
+    <title>Alfie Terry - Home</title>
+    <link rel="icon" href="https://alfieterry.co.uk/assets/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
+    
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Alfie Terry",
+            "url": "https://alfieterry.co.uk",
+            "image": "https://alfieterry.co.uk/assets/images/pre.png",
+            "sameAs": [
+                "https://www.linkedin.com/in/alfie-terry",
+                "https://twitter.com/alfieterry"
+            ],
+            "jobTitle": "Web Developer",
+            "worksFor": {
+                "@type": "Organization",
+                "name": "Self"
+            },
+        }
+    </script>
+
+
+    <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
+    <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
+    
+
     <style>
-        /* Universal Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Fullscreen Centering */
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: radial-gradient(circle, #0f172a, #1e293b);
-            font-family: Arial, sans-serif;
-            overflow: hidden;
-        }
-
-        /* Animated Swirl */
-        .swirl {
-            position: absolute;
-            width: 200vmax;
-            height: 200vmax;
-            background: conic-gradient(from 0deg, #00ffbf, #ff4747, #d9ff00, #006eff);
-            animation: swirl 4s linear infinite, shrink 4s ease-in-out forwards;
-            border-radius: 50%;
-        }
-
-        @keyframes swirl {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes shrink {
-            from {
-                width: 200vmax;
-                height: 200vmax;
-            }
-            to {
-                width: 0;
-                height: 0;
-            }
-        }
-
-        /* Pulsating Glow */
-        .pulsing-circle {
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: rgba(37, 99, 235, 0.5);
-            border-radius: 50%;
-            animation: pulse 2s infinite alternate;
-        }
-
-        @keyframes pulse {
-            from {
-                transform: scale(1);
-                opacity: 1;
-            }
-            to {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-
-        /* Twinkling Stars */
-        .stars {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle 3s infinite;
-        }
-
-        @keyframes twinkle {
-            0%, 100% {
-                opacity: 0.5;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
-
-        /* Logo Animation */
-        .logo {
-            position: absolute;
-            opacity: 0;
-            transform: scale(0);
-            animation: grow 2s ease-in-out 4s forwards;
-        }
-
-        @keyframes grow {
-            from {
-                transform: scale(0);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        /* Scrolling Text */
-        .scrolling-text {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.8);
-            color: #fff;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 0.5rem 0;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .scrolling-text span {
-            display: inline-block;
-            animation: scroll 10s linear infinite;
-        }
-
-        @keyframes scroll {
-            from {
-                transform: translateX(100%);
-            }
-            to {
-                transform: translateX(-100%);
-            }
-        }
-
-        /* Mobile Optimization */
-        @media (max-width: 768px) {
-            .pulsing-circle {
-                width: 100px;
-                height: 100px;
-            }
-
-            .scrolling-text {
-                font-size: 1rem;
-                padding: 0.3rem 0;
-            }
-
-            .scrolling-text span {
-                animation-duration: 7s; /* Faster scroll for smaller screens */
-            }
+            overflow: auto !important;
         }
     </style>
-</head>
+    
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQTWNQ7SGW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PQTWNQ7SGW');
+</script>
+<script data-cfasync="false" nonce="ee15244b-c06d-4f1d-8ba3-dbebc24e01ae">try{(function(w,d){!function(df,dg,dh,di){if(df.zaraz)console.error("zaraz is loaded twice");else{df[dh]=df[dh]||{};df[dh].executed=[];df.zaraz={deferred:[],listeners:[]};df.zaraz._v="5847";df.zaraz._n="ee15244b-c06d-4f1d-8ba3-dbebc24e01ae";df.zaraz.q=[];df.zaraz._f=function(dj){return async function(){var dk=Array.prototype.slice.call(arguments);df.zaraz.q.push({m:dj,a:dk})}};for(const dl of["track","set","debug"])df.zaraz[dl]=df.zaraz._f(dl);df.zaraz.init=()=>{var dm=dg.getElementsByTagName(di)[0],dn=dg.createElement(di),dp=dg.getElementsByTagName("title")[0];dp&&(df[dh].t=dg.getElementsByTagName("title")[0].text);df[dh].x=Math.random();df[dh].w=df.screen.width;df[dh].h=df.screen.height;df[dh].j=df.innerHeight;df[dh].e=df.innerWidth;df[dh].l=df.location.href;df[dh].r=dg.referrer;df[dh].k=df.screen.colorDepth;df[dh].n=dg.characterSet;df[dh].o=(new Date).getTimezoneOffset();if(df.dataLayer)for(const dq of Object.entries(Object.entries(dataLayer).reduce(((dr,ds)=>({...dr[1],...ds[1]})),{})))zaraz.set(dq[0],dq[1],{scope:"page"});df[dh].q=[];for(;df.zaraz.q.length;){const dt=df.zaraz.q.shift();df[dh].q.push(dt)}dn.defer=!0;for(const du of[localStorage,sessionStorage])Object.keys(du||{}).filter((dw=>dw.startsWith("_zaraz_"))).forEach((dv=>{try{df[dh]["z_"+dv.slice(7)]=JSON.parse(du.getItem(dv))}catch{df[dh]["z_"+dv.slice(7)]=du.getItem(dv)}}));dn.referrerPolicy="origin";dn.src="/cdn-cgi/zaraz/s.js?z="+btoa(encodeURIComponent(JSON.stringify(df[dh])));dm.parentNode.insertBefore(dn,dm)};["complete","interactive"].includes(dg.readyState)?zaraz.init():df.addEventListener("DOMContentLoaded",zaraz.init)}}(w,d,"zarazData","script");window.zaraz._p=async cY=>new Promise((cZ=>{if(cY){cY.e&&cY.e.forEach((c$=>{try{const da=d.querySelector("script[nonce]"),db=da?.nonce||da?.getAttribute("nonce"),dc=d.createElement("script");db&&(dc.nonce=db);dc.innerHTML=c$;dc.onload=()=>{d.head.removeChild(dc)};d.head.appendChild(dc)}catch(dd){console.error(`Error executing script: ${c$}\n`,dd)}}));Promise.allSettled((cY.f||[]).map((de=>fetch(de[0],de[1]))))}cZ()}));zaraz._p({"e":["(function(w,d){})(window,document)"]});})(window,document)}catch(e){throw fetch("/cdn-cgi/zaraz/t"),e;};</script></head>
+
 <body>
-    <!-- Swirl Animation -->
-    <div class="swirl"></div>
+    <!-- Header Section with Navigation -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="/" title="Alfie Terry | Home">
+                    <img src="https://alfieterry.co.uk/assets/images/logo.png" alt="Alfie Terry Logo">
+                </a>
+            </div>
+            <nav class="navbar" id="navbar" aria-label="Main navigation">
+                <!-- Mobile Navigation Links will be injected by JavaScript -->
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <div class="side-menu" id="sideMenu">
+                <button class="close-btn" id="closeBtn" aria-label="Close navigation menu">×</button>
+                <ul id="navList">
+                    <!-- Mobile navigation links inserted here -->
+                </ul>
+            </div>
+        </div>
+    </header>
 
-    <!-- Pulsing Circle -->
-    <div class="pulsing-circle"></div>
+    <!-- Main Content -->
+    <main>
+        <section id="home" class="hero">
+            <h1>Welcome to AlfieTerry.co.uk</h1>
+            <p>Your go-to space for all my projects and work.</p>
+            <a href="https://sites.alfieterry.co.uk/" class="button" title="Sites">Get your own site!</a>
+        </section>
 
-    <!-- Stars -->
-    <div class="stars">
-        <!-- JavaScript will dynamically add stars -->
-    </div>
+        <!-- Grid Section with Article and Links -->
+        <section class="grid-container">
+            <article class="grid-item">
+                <h2><a href="about.html" class="highlight" title="Learn about Alfie Terry and the site">About Me And The Site</a></h2>
+                <p>I'm Alfie Terry, a Computer Science enthusiast with a passion for web development and technology.</p>
+            </article>
 
-    <!-- Logo -->
-    <img class="logo" src="https://alfieterry.co.uk/assets/images/logo.png" alt="Your Logo" width="200">
+            <article class="grid-item">
+                <h2><a href="https://alfieterry.co.uk/contact" class="highlight" title="Contact">Contact Me</a></h2>
+                <p>Reach out to me at <a href="mailto:contact@alfieterry.co.uk" class="highlight" title="Email Alfie Terry">contact@alfieterry.co.uk</a>.</p>
 
-    <!-- Scrolling Text -->
-    <div class="scrolling-text">
-        <span>In support of Auntie Molly</span>
-    </div>
+            </article>
+          </section>
 
-    <!-- Redirect Script -->
-    <script>
-        // Create twinkling stars dynamically
-        const starsContainer = document.querySelector('.stars');
-        for (let i = 0; i < 100; i++) {
-            const star = document.createElement('div');
-            star.className = 'star';
-            star.style.top = Math.random() * 100 + 'vh';
-            star.style.left = Math.random() * 100 + 'vw';
-            star.style.animationDelay = Math.random() * 3 + 's';
-            star.style.animationDuration = 2 + Math.random() * 2 + 's';
-            starsContainer.appendChild(star);
-        }
 
-        // Redirect after 6 seconds
-        setTimeout(() => {
-            window.location.href = "https://alfieterry.co.uk/home";
-        }, 6000);
+      
+      
+      
+    </main>
+
+    <!-- Footer Section with Current Year -->
+    <footer class="footer">
+        <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- JavaScript for Dynamic Elements -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.body.style.overflow = 'auto';
+        });
+
+        // Dynamically display the current year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
