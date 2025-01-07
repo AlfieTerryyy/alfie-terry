@@ -21,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const links = await response.json();
             const linkElements = links.map(link => {
-                // Ensure the URL starts with "https://"
                 let fixedUrl = link.url;
                 if (!fixedUrl.startsWith('http://') && !fixedUrl.startsWith('https://')) {
                     fixedUrl = 'https://' + fixedUrl;
