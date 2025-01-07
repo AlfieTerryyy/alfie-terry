@@ -13,9 +13,7 @@
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-nav.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/pounder-btns.css">
     <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/cookie-popup.css">
-
-   <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/form.css">
-
+    <link rel="stylesheet" href="https://alfieterry.co.uk/assets/css/form.css">
     <script src="https://alfieterry.co.uk/assets/js/main.js" defer></script>
     <script src="https://alfieterry.co.uk/assets/js/nav.js" defer></script>
     <style>
@@ -25,14 +23,13 @@
     </style>
 
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PQTWNQ7SGW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PQTWNQ7SGW');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PQTWNQ7SGW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PQTWNQ7SGW');
+    </script>
 </head>
 <body>
     <!-- Start nav -->
@@ -64,56 +61,42 @@
     </header>
     <!-- End nav -->
     <main>
-        
-        
-     
-        
-        
-    
-         <section id="home" class="hero">
+        <section id="home" class="hero">
             <h1>Contact...</h1>
-            <p>Email me at contact@alfieterry.co.uk or use the Form below.</p>
+            <p>Email me at contact@alfieterry.co.uk or use the form below.</p>
         </section>
-<section id="contact" class="contact-section">
-    <h2>Contact Me</h2>
-    <form action="https://formspree.io/f/xwpewdjk" method="POST" class="contact-form">
 
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Your name.." required>
+        <section id="contact" class="contact-section">
+            <h2>Contact Me</h2>
+            <!-- Contact form using FormSubmit service -->
+            <form action="https://formsubmit.co/contact@alfieterry.co.uk" method="POST" class="contact-form">
+                <!-- Hidden fields for configurations -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://alfieterry.co.uk/thank-you.html">
+                
+                <!-- Form Fields -->
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name.." required>
 
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Your email.." required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email.." required>
 
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Your subject.." required>
 
-        <label for="subject">Subject</label>
-        <input type="text" id="subject" name="subject" placeholder="Your subject.." required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message.." rows="6" required></textarea>
 
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Your message.." rows="6" required></textarea>
-
-        <button type="submit">Send Message</button>
-    </form>
-</section>
-                        </ul>
-                    </div>
-                </div>
+                <button type="submit">Send Message</button>
             </form>
         </section>
-    </div>
-</div>
-
-
-        
-        
-        
-        
-        
     </main>
+
     <footer class="footer">
         <p>© <span id="current-year"></span> Alfie Terry. All rights reserved.</p>
     </footer>
     <div id="scroll-progress"></div>
+
     <script>
         document.addEventListener('DOMContentLoaded', (event) => {
             document.body.style.overflow = 'auto';
