@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     const loadNavLinks = async () => {
         try {
-            const response = await fetch('./easier/nav-links.json');
+            const response = await fetch('https://alfieterry.co.uk/easier/nav-links.json');
             if (!response.ok) throw new Error('Failed to fetch navigation');
 
             const links = await response.json();
