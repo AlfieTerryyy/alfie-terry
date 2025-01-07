@@ -21,8 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const links = await response.json();
             const linkElements = links.map(link => {
-                // Ensure the href attributes are correct
-                const fixedUrl = link.url.replace(/\/+/g, '/'); // Fix multiple slashes
+                // Ensure the URL starts with "https://"
+                let fixedUrl = link.url;
+                if (!fixedUrl.startsWith('http://') && !fixedUrl.startsWith('https://')) {
+                    fixedUrl = 'https://' + fixedUrl;
+                }
                 return `<li><a href="${fixedUrl}">${link.text}</a></li>`;
             }).join('');
             
