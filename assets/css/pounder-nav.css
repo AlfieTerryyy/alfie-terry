@@ -27,6 +27,7 @@ body {
     background-image: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
     display: block;
     scroll-behavior: smooth;
+    align-items: right;
 }
 
 .header {
@@ -34,6 +35,7 @@ body {
     backdrop-filter: blur(10px);
     width: 100%;
     position: fixed;
+    align-items: right;
     top: 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(37, 99, 235, 0.1);
@@ -48,31 +50,35 @@ body {
 .header-container {
     max-width: var(--container-width);
     margin: 0 auto;
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: right;
     width: 100%;
 }
 
 .header .logo img {
-    max-height: 50px;
+    max-height: 40px;
+    align-items: left;
 }
 
 .navbar {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex: 1;
+    align-items: right;
+    justify-content: right;
+    gap: 0.5rem;
+    flex: 0.5;
+  
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 0.5rem;
     margin: 0;
     padding: 0;
+    justify-content: right;
+  
 }
 
 .navbar a {
@@ -92,8 +98,8 @@ body {
 
 .button {
     display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    align-items: right;
+    justify-content: right;
     padding: 0.75rem 1.5rem;
     background: var(--primary);
     color: white;
@@ -156,6 +162,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    justify-content: 
 }
 
 .side-menu ul li a {
@@ -191,7 +198,7 @@ body {
     transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1080px) {
     .navbar {
         display: none;
     }
