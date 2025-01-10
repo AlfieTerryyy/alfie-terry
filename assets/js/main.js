@@ -73,3 +73,20 @@ async function fetchMoreContent() {
     content.innerHTML = '<p>More content loaded...</p>';
     return content;
 }
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const footerItems = document.querySelectorAll('.footer-dark .item');
+  const maxHeight = Math.max(...Array.from(footerItems).map(item => item.offsetHeight));
+
+  footerItems.forEach(item => {
+    item.style.height = `${maxHeight}px`;
+  });
+});
+
+
+
