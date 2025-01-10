@@ -52,6 +52,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .header .logo img {
@@ -61,7 +62,9 @@ body {
 .navbar {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 1rem;
+    flex: 1;
 }
 
 .navbar ul {
