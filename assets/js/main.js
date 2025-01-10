@@ -1,34 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Enable scrolling and log to the console
     document.body.style.overflow = 'auto';
     console.log('Scrolling enabled');
+
+    // Scroll progress bar functionality
     const scrollProgress = document.getElementById('scroll-progress');
-    window.addEventListener('scroll', () => {
-        if (!scrollProgress) return;
-        const winScroll = document.documentElement.scrollTop;
-        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-        const scrolled = (winScroll / height) * 100;
-        scrollProgress.style.width = scrolled + '%';
-    });
+    if (scrollProgress) {
+        window.addEventListener('scroll', () => {
+            const winScroll = document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            scrollProgress.style.width = `${scrolled}%`;
+        });
+    }
+
+    // Set the current year in footer or other places
     const yearElement = document.getElementById('current-year');
     if (yearElement) {
         yearElement.textContent = new Date().getFullYear();
     }
-});
-function handleScroll() {
-    const scrollThreshold = 100;
-    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - scrollThreshold;
-    if (nearBottom) {
-        loadMoreContent();
-    }
-}
-async function loadMoreContent() {
-    const container = document.querySelector('.grid-container');
-    const newContent = await fetchMoreContent();
-    container.appendChild(newContent);
-}
-document.addEventListener("DOMContentLoaded", () => {
+
+    // Dynamic scrollbar color based on scroll position
     const root = document.documentElement;
-    window.addEventListener("scroll", () => {
+    window.addEventListener('scroll', () => {
         const scrollTop = window.scrollY;
         const scrollHeight = document.body.scrollHeight - window.innerHeight;
         const scrollPercent = (scrollTop / scrollHeight) * 100;
@@ -36,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const dynamicColor = `hsl(${hue}, 90%, 50%)`;
         root.style.setProperty("--scrollbar-color", dynamicColor);
     });
-});
-document.addEventListener('DOMContentLoaded', () => {
+
+    // Adjust footer position based on content height
     const footer = document.querySelector('footer');
     const content = document.querySelector('main');
     const adjustFooter = () => {
@@ -52,10 +46,30 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     adjustFooter();
     window.addEventListener('resize', adjustFooter);
+
+    // Scroll to load more content when near the bottom
+    const scrollThreshold = 100;
+    const nearBottom = () => {
+        return window.innerHeight + window.scrollY >= document.body.offsetHeight - scrollThreshold;
+    };
+
+    if (nearBottom()) {
+        loadMoreContent();
+    }
 });
 
+// Load more content logic
+async function loadMoreContent() {
+    const container = document.querySelector('.grid-container');
+    const newContent = await fetchMoreContent();
+    container.appendChild(newContent);
+}
 
-
-
-
-
+// Simulated function to fetch more content
+async function fetchMoreContent() {
+    // Placeholder logic for fetching new content
+    const content = document.createElement('div');
+    content.classList.add('new-content');
+    content.innerHTML = '<p>More content loaded...</p>';
+    return content;
+}
