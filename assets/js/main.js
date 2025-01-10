@@ -53,3 +53,21 @@ document.addEventListener('DOMContentLoaded', () => {
     adjustFooter();
     window.addEventListener('resize', adjustFooter);
 });
+
+
+
+
+
+
+
+// LOAD -----------------------------------------------------------------------------------------------------
+// Set the duration you want for the spinner to stay visible (e.g., 2 minutes = 120000 ms)
+const spinnerDuration = 1200; // 2 minutes
+
+// Show the spinner initially
+document.addEventListener('DOMContentLoaded', function() {
+  setTimeout(function() {
+    const spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'none';
+  }, spinnerDuration);
+});
