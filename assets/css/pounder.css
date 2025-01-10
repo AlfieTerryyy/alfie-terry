@@ -275,9 +275,22 @@ html {
 
 /* Footer Section - AlfieTerry.co.uk */
 .footer-dark {
-  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
   color: var(--text); /* Use the site's defined text color */
   background-color: var(--dark); /* Use the site's dark background */
+}
+
+.footer-dark .content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: var(--container-width);
+  width: 100%;
+  gap: 20px;
 }
 
 .footer-dark h3 {
@@ -286,6 +299,7 @@ html {
   font-weight: bold;
   font-size: 16px;
   color: var(--primary-light); /* Highlight headers in the primary light color */
+  text-align: center;
 }
 
 .footer-dark ul {
@@ -293,7 +307,8 @@ html {
   list-style: none;
   line-height: 1.6;
   font-size: 14px;
-  margin-bottom: 0;
+  margin: 0;
+  text-align: left;
 }
 
 .footer-dark ul a {
@@ -308,37 +323,21 @@ html {
   color: var(--primary); /* Add primary color hover effect */
 }
 
-@media (max-width: 767px) {
-  .footer-dark .item:not(.social) {
-    text-align: center;
-    padding-bottom: 20px;
-  }
+.footer-dark .item {
+  flex: 1 1 calc(33.333% - 20px); /* Make items flexible and aligned */
+  min-width: 200px;
 }
 
 .footer-dark .item.text {
   margin-bottom: 36px;
-}
-
-@media (max-width: 767px) {
-  .footer-dark .item.text {
-    margin-bottom: 0;
-  }
-}
-
-.footer-dark .item.text p {
-  opacity: 0.6;
-  margin-bottom: 0;
-}
-
-.footer-dark .item.social {
   text-align: center;
 }
 
-@media (max-width: 991px) {
-  .footer-dark .item.social {
-    text-align: center;
-    margin-top: 20px;
-  }
+.footer-dark .item.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 .footer-dark .item.social > a {
@@ -350,16 +349,16 @@ html {
   text-align: center;
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
-  margin: 0 8px;
-  color: var(--text); /* Matches site's text color */
-  background: var(--dark-lighter); /* Background color for buttons */
+  margin: 0;
+  color: var(--text);
+  background: var(--dark-lighter);
   opacity: 0.75;
   transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .footer-dark .item.social > a:hover {
   opacity: 1;
-  background: var(--primary-light); /* Add hover background */
+  background: var(--primary-light);
 }
 
 .footer-dark .copyright {
@@ -368,6 +367,16 @@ html {
   opacity: 0.5;
   font-size: 13px;
   margin-bottom: 0;
-  color: var(--text-muted); /* Match muted text style */
+  color: var(--text-muted);
 }
 
+@media (max-width: 991px) {
+  .footer-dark .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-dark .item {
+    text-align: center;
+  }
+}
