@@ -272,7 +272,6 @@ html {
 
 
 
-
 /* Footer Section - AlfieTerry.co.uk */
 .footer-dark {
   display: flex;
@@ -280,35 +279,84 @@ html {
   align-items: center;
   justify-content: center;
   padding: 50px 20px;
-  color: var(--text); /* Use the site's defined text color */
-  background-color: var(--dark); /* Use the site's dark background */
+  color: var(--text);
+  background-color: var(--dark);
 }
 
 .footer-dark .content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   max-width: var(--container-width);
   width: 100%;
-  gap: 20px;
+  gap: 40px; /* Space between the sections */
 }
 
-.footer-dark h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-weight: bold;
-  font-size: 16px;
-  color: var(--primary-light); /* Highlight headers in the primary light color */
+.footer-dark .links-section {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between the two link sections */
+}
+
+.footer-dark .links-section .item {
+  flex: 1 1 calc(50% - 20px); /* Two columns, equal width */
   text-align: center;
 }
 
 .footer-dark ul {
   padding: 0;
   list-style: none;
+  margin: 10px 0 0; /* Space between heading and links */
   line-height: 1.6;
   font-size: 14px;
-  margin: 0;
-  text-align: left;
+}
+
+.footer-dark ul a {
+  color: var(--text-muted);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+.footer-dark ul a:hover {
+  opacity: 1;
+  color: var(--primary);
+}
+
+.footer-dark .item.text {
+  margin-top: 40px; /* Add space above Alfie Terry message */
+  text-align: center;
+}
+
+.footer-dark .item.text p {
+  opacity: 0.6;
+}
+
+.footer-dark .item.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-dark .copyright {
+  text-align: center;
+  margin-top: 20px; /* Space before copyright */
+  opacity: 0.5;
+  font-size: 13px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .footer-dark .links-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-dark .item {
+    text-align: center;
+  }
 }
 
 .footer-dark ul a {
