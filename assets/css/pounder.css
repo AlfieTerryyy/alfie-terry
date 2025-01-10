@@ -273,11 +273,11 @@ html {
 
 
 
-
+/* Footer Section - AlfieTerry.co.uk */
 .footer-dark {
   padding: 50px 0;
-  color: #f1f5f9;
-  background-color: #0f172a;
+  color: var(--text); /* Use the site's defined text color */
+  background-color: var(--dark); /* Use the site's dark background */
 }
 
 .footer-dark h3 {
@@ -285,6 +285,7 @@ html {
   margin-bottom: 12px;
   font-weight: bold;
   font-size: 16px;
+  color: var(--primary-light); /* Highlight headers in the primary light color */
 }
 
 .footer-dark ul {
@@ -296,13 +297,15 @@ html {
 }
 
 .footer-dark ul a {
-  color: inherit;
+  color: var(--text-muted); /* Subtle text for links */
   text-decoration: none;
-  opacity: 0.6;
+  opacity: 0.7;
+  transition: opacity 0.3s ease, color 0.3s ease;
 }
 
 .footer-dark ul a:hover {
-  opacity: 0.8;
+  opacity: 1;
+  color: var(--primary); /* Add primary color hover effect */
 }
 
 @media (max-width: 767px) {
@@ -348,19 +351,23 @@ html {
   border-radius: 50%;
   box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.4);
   margin: 0 8px;
-  color: #f1f5f9;
+  color: var(--text); /* Matches site's text color */
+  background: var(--dark-lighter); /* Background color for buttons */
   opacity: 0.75;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
 }
 
 .footer-dark .item.social > a:hover {
-  opacity: 0.9;
+  opacity: 1;
+  background: var(--primary-light); /* Add hover background */
 }
 
 .footer-dark .copyright {
   text-align: center;
   padding-top: 24px;
-  opacity: 0.3;
+  opacity: 0.5;
   font-size: 13px;
   margin-bottom: 0;
+  color: var(--text-muted); /* Match muted text style */
 }
 
