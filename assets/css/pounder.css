@@ -281,30 +281,33 @@ html {
 .footer-dark .container {
   max-width: 1200px;
   margin: 0 auto;
+  text-align: center; /* Center aligns everything by default */
 }
 
 .footer-dark .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  gap: 40px; /* Space between sections */
+  justify-content: center; /* Centers all columns */
+  gap: 40px; /* Spacing between items */
 }
 
 .footer-dark .item {
-  flex: 1 1 200px; /* Flexible items, min width of 200px */
-  text-align: center;
+  flex: 1 1 200px;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center; /* Aligns each column */
 }
 
 .footer-dark h3 {
   margin-top: 0;
   margin-bottom: 12px;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .footer-dark ul {
-  padding: 0;
   list-style: none;
+  padding: 0;
   margin: 0;
   line-height: 1.6;
   font-size: 14px;
@@ -319,12 +322,13 @@ html {
 
 .footer-dark ul a:hover {
   opacity: 1;
-  color: #60a5fa; /* Matches primary-light */
+  color: #60a5fa;
 }
 
 .footer-dark .item.text {
-  margin-top: 40px; /* Add spacing above Alfie Terry message */
-  text-align: center;
+  flex: 1 1 100%;
+  margin-top: 40px; /* Space above the Alfie Terry message */
+  text-align: center; /* Aligns the message properly */
 }
 
 .footer-dark .item.text p {
@@ -333,38 +337,43 @@ html {
 }
 
 .footer-dark .item.social {
+  flex: 1 1 100%;
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Centers social links */
   gap: 15px;
-  margin-top: 20px; /* Add spacing above social icons */
+  margin-bottom: 20px; /* Adds space above copyright */
 }
 
 .footer-dark .item.social a {
   font-size: 20px;
   color: #f1f5f9;
   text-decoration: none;
-  transition: opacity 0.3s ease, color 0.3s ease;
+  width: 36px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rgba(15, 23, 42, 0.8); /* Add subtle background */
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-dark .item.social a:hover {
-  color: #60a5fa;
+  background-color: #2563eb;
+  transform: scale(1.1); /* Adds hover effect */
 }
 
 .footer-dark .copyright {
-  margin-top: 40px;
-  text-align: center;
+  flex: 1 1 100%;
+  margin-top: 20px;
   font-size: 13px;
   opacity: 0.6;
+  text-align: center;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .footer-dark .row {
-    flex-direction: column;
-    gap: 20px; /* Reduced gap on smaller screens */
-  }
-
-  .footer-dark .item {
-    text-align: center;
+    flex-direction: column; /* Stacks all items vertically */
+    gap: 20px;
   }
 }
