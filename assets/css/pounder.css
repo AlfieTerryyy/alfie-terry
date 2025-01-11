@@ -272,6 +272,8 @@ html {
 
 
 
+/*  Footer -----------------------------------------------  */
+
 .footer-dark {
   padding: 50px 20px;
   color: #f1f5f9;
@@ -281,21 +283,28 @@ html {
 .footer-dark .container {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center; /* Center aligns everything by default */
+  text-align: center;
 }
 
 .footer-dark .row {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers all columns */
-  gap: 40px; /* Spacing between items */
+  justify-content: center;
+  gap: 40px;
 }
 
-.footer-dark .item {
-  flex: 1 1 200px;
+.footer-dark .titles-row {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-dark .titles-row .item {
+  flex: 1 1 auto;
   min-width: 200px;
   max-width: 300px;
-  text-align: center; /* Aligns each column */
 }
 
 .footer-dark h3 {
@@ -326,22 +335,20 @@ html {
 }
 
 .footer-dark .item.text {
-  flex: 1 1 100%;
-  margin-top: 40px; /* Space above the Alfie Terry message */
-  text-align: center; /* Aligns the message properly */
+  text-align: left;
 }
 
 .footer-dark .item.text p {
-  opacity: 0.7;
-  line-height: 1.6;
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.8;
 }
 
-.footer-dark .item.social {
-  flex: 1 1 100%;
+.footer-dark .social-row {
   display: flex;
-  justify-content: center; /* Centers social links */
+  justify-content: center;
   gap: 15px;
-  margin-bottom: 20px; /* Adds space above copyright */
+  margin: 30px 0;
 }
 
 .footer-dark .item.social a {
@@ -353,27 +360,28 @@ html {
   line-height: 36px;
   text-align: center;
   border-radius: 50%;
-  background-color: rgba(15, 23, 42, 0.8); /* Add subtle background */
+  background-color: rgba(15, 23, 42, 0.8);
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .footer-dark .item.social a:hover {
   background-color: #2563eb;
-  transform: scale(1.1); /* Adds hover effect */
+  transform: scale(1.1);
 }
 
 .footer-dark .copyright {
-  flex: 1 1 100%;
   margin-top: 20px;
   font-size: 13px;
   opacity: 0.6;
-  text-align: center;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .footer-dark .row {
-    flex-direction: column; /* Stacks all items vertically */
-    gap: 20px;
+  .titles-row {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-dark .social-row {
+    gap: 10px;
   }
 }
