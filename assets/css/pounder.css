@@ -270,18 +270,16 @@ html {
 
 
 
-
-
-/*  Footer -----------------------------------------------  */
+/* Footer ----------------------------------------------- */
 
 .footer-dark {
-  padding: 50px 20px;
+  padding: 30px 15px;
   color: #f1f5f9;
   background-color: #0f172a;
 }
 
 .footer-dark .container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -290,21 +288,38 @@ html {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 40px;
+  gap: 20px;
 }
 
 .footer-dark .titles-row {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
-  gap: 40px;
+  gap: 40px; 
   margin-bottom: 30px;
+  overflow-x: auto; 
+  scrollbar-width: thin; 
+  scrollbar-color: #60a5fa transparent;
+}
+
+.footer-dark .titles-row::-webkit-scrollbar {
+  height: 8px; 
+}
+
+.footer-dark .titles-row::-webkit-scrollbar-thumb {
+  background: #60a5fa;
+  border-radius: 4px;
+}
+
+.footer-dark .titles-row::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 .footer-dark .titles-row .item {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-width: 200px;
   max-width: 300px;
+  text-align: center; 
 }
 
 .footer-dark h3 {
@@ -377,11 +392,13 @@ html {
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .titles-row {
-    flex-wrap: wrap;
-    justify-content: center;
+  .footer-dark .titles-row {
+    gap: 20px; 
   }
-  .footer-dark .social-row {
-    gap: 10px;
+  .footer-dark ul {
+    font-size: 13px;
+  }
+  .footer-dark h3 {
+    font-size: 16px;
   }
 }
