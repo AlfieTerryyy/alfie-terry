@@ -47,33 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     adjustFooter();
     window.addEventListener('resize', adjustFooter);
 
-    // Scroll to load more content when near the bottom
-    const scrollThreshold = 100;
-    const nearBottom = () => {
-        return window.innerHeight + window.scrollY >= document.body.offsetHeight - scrollThreshold;
-    };
-
-    if (nearBottom()) {
-        loadMoreContent();
-    }
-});
-
-// Load more content logic
-async function loadMoreContent() {
-    const container = document.querySelector('.grid-container');
-    const newContent = await fetchMoreContent();
-    container.appendChild(newContent);
-}
-
-// Simulated function to fetch more content
-async function fetchMoreContent() {
-    // Placeholder logic for fetching new content
-    const content = document.createElement('div');
-    content.classList.add('new-content');
-    content.innerHTML = '<p>More content loaded...</p>';
-    return content;
-}
-
 
 
 
