@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings Menu</title>
+  <style>
+    /* Default styles */
+    :root {
+      --primary: #2563eb;
+      --primary-light: #60a5fa;
+      --dark: #0f172a;
+      --dark-lighter: #1e293b;
+      --text: #f1f5f9;
+      --text-muted: #94a3b8;
+      --border-radius: 12px;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--dark);
+      color: var(--text);
+    }
+
+    #settings-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-color: var(--primary);
+      color: white;
+      font-size: 24px;
+      border: none;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      z-index: 1000;
+    }
+
+    #settings-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    }
+
+    #settings-menu {
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      background: var(--dark-lighter);
+      border: 1px solid var(--primary-light);
+      border-radius: var(--border-radius);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+      width: 300px;
+      padding: 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 1000;
+      animation: fadeIn 0.3s ease forwards;
+    }
+
+    #settings-menu h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      color: var(--text);
+      text-align: center;
+    }
+
+    #settings-menu label {
+      font-size: 1rem;
+      color: var(--text-muted);
+    }
+
+    #settings-menu select {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      color: var(--text);
+      background: var(--dark);
+      border: 1px solid var(--primary-light);
+      border-radius: var(--border-radius);
+      outline: none;
+    }
+
+    #settings-menu button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      background: var(--primary);
+      border: none;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    #settings-menu button:hover {
+      background: var(--primary-light);
+      transform: translateY(-2px);
+    }
+
+    #settings-menu button#close-menu {
+      background: var(--dark-lighter);
+      color: var(--text-muted);
+      border: 1px solid var(--primary-light);
+    }
+
+    #settings-menu button#close-menu:hover {
+      background: var(--dark);
+      color: var(--text);
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="settings-button">⚙️</div>
+  <div id="settings-menu">
+    <div class="menu-content">
+      <h2>Settings</h2>
+      <label for="theme-select">Choose a theme:</label>
+      <select id="theme-select">
+        <option value="blue">Blue</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+      </select>
+      <button id="save-settings">Save</button>
+      <button id="close-menu">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // Apply the selected style dynamically using CSS variables
+    function applyStyle(theme) {
+      const root = document.documentElement;
+      switch (theme) {
+        case 'blue':
+          root.style.setProperty('--primary', '#2563eb');
+          root.style.setProperty('--primary-light', '#60a5fa');
+          root.style.setProperty('--dark', '#0f172a');
+          root.style.setProperty('--dark-lighter', '#1e293b');
+          root.style.setProperty('--text', '#f1f5f9');
+          root.style.setProperty('--text-muted', '#94a3b8');
+          break;
+        case 'red':
+          root.style.setProperty('--primary', '#dc2626');
+          root.style.setProperty('--primary-light', '#f87171');
+          root.style.setProperty('--dark', '#dd6868');
+          root.style.setProperty('--dark-lighter', '#8f0000');
+          root.style.setProperty('--text', '#edf2f7');
+          root.style.setProperty('--text-muted', '#a0aec0');
+          break;
+        case 'green':
+          root.style.setProperty('--primary', '#16a34a');
+          root.style.setProperty('--primary-light', '#4ade80');
+          root.style.setProperty('--dark', '#b6d7a8');
+          root.style.setProperty('--dark-lighter', '#c9efb9');
+          root.style.setProperty('--text', '#e5e7eb');
+          root.style.setProperty('--text-muted', '#9ca3af');
+          break;
+        case 'yellow':
+          root.style.setProperty('--primary', '#ca8a04');
+          root.style.setProperty('--primary-light', '#facc15');
+          root.style.setProperty('--dark', '#a17900');
+          root.style.setProperty('--dark-lighter', '#cf9c00');
+          root.style.setProperty('--text', '#f3f4f6');
+          root.style.setProperty('--text-muted', '#d1d5db');
+          break;
+      }
+    }
+
+    // Load saved style from localStorage
+    function loadStyle() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        applyStyle(savedTheme);
+        themeSelect.value = savedTheme;
+      }
+    }
+
+    // JavaScript functionality
+    const settingsButton = document.getElementById('settings-button');
+    const settingsMenu = document.getElementById('settings-menu');
+    const themeSelect = document.getElementById('theme-select');
+    const saveButton = document.getElementById('save-settings');
+    const closeButton = document.getElementById('close-menu');
+
+    // Event Listeners
+    settingsButton.addEventListener('click', () => {
+      settingsMenu.style.display = 'flex';
+    });
+
+    closeButton.addEventListener('click', () => {
+      settingsMenu.style.display = 'none';
+    });
+
+    saveButton.addEventListener('click', () => {
+      const selectedTheme = themeSelect.value;
+      applyStyle(selectedTheme);
+      localStorage.setItem('theme', selectedTheme);
+      settingsMenu.style.display = 'none';
+    });
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', loadStyle);
+  </script>
+
+</body>
+</html>
