@@ -65,3 +65,117 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    document.addEventListener("DOMContentLoaded", function() {
+    // Check if the <no-setting-change-load> tag exists
+    if (!document.querySelector('no-setting-change-load')) {
+        // Create a new div to hold the settings content
+        const settingsDiv = document.createElement('div');
+        settingsDiv.style.position = 'fixed';
+        settingsDiv.style.top = '0';
+        settingsDiv.style.left = '0';
+        settingsDiv.style.width = '100%';
+        settingsDiv.style.height = '100%';
+        settingsDiv.style.zIndex = '9999';
+        settingsDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        settingsDiv.style.overflow = 'auto';
+        settingsDiv.style.padding = '20px';
+        settingsDiv.style.boxSizing = 'border-box';
+
+        // Fetch the content of settings.html
+        fetch('https://alfieterry.co.uk/settings.html')
+            .then(response => response.text())
+            .then(htmlContent => {
+                settingsDiv.innerHTML = htmlContent;
+                document.body.appendChild(settingsDiv);
+            })
+            .catch(error => {
+                console.error('Error loading settings:', error);
+            });
+    }
+});
+
+
+
+
+
+
