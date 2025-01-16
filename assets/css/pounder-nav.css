@@ -1,37 +1,17 @@
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
-}
-
-:root {
-    --primary: #2563eb;
-    --primary-light: #60a5fa;
-    --dark: #0f172a;
-    --dark-lighter: #1e293b;
-    --text: #f1f5f9;
-    --text-muted: #94a3b8;
-    --border-radius: 12px;
-    --container-width: 1200px;
-}
-
+/* Reset global styles that affect the entire page */
 body {
     min-height: 100vh;
     font-family: 'Roboto', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
     color: var(--text);
-    background: var(--dark);
-    background-image: radial-gradient(circle at 0% 0%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
     display: block;
     scroll-behavior: smooth;
     align-items: right;
 }
 
+/* Specific styles for the header */
 .header {
-    background: rgba(15, 23, 42, 0.8);
+    background: rgba(15, 23, 42, 0.8); /* Keeps the header's background */
     backdrop-filter: blur(10px);
     width: 100%;
     position: fixed;
@@ -43,32 +23,18 @@ body {
     transition: transform 0.3s ease;
 }
 
-.header.hidden {
-    transform: translateY(-100%);
+/* Make sure to add background color here for the main page if needed */
+.main-content {
+    background: var(--dark); /* Keep the background for content separate from the nav */
 }
 
-.header-container {
-    max-width: var(--container-width);
-    margin: 0 auto;
-    padding: 0.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: right;
-    width: 100%;
-}
-
-.header .logo img {
-    max-height: 40px;
-    align-items: left;
-}
-
+/* Keep the rest of the navbar and menu styles intact */
 .navbar {
     display: flex;
     align-items: right;
     justify-content: right;
     gap: 0.5rem;
     flex: 0.5;
-  
 }
 
 .navbar ul {
@@ -78,7 +44,6 @@ body {
     margin: 0;
     padding: 0;
     justify-content: right;
-  
 }
 
 .navbar a {
@@ -96,28 +61,7 @@ body {
     transform: scale(1.05);
 }
 
-.button {
-    display: inline-flex;
-    align-items: right;
-    justify-content: right;
-    padding: 0.75rem 1.5rem;
-    background: var(--primary);
-    color: white;
-    border: none;
-    border-radius: 9999px;
-    font-weight: 500;
-    cursor: pointer;
-    transform: translateY(0);
-    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.1), 0 2px 4px -1px rgba(37, 99, 235, 0.06);
-    transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
-}
-
-.button:hover {
-    background: var(--primary-light);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2), 0 4px 6px -2px rgba(37, 99, 235, 0.1);
-}
-
+/* Keep the mobile side menu and toggle as needed */
 .menu-toggle {
     display: none;
     background: none;
@@ -162,7 +106,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    justify-content: 
+    justify-content: left;
 }
 
 .side-menu ul li a {
@@ -205,4 +149,11 @@ body {
     .menu-toggle {
         display: block;
     }
+}
+
+/* Header Logo Size */
+.header .logo img {
+    max-height: 40px; /* Limit the maximum height of the logo */
+    max-width: 100%;   /* Make sure the width is proportional */
+    height: auto;      /* Maintain aspect ratio */
 }
