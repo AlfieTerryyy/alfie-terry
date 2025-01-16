@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Theme Settings -------------------------------------------------------------------------------------------------------------------
 
-    // Inject CSS styles dynamically
+  // Inject CSS styles dynamically
 const settingsCSS = `
   #settings-button {
     position: fixed;
@@ -229,6 +229,9 @@ function applyStyle(theme) {
       root.style.setProperty('--dark-lighter', '#1e293b');
       root.style.setProperty('--text', '#f1f5f9');
       root.style.setProperty('--text-muted', '#94a3b8');
+      root.style.setProperty('--secondary', '#2563eb');
+      root.style.setProperty('--gradient-start', 'rgba(29, 78, 216, 0.1)');
+      root.style.setProperty('--gradient-end', 'rgba(29, 78, 216, 0.25)');
       break;
     case 'red':
       root.style.setProperty('--primary', '#dc2626');
@@ -237,6 +240,9 @@ function applyStyle(theme) {
       root.style.setProperty('--dark-lighter', '#2d3748');
       root.style.setProperty('--text', '#edf2f7');
       root.style.setProperty('--text-muted', '#a0aec0');
+      root.style.setProperty('--secondary', '#ff7276');
+      root.style.setProperty('--gradient-start', 'rgba(230, 57, 70, 0.1)');
+      root.style.setProperty('--gradient-end', 'rgba(230, 57, 70, 0.25)');
       break;
     case 'green':
       root.style.setProperty('--primary', '#16a34a');
@@ -245,6 +251,9 @@ function applyStyle(theme) {
       root.style.setProperty('--dark-lighter', '#374151');
       root.style.setProperty('--text', '#e5e7eb');
       root.style.setProperty('--text-muted', '#9ca3af');
+      root.style.setProperty('--secondary', '#34d399');
+      root.style.setProperty('--gradient-start', 'rgba(16, 185, 129, 0.1)');
+      root.style.setProperty('--gradient-end', 'rgba(16, 185, 129, 0.25)');
       break;
     case 'yellow':
       root.style.setProperty('--primary', '#ca8a04');
@@ -253,6 +262,9 @@ function applyStyle(theme) {
       root.style.setProperty('--dark-lighter', '#27272a');
       root.style.setProperty('--text', '#f3f4f6');
       root.style.setProperty('--text-muted', '#d1d5db');
+      root.style.setProperty('--secondary', '#fcd34d');
+      root.style.setProperty('--gradient-start', 'rgba(245, 158, 11, 0.1)');
+      root.style.setProperty('--gradient-end', 'rgba(245, 158, 11, 0.25)');
       break;
   }
 }
@@ -284,6 +296,7 @@ saveButton.addEventListener('click', () => {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', loadStyle);
+
 
 
 
