@@ -6,6 +6,8 @@
 }
 
 :root {
+
+  /* Default */
     --primary: #2563eb;
     --primary-light: #60a5fa;
     --dark: #0f172a;
@@ -17,7 +19,66 @@
     --gradient-end: rgba(37, 99, 235, 0.25);
     --border-radius: 12px;
     --container-width: 1200px;
+
+  /* Red */
+    --red-primary: #e63946;
+    --red-primary-light: #f87171;
+    --red-dark: #7f1d1d;
+    --red-dark-lighter: #9f1239;
+    --red-text: #fff5f5;
+    --red-text-muted: #fecaca;
+    --red-secondary: #ff7276;
+    --red-gradient-start: rgba(230, 57, 70, 0.1);
+    --red-gradient-end: rgba(230, 57, 70, 0.25);
+
+  /* Blue */
+    --blue-primary: #1d4ed8;
+    --blue-primary-light: #60a5fa;
+    --blue-dark: #1e3a8a;
+    --blue-dark-lighter: #3b82f6;
+    --blue-text: #e0f2fe;
+    --blue-text-muted: #93c5fd;
+    --blue-secondary: #2563eb;
+    --blue-gradient-start: rgba(29, 78, 216, 0.1);
+    --blue-gradient-end: rgba(29, 78, 216, 0.25);
+
+  /* Green */
+    --green-primary: #10b981;
+    --green-primary-light: #6ee7b7;
+    --green-dark: #064e3b;
+    --green-dark-lighter: #059669;
+    --green-text: #ecfdf5;
+    --green-text-muted: #86efac;
+    --green-secondary: #34d399;
+    --green-gradient-start: rgba(16, 185, 129, 0.1);
+    --green-gradient-end: rgba(16, 185, 129, 0.25);
+
+  /* Yellow */
+    --yellow-primary: #f59e0b;
+    --yellow-primary-light: #fbbf24;
+    --yellow-dark: #78350f;
+    --yellow-dark-lighter: #d97706;
+    --yellow-text: #fef3c7;
+    --yellow-text-muted: #fde68a;
+    --yellow-secondary: #fcd34d;
+    --yellow-gradient-start: rgba(245, 158, 11, 0.1);
+    --yellow-gradient-end: rgba(245, 158, 11, 0.25);
+
+  /* Example */
+    --example-primary: #0000;
+    --example-primary-light: #0000;
+    --example-dark: #0000;
+    --example-dark-lighter: #0000;
+    --example-text: #0000;
+    --example-text-muted: #0000;
+    --example-secondary: #0000;
+    --example-gradient-start: rgba(00, 00, 000, 0.0);
+    --example-gradient-end: rgba(00, 00, 000, 0.0);
+    --example-border-radius: 12px;
+    --example-container-width: 1200px;
+
 }
+
 
 html {
     scroll-behavior: smooth;
