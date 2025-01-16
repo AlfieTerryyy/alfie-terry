@@ -130,5 +130,36 @@ document.addEventListener('DOMContentLoaded', () => {
             switchStyle.style.transform = 'translateX(30px)';
         }
     });
+
+    
 });
+
+
+
+
+
+
+
+
+
+
+
+
+    function adjustFooterPosition() {
+  const bodyHeight = document.body.offsetHeight;
+  const windowHeight = window.innerHeight;
+  const footer = document.querySelector('footer');
+
+  if (bodyHeight < windowHeight) {
+    footer.style.position = 'absolute';
+    footer.style.bottom = '0';
+  } else {
+    footer.style.position = 'relative';
+  }
+}
+
+// Adjust footer position on page load and window resize
+window.addEventListener('load', adjustFooterPosition);
+window.addEventListener('resize', adjustFooterPosition);
+
 
