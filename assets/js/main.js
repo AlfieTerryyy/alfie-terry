@@ -144,21 +144,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+// Create the arrow button dynamically
+const arrowButton = document.createElement('button');
+arrowButton.classList.add('arrow-btn');
+arrowButton.innerHTML = '&#8595;'; // Downward arrow symbol
+document.body.appendChild(arrowButton);
 
-function adjustFooterPosition() {
-  const bodyHeight = document.body.offsetHeight;
-  const windowHeight = window.innerHeight;
-  const footer = document.querySelector('footer');
+// Get the footer and set up initial scroll position
+const footer = document.querySelector('.footer-dark');
+let lastScrollTop = 0;
+let isMobile = window.innerWidth <= 768;  // Detect if the user is on mobile
 
-  // Ensure the footer is sticky at the bottom
-  if (bodyHeight < windowHeight) {
-    footer.style.position = 'absolute';
-    footer.style.bottom = '0';
-  } else {
-    footer.style.position = 'relative';
-  }
+// Function to check scrollability and adjust footer behavior
+function checkScrollability() {
+    const bodyHeight = document.body.scrollHeight;
+    const viewportHeight = window.innerHeight;
+
+    if (bodyHeight <= viewportHeight) {
+        // If content isn't enough to scroll, always show the footer
+        footer.style.bottom = '0';
+        arrowButton.style.display = 'none'; // Hide arrow button
+    } else {
+        // Handle scroll behavior for desktop
+        arrowButton.style.display = 'block'; // Show arrow button if scrollable
+    }
 }
 
-// Adjust footer position on page load and window resize
-window.addEventListener('load', adjustFooterPosition);
-window.addEventListener('resize', adjustFooterPosition);
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative scroll values
+}
+
+// Toggle the footer when the arrow button is clicked
+arrowButton.addEventListener('click', () => {
+    if (footer.style.bottom === '0px') {
+        footer.style.bottom = "-100%"; // Slide footer out
+    } else {
+        footer.style.bottom = "0"; // Slide footer in
+    }
+});
+
+// Attach the scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+// Check for resizing and adjust based on screen size
+window.addEventListener('resize', () => {
+    isMobile = window.innerWidth <= 768; // Recalculate if it's mobile
+    checkScrollability(); // Check scrollability on resize
+});
+
+// Initial footer position on page load
+footer.style.bottom = "-100%"; // Make sure the footer starts off-screen on desktop
+checkScrollability(); // Check if content allows scrolling or not
