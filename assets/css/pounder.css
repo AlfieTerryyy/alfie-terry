@@ -291,23 +291,21 @@ html, body {
     padding: 30px 15px;
     color: #f1f5f9;
     background-color: var(--dark);
-    position: absolute;
-    bottom: 0;  /* Always at the bottom */
-    left: 0;
+    position: relative; /* Change from absolute to relative */
+    bottom: 0;  /* Always at the bottom, but relative positioning will ensure it stays at the bottom */
     width: 100%;
     z-index: 10;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
-    transition: none; /* No animation */
     display: block;
 }
 
 /* Footer Container ensures the body grows to fit the footer */
 body {
     min-height: 100vh;
-    position: relative; /* Important for the footer to stay below content */
+    position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Content above footer */
+    justify-content: flex-end;  /* Ensures the content stays at the top and the footer is pushed to the bottom */
 }
 
 /* Arrow Button Styling */
@@ -395,8 +393,8 @@ body {
 .footer-dark .footer-content {
     display: flex;
     flex-direction: column;
-    align-items: center;  /* Center items horizontally */
-    justify-content: center;  /* Center items vertically */
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
@@ -422,8 +420,7 @@ body {
 /* Ensure mobile view visibility */
 @media (max-width: 768px) {
     .footer-dark {
-        position: relative;  /* Fix for small screen view */
-        bottom: 0;
+        position: relative;
     }
 }
 
