@@ -276,26 +276,22 @@ html {
 
 
 
+/* Footer ----------------------------------------------- */
 
 /* Footer Styling */
 .footer-dark {
-    position: fixed;
-    bottom: 0; /* Keep footer fixed at the bottom of the page */
-    left: 0;
-    width: 100%;
-    padding: 1rem;
+    padding: 30px 15px;
     color: #f1f5f9;
     background-color: var(--dark);
-    transition: bottom 0.3s ease, transform 0.3s ease;
-    z-index: 999;
 }
 
 .footer-dark .container {
     max-width: 100%;
     margin: 0 auto;
-    text-align: center;
+    text-align: center; /* Keeps the footer content centered */
 }
 
+/* Row for Items in the Footer */
 .footer-dark .row {
     display: flex;
     flex-wrap: wrap;
@@ -303,19 +299,20 @@ html {
     gap: 20px;
 }
 
+/* Titles Row - Keep Horizontal Layout with Scrolling */
 .footer-dark .titles-row {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    gap: 40px; 
+    gap: 40px;
     margin-bottom: 30px;
-    overflow-x: auto; 
-    scrollbar-width: thin; 
+    overflow-x: auto;
+    scrollbar-width: thin;
     scrollbar-color: var(--primary-light) transparent;
 }
 
 .footer-dark .titles-row::-webkit-scrollbar {
-    height: 8px; 
+    height: 8px;
 }
 
 .footer-dark .titles-row::-webkit-scrollbar-thumb {
@@ -331,22 +328,39 @@ html {
     flex: 0 0 auto;
     min-width: 200px;
     max-width: 300px;
-    text-align: center; 
+    text-align: center; /* Ensures alignment of text under each heading */
 }
 
+/* Footer Title (h3) Styling */
 .footer-dark h3 {
     margin-top: 0;
     margin-bottom: 12px;
     font-weight: bold;
     font-size: 18px;
+    text-transform: uppercase; /* For a clean, modern look */
+    position: relative; /* Positioning for the underline effect */
+    padding-bottom: 8px; /* Space between text and line */
 }
 
+/* Add a faint line under each h3 */
+.footer-dark h3::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(255, 255, 255, 0.2); /* Faint line color */
+}
+
+/* Footer Links Styling */
 .footer-dark ul {
     list-style: none;
     padding: 0;
     margin: 0;
     line-height: 1.6;
     font-size: 14px;
+    text-align: left; /* Align links to the left under each title */
 }
 
 .footer-dark ul a {
@@ -360,21 +374,38 @@ html {
     opacity: 1;
 }
 
-/* Social Links with 'col item social' */
+/* Social Links Styling */
 .footer-dark .col.item.social {
     margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
+    text-align: center; /* Centers the social links */
 }
 
 .footer-dark .col.item.social a {
     color: #f1f5f9;
-    font-size: 1.5rem;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    font-size: 18px;
+    margin: 0 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .footer-dark .col.item.social a:hover {
-    opacity: 1;
+    color: var(--primary);
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 768px) {
+    /* Titles Row - Adjust for smaller screens */
+    .footer-dark .titles-row {
+        gap: 20px; /* Reduced gap on smaller screens */
+    }
+
+    /* Footer Links */
+    .footer-dark ul {
+        font-size: 13px; /* Smaller font size for mobile */
+    }
+
+    /* Footer Titles */
+    .footer-dark h3 {
+        font-size: 16px; /* Adjust title font size */
+    }
 }
