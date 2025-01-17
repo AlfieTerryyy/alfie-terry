@@ -293,7 +293,7 @@ body {
     padding: 30px 15px;
     color: #f1f5f9;
     background-color: var(--dark);
-    margin-top: auto; /* Pushes the footer to the bottom of the screen */
+    margin-top: auto;
 }
 
 .footer-dark .container {
