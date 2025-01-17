@@ -276,9 +276,6 @@ html {
 
 
 
-/* Footer ----------------------------------------------- */
-
-/* Footer ----------------------------------------------- */
 
 /* Ensure the page takes up at least 100vh */
 body {
@@ -290,17 +287,19 @@ body {
 /* Make the content area flexible to push footer to the bottom */
 .main-content {
     flex: 1;
-    padding-bottom: 80px; /* Make sure there’s enough space for the fixed footer */
+    padding-bottom: 80px; /* Ensure space for footer */
 }
 
 /* Footer Styling */
 .footer-dark {
     position: fixed;
-    bottom: 0;
+    bottom: -100px; /* Initially hide footer */
+    left: 0;
     width: 100%;
     padding: 1rem;
     color: #f1f5f9;
     background-color: var(--dark);
+    transition: bottom 0.3s ease, transform 0.3s ease;
     z-index: 999;
 }
 
