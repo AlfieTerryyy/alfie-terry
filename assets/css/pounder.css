@@ -276,109 +276,121 @@ html {
 
 /* Footer ----------------------------------------------- */
 
-       /* Footer Styling */
-        .footer-dark {
-            padding: 30px 15px;
-            color: #f1f5f9;
-            background-color: var(--dark);
-        }
+      /* Ensure the page takes up at least 100vh */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
-        .footer-dark .container {
-            max-width: 100%;
-            margin: 0 auto;
-            text-align: center;
-        }
+/* Make the content area flexible to push footer to the bottom */
+.main-content {
+    flex: 1;
+}
 
-        .footer-dark .row {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
+/* Footer Styling */
+.footer-dark {
+    padding: 30px 15px;
+    color: #f1f5f9;
+    background-color: var(--dark);
+    margin-top: auto; /* Pushes the footer to the bottom of the screen */
+}
 
-        .footer-dark .titles-row {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: center;
-            gap: 40px; 
-            margin-bottom: 30px;
-            overflow-x: auto; 
-            scrollbar-width: thin; 
-            scrollbar-color: var(--primary-light) transparent;
-        }
+.footer-dark .container {
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
 
-        .footer-dark .titles-row::-webkit-scrollbar {
-            height: 8px; 
-        }
+.footer-dark .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
 
-        .footer-dark .titles-row::-webkit-scrollbar-thumb {
-            background: var(--primary-light);
-            border-radius: 4px;
-        }
+.footer-dark .titles-row {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 40px; 
+    margin-bottom: 30px;
+    overflow-x: auto; 
+    scrollbar-width: thin; 
+    scrollbar-color: var(--primary-light) transparent;
+}
 
-        .footer-dark .titles-row::-webkit-scrollbar-track {
-            background: transparent;
-        }
+.footer-dark .titles-row::-webkit-scrollbar {
+    height: 8px; 
+}
 
-        .footer-dark .titles-row .item {
-            flex: 0 0 auto;
-            min-width: 200px;
-            max-width: 300px;
-            text-align: center; 
-        }
+.footer-dark .titles-row::-webkit-scrollbar-thumb {
+    background: var(--primary-light);
+    border-radius: 4px;
+}
 
-        .footer-dark h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-weight: bold;
-            font-size: 18px;
-        }
+.footer-dark .titles-row::-webkit-scrollbar-track {
+    background: transparent;
+}
 
-        .footer-dark ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            line-height: 1.6;
-            font-size: 14px;
-        }
+.footer-dark .titles-row .item {
+    flex: 0 0 auto;
+    min-width: 200px;
+    max-width: 300px;
+    text-align: center; 
+}
 
-        .footer-dark ul a {
-            color: #f1f5f9;
-            text-decoration: none;
-            opacity: 0.7;
-            transition: opacity 0.3s ease;
-        }
+.footer-dark h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 18px;
+}
 
-        .footer-dark ul a:hover {
-            opacity: 1;
-        }
+.footer-dark ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 1.6;
+    font-size: 14px;
+}
 
-        .footer-dark .social-links {
-            margin-top: 20px;
-        }
+.footer-dark ul a {
+    color: #f1f5f9;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
 
-        .footer-dark .social-links a {
-            color: #f1f5f9;
-            font-size: 18px;
-            margin: 0 12px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+.footer-dark ul a:hover {
+    opacity: 1;
+}
 
-        .footer-dark .social-links a:hover {
-            color: var(--primary);
-        }
+.footer-dark .social-links {
+    margin-top: 20px;
+}
 
-    
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-          .footer-dark .titles-row {
-            gap: 20px; 
-          }
-          .footer-dark ul {
-            font-size: 13px;
-          }
-          .footer-dark h3 {
-            font-size: 16px;
-          }
-        }
+.footer-dark .social-links a {
+    color: #f1f5f9;
+    font-size: 18px;
+    margin: 0 12px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-dark .social-links a:hover {
+    color: var(--primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-dark .titles-row {
+    gap: 20px; 
+  }
+  .footer-dark ul {
+    font-size: 13px;
+  }
+  .footer-dark h3 {
+    font-size: 16px;
+  }
+}
