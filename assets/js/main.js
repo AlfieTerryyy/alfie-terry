@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function adjustFooterPosition() {
   const bodyHeight = document.body.offsetHeight;
   const windowHeight = window.innerHeight;
-  const footer = document.querySelector('footer');
+  const footer = document.querySelector('footer-dark');
 
   if (bodyHeight < windowHeight) {
     footer.style.position = 'absolute';
