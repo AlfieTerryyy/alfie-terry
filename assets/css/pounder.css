@@ -276,36 +276,65 @@ html {
 
 
 
-/* Footer ----------------------------------------------- */
 
+/* Basic Reset */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Footer Styling */
 .footer-dark {
     padding: 30px 15px;
     color: #f1f5f9;
     background-color: var(--dark);
     position: absolute;
-    bottom: 0;
+    bottom: 0;  /* Always at the bottom */
     left: 0;
     width: 100%;
     z-index: 10;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
+    transition: none; /* No animation */
+    display: block;
 }
 
-.footer-dark .container {
-    max-width: 100%;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.footer-dark .row {
+/* Footer Container ensures the body grows to fit the footer */
+body {
+    min-height: 100vh;
+    position: relative; /* Important for the footer to stay below content */
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    flex-direction: column;
+    justify-content: flex-start; /* Content above footer */
 }
 
+/* Arrow Button Styling */
+.arrow-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 11;
+    display: none;
+}
+
+.arrow-btn:hover {
+    background-color: var(--primary-light);
+}
+
+/* Footer Titles Styling */
 .footer-dark .titles-row {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
     margin-bottom: 30px;
@@ -339,19 +368,8 @@ html {
     margin-bottom: 12px;
     font-weight: bold;
     font-size: 18px;
-    text-transform: uppercase;
-    position: relative;
-    padding-bottom: 8px;
-}
-
-.footer-dark h3::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    background-color: rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 12px;
 }
 
 .footer-dark ul {
@@ -360,7 +378,6 @@ html {
     margin: 0;
     line-height: 1.6;
     font-size: 14px;
-    text-align: left;
 }
 
 .footer-dark ul a {
@@ -374,9 +391,20 @@ html {
     opacity: 1;
 }
 
+/* Centering the social icons and copyright text */
+.footer-dark .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Center items horizontally */
+    justify-content: center;  /* Center items vertically */
+    text-align: center;
+}
+
+/* Social Icons */
 .footer-dark .col.item.social {
     margin-top: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .footer-dark .col.item.social a {
@@ -391,28 +419,24 @@ html {
     color: var(--primary);
 }
 
-body, html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.wrapper {
-    flex-grow: 1;
-}
-
+/* Ensure mobile view visibility */
 @media (max-width: 768px) {
-    .footer-dark .titles-row {
-        gap: 20px;
+    .footer-dark {
+        position: relative;  /* Fix for small screen view */
+        bottom: 0;
     }
+}
 
-    .footer-dark ul {
-        font-size: 13px;
-    }
+/* Copyright Styling */
+.footer-dark .copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #f1f5f9;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
 
-    .footer-dark h3 {
-        font-size: 16px;
-    }
+.footer-dark .copyright:hover {
+    opacity: 1;
 }
