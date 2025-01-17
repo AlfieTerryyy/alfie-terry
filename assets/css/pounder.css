@@ -286,26 +286,29 @@ html, body {
     overflow-x: hidden;
 }
 
+/* Body Setup to Stick Footer at the Bottom */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content should take up available space */
+.main-content {
+    flex: 1; /* Takes all available space above the footer */
+}
+
 /* Footer Styling */
 .footer-dark {
     padding: 30px 15px;
     color: #f1f5f9;
     background-color: var(--dark);
-    position: relative; /* Change from absolute to relative */
-    bottom: 0;  /* Always at the bottom, but relative positioning will ensure it stays at the bottom */
+    position: relative; /* Relative positioning to keep footer in flow */
     width: 100%;
     z-index: 10;
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
     display: block;
-}
-
-/* Footer Container ensures the body grows to fit the footer */
-body {
-    min-height: 100vh;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;  /* Ensures the content stays at the top and the footer is pushed to the bottom */
+    /* Added padding for spacing */
 }
 
 /* Arrow Button Styling */
