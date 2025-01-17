@@ -29,6 +29,8 @@ html {
 }
 
 body {
+    display: flex;
+    flex-direction: column;
     min-height: 100vh;
     font-family: 'Roboto', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
