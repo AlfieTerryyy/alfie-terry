@@ -396,3 +396,16 @@ body {
     font-size: 16px;
   }
 }
+
+footer {
+  padding: 20px 0;
+  text-align: center;
+  position: relative;
+  width: 100%;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
