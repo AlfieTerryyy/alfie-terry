@@ -282,6 +282,12 @@ html {
     padding: 30px 15px;
     color: #f1f5f9;
     background-color: var(--dark);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .footer-dark .container {
@@ -383,6 +389,18 @@ html {
 
 .footer-dark .col.item.social a:hover {
     color: var(--primary);
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    flex-grow: 1;
 }
 
 @media (max-width: 768px) {
