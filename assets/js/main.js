@@ -145,11 +145,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    function adjustFooterPosition() {
+function adjustFooterPosition() {
   const bodyHeight = document.body.offsetHeight;
   const windowHeight = window.innerHeight;
-  const footer-dark = document.querySelector('footer-dark');
+  const footer = document.querySelector('footer');
 
+  // Ensure the footer is sticky at the bottom
   if (bodyHeight < windowHeight) {
     footer.style.position = 'absolute';
     footer.style.bottom = '0';
@@ -161,5 +162,3 @@ document.addEventListener('DOMContentLoaded', () => {
 // Adjust footer position on page load and window resize
 window.addEventListener('load', adjustFooterPosition);
 window.addEventListener('resize', adjustFooterPosition);
-
-
