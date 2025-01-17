@@ -277,23 +277,10 @@ html {
 
 
 
-/* Ensure the page takes up at least 100vh */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Make the content area flexible to push footer to the bottom */
-.main-content {
-    flex: 1;
-    padding-bottom: 80px; /* Ensure space for footer */
-}
-
 /* Footer Styling */
 .footer-dark {
     position: fixed;
-    bottom: -100px; /* Initially hide footer */
+    bottom: 0; /* Keep footer fixed at the bottom of the page */
     left: 0;
     width: 100%;
     padding: 1rem;
@@ -373,46 +360,21 @@ body {
     opacity: 1;
 }
 
-.footer-dark .social-links {
+/* Social Links with 'col item social' */
+.footer-dark .col.item.social {
     margin-top: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
-.footer-dark .social-links a {
+.footer-dark .col.item.social a {
     color: #f1f5f9;
-    font-size: 18px;
-    margin: 0 12px;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
 }
 
-.footer-dark .social-links a:hover {
-    color: #c7dcf2;
-    transform: scale(1.1);
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .footer-dark .titles-row {
-        gap: 20px; 
-    }
-    .footer-dark ul {
-        font-size: 13px;
-    }
-    .footer-dark h3 {
-        font-size: 16px;
-    }
-}
-
-footer {
-    padding: 20px 0;
-    text-align: center;
-    position: relative;
-    width: 100%;
-}
-
-footer .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.footer-dark .col.item.social a:hover {
+    opacity: 1;
 }
