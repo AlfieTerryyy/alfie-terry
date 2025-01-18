@@ -168,13 +168,11 @@
         <button class="tool-button" id="unordered-list"><i class="fas fa-list-ul"></i></button>
         <button class="tool-button" id="ordered-list"><i class="fas fa-list-ol"></i></button>
         <button class="tool-button" id="font-family"><i class="fas fa-font"></i></button>
-      <button class="tool-button" id="font-size"><i class="fas fa-text-size"> <p>FS</p></i></button>
+        <button class="tool-button" id="font-size"><i class="fas fa-text-size"></i></button>
     </div>
 
     <!-- Document Editor -->
     <main>
-      <br>
-      <br>
       <br>
       <br>
       <br>
@@ -218,19 +216,113 @@
         });
         document.getElementById('unordered-list').addEventListener('click', () => document.execCommand('insertUnorderedList'));
         document.getElementById('ordered-list').addEventListener('click', () => document.execCommand('insertOrderedList'));
-        document.getElementById('font-family').addEventListener('click', () => {
-            const font = prompt('Enter font family (e.g., Arial, Times New Roman)');
-            document.execCommand('fontName', false, font);
-        });
-        document.getElementById('font-size').addEventListener('click', () => {
-            const size = prompt('Enter font size (e.g., 3, 4, 5)');
-            document.execCommand('fontSize', false, size);
-        });
 
         // Save functionality (download file)
         document.getElementById('save-btn').addEventListener('click', () => {
             const content = document.getElementById('editor').innerHTML;
-            const blob = new Blob([content], { type: 'text/html' });
+            const styles = `
+                <style>
+                    body { font-family: 'Roboto', sans-serif; background-color: var(--dark); color: var(--text); }
+                    .editor { max-width: 900px; margin: auto; padding: 2rem; background: #fff; color: #333; border-radius: 8px; }
+                </style>
+            `;
+            const htmlContent = `
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Document</title>
+                    ${styles}
+                    <style>
+                    /* Basic Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Setup */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f7fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Background Styles */
+.bg-main {
+  background-color: #2563eb; /* Primary background */
+  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+/* Basic Text Box Styling */
+.text-box {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  color: #333;
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.text-box:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+
+/* Heading and Paragraph Styles */
+h1, h2, h3 {
+  font-weight: 700;
+  color: #1e293b; /* Dark text color */
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1rem;
+  color: #4b5563; /* Muted text color */
+  margin-bottom: 1rem;
+}
+
+/* Button Style */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #1e40af;
+}
+
+                    </style>
+                </head>
+                <body>
+                    <div class="editor">${content}</div>
+                </body>
+                </html>
+            `;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
