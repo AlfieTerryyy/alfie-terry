@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlfieTerry Docs</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Base Styles */
+        :root {
+            --primary: #2563eb;
+            --primary-light: #60a5fa;
+            --dark: #0f172a;
+            --dark-lighter: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-radius: 12px;
+            --container-width: 1200px;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: var(--text);
+            background: var(--dark);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .header h1 {
+            color: var(--primary-light);
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-start;
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+            position: fixed;
+            top: 70px;
+            width: calc(100% - 4rem);
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+
+        .tool-button {
+            background: var(--primary);
+            border: none;
+            padding: 0.8rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            color: white;
+            font-size: 1.4rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tool-button:hover {
+            background: var(--primary-light);
+            transform: scale(1.1);
+        }
+
+        .tool-button i {
+            font-size: 1.6rem;
+        }
+
+        /* Editor (Notepad Box) */
+        .editor {
+            margin-top: 120px;
+            padding: 2rem;
+            max-width: var(--container-width);
+            min-height: 70vh;
+            background: #fff;
+            border-radius: var(--border-radius);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+            color: var(--dark);
+            overflow-wrap: break-word;
+            outline: none;
+            margin: 0 auto;
+            font-family: 'Courier New', monospace;
+            line-height: 1.8;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .editor:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: var(--dark-lighter);
+            color: var(--text);
+            margin-top: auto;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.1), transparent 70%);
+            pointer-events: none;
+        }
+
+        /* Save Button (visual feedback on click) */
+        .save-feedback {
+            background: var(--primary-light);
+            padding: 0.5rem 1rem;
+            font-size: 1.2rem;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            color: var(--text);
+            transition: background 0.3s ease;
+        }
+
+        .save-feedback:active {
+            background: var(--primary);
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>AlfieTerry Docs</h1>
+    </header>
+
+    <!-- Toolbar with tools -->
+    <div class="toolbar">
+        <button class="tool-button" id="bold"><i class="fas fa-bold"></i></button>
+        <button class="tool-button" id="italic"><i class="fas fa-italic"></i></button>
+        <button class="tool-button" id="underline"><i class="fas fa-underline"></i></button>
+        <button class="tool-button" id="strikethrough"><i class="fas fa-strikethrough"></i></button>
+        
+        <button class="tool-button" id="increase-font-size"><i class="fas fa-font fa-lg"></i><span style="font-size: 1.5rem; margin-left: 0.5rem;">A</span></button>
+        <button class="tool-button" id="decrease-font-size"><i class="fas fa-font fa-sm"></i><span style="font-size: 1.2rem; margin-left: 0.5rem;">b</span></button>
+
+        <button class="tool-button" id="align-left"><i class="fas fa-align-left"></i></button>
+        <button class="tool-button" id="align-center"><i class="fas fa-align-center"></i></button>
+        <button class="tool-button" id="align-right"><i class="fas fa-align-right"></i></button>
+        <button class="tool-button" id="change-color"><i class="fas fa-font"></i></button>
+        <button class="tool-button" id="highlight"><i class="fas fa-highlighter"></i></button>
+        <button class="tool-button" id="create-link"><i class="fas fa-link"></i></button>
+        <button class="tool-button" id="unordered-list"><i class="fas fa-list-ul"></i></button>
+        <button class="tool-button" id="ordered-list"><i class="fas fa-list-ol"></i></button>
+        <button class="tool-button" id="font-family"><i class="fas fa-font"></i></button>
+      <button class="tool-button" id="font-size"><i class="fas fa-text-size"> <p>FS</p></i></button>
+    </div>
+
+    <!-- Document Editor -->
+    <main>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <div id="editor" class="editor" contenteditable="true">
+            <p>Start writing here...</p>
+        </div>
+    </main>
+
+    <footer>
+        <button class="save-feedback" id="save-btn"><i class="fas fa-save"></i> Save Document</button>
+        <p>&copy; 2025 Alfie Terry. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to handle tool actions
+        document.getElementById('bold').addEventListener('click', () => document.execCommand('bold'));
+        document.getElementById('italic').addEventListener('click', () => document.execCommand('italic'));
+        document.getElementById('underline').addEventListener('click', () => document.execCommand('underline'));
+        document.getElementById('strikethrough').addEventListener('click', () => document.execCommand('strikethrough'));
+        document.getElementById('increase-font-size').addEventListener('click', () => {
+            document.execCommand('fontSize', false, '5');
+        });
+        document.getElementById('decrease-font-size').addEventListener('click', () => {
+            document.execCommand('fontSize', false, '2');
+        });
+        document.getElementById('align-left').addEventListener('click', () => document.execCommand('justifyLeft'));
+        document.getElementById('align-center').addEventListener('click', () => document.execCommand('justifyCenter'));
+        document.getElementById('align-right').addEventListener('click', () => document.execCommand('justifyRight'));
+        document.getElementById('change-color').addEventListener('click', () => {
+            const color = prompt('Enter text color (e.g., red, #ff0000)');
+            document.execCommand('foreColor', false, color);
+        });
+        document.getElementById('highlight').addEventListener('click', () => {
+            const color = prompt('Enter highlight color (e.g., yellow)');
+            document.execCommand('backColor', false, color);
+        });
+        document.getElementById('create-link').addEventListener('click', () => {
+            const url = prompt('Enter URL:');
+            document.execCommand('createLink', false, url);
+        });
+        document.getElementById('unordered-list').addEventListener('click', () => document.execCommand('insertUnorderedList'));
+        document.getElementById('ordered-list').addEventListener('click', () => document.execCommand('insertOrderedList'));
+        document.getElementById('font-family').addEventListener('click', () => {
+            const font = prompt('Enter font family (e.g., Arial, Times New Roman)');
+            document.execCommand('fontName', false, font);
+        });
+        document.getElementById('font-size').addEventListener('click', () => {
+            const size = prompt('Enter font size (e.g., 3, 4, 5)');
+            document.execCommand('fontSize', false, size);
+        });
+
+        // Save functionality (download file)
+        document.getElementById('save-btn').addEventListener('click', () => {
+            const content = document.getElementById('editor').innerHTML;
+            const blob = new Blob([content], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'document.html';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+
+</body>
+</html>
